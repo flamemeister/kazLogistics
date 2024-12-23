@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Footer from "../Footer/Footer";
 
 // Hero background image
-import heroBg from "../../assets/aboutus.jpg";
+import heroBg from "../../assets/images/image4.jpg";
 
 // Example gallery images (use your actual paths)
 import gallery1 from "../../assets/image1.jpeg";

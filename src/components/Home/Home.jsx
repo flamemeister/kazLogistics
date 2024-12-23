@@ -53,7 +53,7 @@ const Home = () => {
         <div className="relative max-w-7xl mx-auto px-4 text-center w-full fade-in-up">
           <div className="flex flex-col items-center justify-center py-8 md:py-16">
             <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
-              KazLogistics
+            Great Steppe Logistics
             </h1>
             <p className="text-gray-200 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
               Ваша международная транспортно-логистическая компания
@@ -153,7 +153,7 @@ const Home = () => {
                 О компании
               </h2>
               <p className="mt-4 text-gray-600 leading-relaxed">
-                Компания KazLogistics – международная транспортно-логистическая 
+                Компания Great Steppe Logistics – международная транспортно-логистическая 
                 компания, обеспечивающая полный комплекс услуг по доставке и 
                 хранению грузов. Доставим груз железнодорожными, автомобильными 
                 и морскими видами транспорта. Мы осуществляем перевозки по 

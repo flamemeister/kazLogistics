@@ -21,7 +21,7 @@ const AboutUs = () => {
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         <div className="relative flex items-center justify-center h-full">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold">ABOUT US</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">О НАС</h1>
             <div className="mt-2 h-1 w-16 bg-green-500 mx-auto"></div>
           </div>
         </div>
@@ -34,40 +34,41 @@ const AboutUs = () => {
             <div>
               <img
                 src={image1}
-                alt="Worker with a crane"
+                alt="Работник с краном"
                 className="rounded-lg shadow-lg"
               />
             </div>
             <div>
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                Our Commitment to Excellence
+                Наша приверженность к качеству
               </h2>
               <div className="mt-2 h-1 w-full bg-green-500"></div>
               <p className="text-gray-600 leading-relaxed">
-                At Kazakh Trans Trade, we pride ourselves on delivering the
-                highest quality services in the logistics and transportation
-                industry. From container transport to supply chain management,
-                we ensure efficiency and reliability in everything we do.
+                В компании Great Steppe Logistics мы гордимся предоставлением
+                высококачественных услуг в сфере логистики и транспортировки.
+                От перевозки контейнеров до управления цепочками поставок, мы
+                обеспечиваем эффективность и надежность во всех аспектах нашей
+                работы.
               </p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <div>
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                Your Trusted Logistics Partner
+                Ваш надежный логистический партнер
               </h2>
               <div className="mt-2 h-1 w-full bg-green-500"></div>
               <p className="text-gray-600 leading-relaxed">
-                Whether transporting goods across Kazakhstan or internationally,
-                we are here to help you every step of the way. Our team of
-                professionals is dedicated to meeting your needs and exceeding
-                your expectations.
+                Независимо от того, требуется ли перевозка грузов по Казахстану
+                или за его пределами, мы готовы помочь на каждом этапе. Наша
+                команда профессионалов стремится удовлетворить ваши
+                потребности и превзойти ожидания.
               </p>
             </div>
             <div>
               <img
                 src={image2}
-                alt="Shipping containers"
+                alt="Контейнеры для перевозок"
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -83,88 +84,89 @@ const AboutUs = () => {
       {/* Why Choose Us Section */}
       <div className="max-w-6xl mx-auto px-8 mb-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-800">Why Choose Us?</h2>
+          <h2 className="text-3xl font-bold text-gray-800">Почему выбирают нас?</h2>
           <p className="text-gray-600 text-lg mt-4">
-            Reasons to choose us as your freight forwarding partner
+            Причины выбрать нас в качестве вашего логистического партнера
           </p>
           <div className="mt-2 h-1 w-16 bg-green-500 mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
-          {/* Reliability */}
+          {/* Надежность */}
           <div className="flex items-start">
             <div className="flex-shrink-0">
               <CheckCircleIcon className="h-8 w-8 text-green-500" />
             </div>
             <div className="ml-4">
-              <h3 className="text-xl font-bold text-gray-800">Reliability</h3>
+              <h3 className="text-xl font-bold text-gray-800">Надежность</h3>
               <p className="text-gray-600 mt-2">
-                We understand how important it is for business to ensure the
-                safety and timeliness of cargo transportation. KazakhTransTrade
-                is proud of its reputation as a reliable partner. We guarantee
-                that your cargo will be delivered safe and sound, as well as
-                within the agreed time frame. Our processes are controlled at
-                every stage, which allows us to minimize risks and avoid
-                unexpected delays.
+                Мы понимаем, насколько важно для бизнеса обеспечить безопасность
+                и своевременность грузоперевозок. Great Steppe Logistics гордится
+                своей репутацией надежного партнера. Мы гарантируем, что ваш
+                груз будет доставлен в целости и сохранности в установленные
+                сроки. Наши процессы контролируются на каждом этапе, что
+                позволяет минимизировать риски и избежать неожиданных задержек.
               </p>
             </div>
           </div>
 
-          {/* Customized Solutions */}
+          {/* Индивидуальные решения */}
           <div className="flex items-start">
             <div className="flex-shrink-0">
               <PuzzlePieceIcon className="h-8 w-8 text-green-500" />
             </div>
             <div className="ml-4">
               <h3 className="text-xl font-bold text-gray-800">
-                Customized Solutions
+                Индивидуальные решения
               </h3>
               <p className="text-gray-600 mt-2">
-                We understand that every business is unique and requires an
-                individual approach. That’s why we work closely with our clients
-                to develop logistics strategies that perfectly match their
-                needs. Our experts are ready to create tailored solutions that
-                ensure the smooth operation of your supply chain.
+                Мы понимаем, что каждый бизнес уникален и требует индивидуального
+                подхода. Именно поэтому мы тесно сотрудничаем с нашими клиентами,
+                разрабатывая логистические стратегии, которые идеально подходят
+                для их потребностей. Наши эксперты готовы создать
+                индивидуальные решения, которые обеспечат бесперебойную работу
+                вашей цепочки поставок.
               </p>
             </div>
           </div>
 
-          {/* Integrated Approach */}
+          {/* Интегрированный подход */}
           <div className="flex items-start">
             <div className="flex-shrink-0">
               <ChartBarIcon className="h-8 w-8 text-green-500" />
             </div>
             <div className="ml-4">
               <h3 className="text-xl font-bold text-gray-800">
-                Integrated Approach
+                Интегрированный подход
               </h3>
               <p className="text-gray-600 mt-2">
-                Unlike many other companies, we offer not only transportation
-                services, but also a full range of logistics solutions. From
-                documentation processing to warehousing, we take on all stages
-                associated with the movement of your cargo. This allows you to
-                focus on developing your business, entrusting us with all
-                logistics aspects.
+                В отличие от многих других компаний, мы предлагаем не только
+                транспортные услуги, но и полный спектр логистических решений.
+                От обработки документации до складирования мы берем на себя все
+                этапы, связанные с перемещением вашего груза. Это позволяет вам
+                сосредоточиться на развитии бизнеса, доверив нам все аспекты
+                логистики.
               </p>
             </div>
           </div>
 
-          {/* Experience and Professionalism */}
+          {/* Опыт и профессионализм */}
           <div className="flex items-start">
             <div className="flex-shrink-0">
               <AcademicCapIcon className="h-8 w-8 text-green-500" />
             </div>
             <div className="ml-4">
               <h3 className="text-xl font-bold text-gray-800">
-                Experience and Professionalism
+                Опыт и профессионализм
               </h3>
               <p className="text-gray-600 mt-2">
-                Since its foundation in 2020, KazakhTransTrade has accumulated
-                extensive experience in working with various industries and
-                types of cargo. Our team consists of highly qualified
-                specialists who are constantly learning and monitoring new
-                trends in logistics. This allows us to quickly adapt to changing
-                conditions and provide the best service to our clients.
+                С момента основания в 2020 году компания Great Steppe Logistics
+                накопила обширный опыт работы с различными отраслями и типами
+                грузов. Наша команда состоит из высококвалифицированных
+                специалистов, которые постоянно учатся и отслеживают новые
+                тенденции в логистике. Это позволяет нам быстро адаптироваться к
+                изменяющимся условиям и предоставлять нашим клиентам лучший
+                сервис.
               </p>
             </div>
           </div>

@@ -13,7 +13,7 @@ const Contacts = () => {
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         <div className="relative flex items-center justify-center h-full">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold">CONTACTS</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">КОНТАКТЫ</h1>
             <div className="mt-2 h-1 w-16 bg-green-500 mx-auto"></div>
           </div>
         </div>
@@ -38,11 +38,11 @@ const Contacts = () => {
 
             {/* Contact Details */}
             <div className="text-gray-800 flex flex-col items-center md:items-start md:pl-8">
-              <h2 className="text-2xl font-bold mb-4">CONTACTS</h2>
+              <h2 className="text-2xl font-bold mb-4">КОНТАКТЫ</h2>
               <p className="mb-2 text-center md:text-left">
-                Kazakhstan, Almaty city, Almaly district, Seifullin Avenue, BC “Altyn Zaman”, building 498, second floor, office 201
+                Казахстан, город Алматы, Алмалинский район, проспект Сейфуллина, БЦ «Алтын Заман», дом 498, второй этаж, офис 201
               </p>
-              <p className="mb-2 text-center md:text-left">Postal code: 050012</p>
+              <p className="mb-2 text-center md:text-left">Почтовый индекс: 050012</p>
               <p className="mb-2 text-center md:text-left">+7 (727) 352 88 80</p>
               <p className="mb-4 text-center md:text-left">info@kazakhtranstrade.kz</p>
               <div className="mt-2 h-1 w-16 bg-green-500"></div>
@@ -54,22 +54,22 @@ const Contacts = () => {
       {/* Consultation Section */}
       <div className="bg-gray-100 py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">GET A CONSULTATION</h2>
+          <h2 className="text-3xl font-bold mb-4">ПОЛУЧИТЕ КОНСУЛЬТАЦИЮ</h2>
           <p className="text-gray-600 mb-6">
-            Fill out the form to get a free consultation from our specialists. We will contact you as soon as possible and answer all your questions.
+            Заполните форму, чтобы получить бесплатную консультацию от наших специалистов. Мы свяжемся с вами в ближайшее время и ответим на все ваши вопросы.
           </p>
           <form className="max-w-md mx-auto">
             <div className="mb-4">
               <input
                 type="text"
-                placeholder="Name"
+                placeholder="Имя"
                 className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
             <div className="mb-4">
               <input
                 type="text"
-                placeholder="Phone number"
+                placeholder="Номер телефона"
                 className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
@@ -77,7 +77,7 @@ const Contacts = () => {
               type="submit"
               className="w-full bg-green-500 text-white py-3 rounded hover:bg-green-600 transition duration-300"
             >
-              SEND
+              ОТПРАВИТЬ
             </button>
           </form>
         </div>

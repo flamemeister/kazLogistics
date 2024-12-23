@@ -60,11 +60,11 @@ const Navbar = () => {
             +7 (727) 352 88 80
           </a>
           <a
-            href="mailto:info@kazakhtranstrade.kz"
+            href="mailto:info@gslog.kz"
             className="flex items-center hover:opacity-80"
           >
             <EnvelopeIcon className="h-5 w-5 mr-1" />
-            info@kazakhtranstrade.kz
+            info@gslog.kz
           </a>
         </div>
       </div>
