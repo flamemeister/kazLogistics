@@ -5,7 +5,7 @@ import {
   ClockIcon,
   ClipboardDocumentIcon,
 } from "@heroicons/react/24/outline";
-import Footer from "./Footer";
+import Footer from "../Footer/Footer";
 import bgImage from "../../assets/images/home_bg_image.png";
 
 // Inline custom CSS for simple fade-in animations:

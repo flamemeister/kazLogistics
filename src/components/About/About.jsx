@@ -1,8 +1,14 @@
-import React from 'react';
-import backgroundImage from '../../assets/aboutus.jpg';
-import image1 from '../../assets/image1.jpeg';
-import image2 from '../../assets/image2.jpg';
-import { CheckCircleIcon, PuzzlePieceIcon, ChartBarIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
+import React from "react";
+import backgroundImage from "../../assets/aboutus.jpg";
+import image1 from "../../assets/image1.jpeg";
+import image2 from "../../assets/image2.jpg";
+import Footer from "../Footer/Footer";
+import {
+  CheckCircleIcon,
+  PuzzlePieceIcon,
+  ChartBarIcon,
+  AcademicCapIcon,
+} from "@heroicons/react/24/outline";
 
 const AboutUs = () => {
   return (
@@ -38,7 +44,10 @@ const AboutUs = () => {
               </h2>
               <div className="mt-2 h-1 w-full bg-green-500"></div>
               <p className="text-gray-600 leading-relaxed">
-                At Kazakh Trans Trade, we pride ourselves on delivering the highest quality services in the logistics and transportation industry. From container transport to supply chain management, we ensure efficiency and reliability in everything we do.
+                At Kazakh Trans Trade, we pride ourselves on delivering the
+                highest quality services in the logistics and transportation
+                industry. From container transport to supply chain management,
+                we ensure efficiency and reliability in everything we do.
               </p>
             </div>
           </div>
@@ -49,7 +58,10 @@ const AboutUs = () => {
               </h2>
               <div className="mt-2 h-1 w-full bg-green-500"></div>
               <p className="text-gray-600 leading-relaxed">
-                Whether transporting goods across Kazakhstan or internationally, we are here to help you every step of the way. Our team of professionals is dedicated to meeting your needs and exceeding your expectations.
+                Whether transporting goods across Kazakhstan or internationally,
+                we are here to help you every step of the way. Our team of
+                professionals is dedicated to meeting your needs and exceeding
+                your expectations.
               </p>
             </div>
             <div>
@@ -69,7 +81,7 @@ const AboutUs = () => {
       </div>
 
       {/* Why Choose Us Section */}
-      <div className="max-w-6xl mx-auto px-8">
+      <div className="max-w-6xl mx-auto px-8 mb-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-800">Why Choose Us?</h2>
           <p className="text-gray-600 text-lg mt-4">
@@ -87,7 +99,13 @@ const AboutUs = () => {
             <div className="ml-4">
               <h3 className="text-xl font-bold text-gray-800">Reliability</h3>
               <p className="text-gray-600 mt-2">
-                We understand how important it is for business to ensure the safety and timeliness of cargo transportation. KazakhTransTrade is proud of its reputation as a reliable partner. We guarantee that your cargo will be delivered safe and sound, as well as within the agreed time frame. Our processes are controlled at every stage, which allows us to minimize risks and avoid unexpected delays.
+                We understand how important it is for business to ensure the
+                safety and timeliness of cargo transportation. KazakhTransTrade
+                is proud of its reputation as a reliable partner. We guarantee
+                that your cargo will be delivered safe and sound, as well as
+                within the agreed time frame. Our processes are controlled at
+                every stage, which allows us to minimize risks and avoid
+                unexpected delays.
               </p>
             </div>
           </div>
@@ -98,9 +116,15 @@ const AboutUs = () => {
               <PuzzlePieceIcon className="h-8 w-8 text-green-500" />
             </div>
             <div className="ml-4">
-              <h3 className="text-xl font-bold text-gray-800">Customized Solutions</h3>
+              <h3 className="text-xl font-bold text-gray-800">
+                Customized Solutions
+              </h3>
               <p className="text-gray-600 mt-2">
-                We understand that every business is unique and requires an individual approach. That’s why we work closely with our clients to develop logistics strategies that perfectly match their needs. Our experts are ready to create tailored solutions that ensure the smooth operation of your supply chain.
+                We understand that every business is unique and requires an
+                individual approach. That’s why we work closely with our clients
+                to develop logistics strategies that perfectly match their
+                needs. Our experts are ready to create tailored solutions that
+                ensure the smooth operation of your supply chain.
               </p>
             </div>
           </div>
@@ -111,9 +135,16 @@ const AboutUs = () => {
               <ChartBarIcon className="h-8 w-8 text-green-500" />
             </div>
             <div className="ml-4">
-              <h3 className="text-xl font-bold text-gray-800">Integrated Approach</h3>
+              <h3 className="text-xl font-bold text-gray-800">
+                Integrated Approach
+              </h3>
               <p className="text-gray-600 mt-2">
-                Unlike many other companies, we offer not only transportation services, but also a full range of logistics solutions. From documentation processing to warehousing, we take on all stages associated with the movement of your cargo. This allows you to focus on developing your business, entrusting us with all logistics aspects.
+                Unlike many other companies, we offer not only transportation
+                services, but also a full range of logistics solutions. From
+                documentation processing to warehousing, we take on all stages
+                associated with the movement of your cargo. This allows you to
+                focus on developing your business, entrusting us with all
+                logistics aspects.
               </p>
             </div>
           </div>
@@ -124,14 +155,22 @@ const AboutUs = () => {
               <AcademicCapIcon className="h-8 w-8 text-green-500" />
             </div>
             <div className="ml-4">
-              <h3 className="text-xl font-bold text-gray-800">Experience and Professionalism</h3>
+              <h3 className="text-xl font-bold text-gray-800">
+                Experience and Professionalism
+              </h3>
               <p className="text-gray-600 mt-2">
-                Since its foundation in 2020, KazakhTransTrade has accumulated extensive experience in working with various industries and types of cargo. Our team consists of highly qualified specialists who are constantly learning and monitoring new trends in logistics. This allows us to quickly adapt to changing conditions and provide the best service to our clients.
+                Since its foundation in 2020, KazakhTransTrade has accumulated
+                extensive experience in working with various industries and
+                types of cargo. Our team consists of highly qualified
+                specialists who are constantly learning and monitoring new
+                trends in logistics. This allows us to quickly adapt to changing
+                conditions and provide the best service to our clients.
               </p>
             </div>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
