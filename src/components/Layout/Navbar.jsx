@@ -117,10 +117,10 @@ const Navbar = () => {
                       to="/jd-perevozki"
                       className="block px-4 py-2 hover:bg-gray-200"
                     >
-                      ЖД перевозки
+                      Все услуги
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       to="/avto-perevozki"
                       className="block px-4 py-2 hover:bg-gray-200"
@@ -159,7 +159,7 @@ const Navbar = () => {
                     >
                       Складские услуги
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             )}
