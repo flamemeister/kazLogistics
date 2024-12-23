@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .header {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .footer img {
+            max-width: 150px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>Спасибо за вашу заявку!</h1>
+        </div>
+        <div class="content">
+            <p>Здравствуйте, {{ name }}!</p>
+            <p>Мы получили вашу заявку на консультацию:</p>
+            <ul>
+                <li><strong>Телефон:</strong> {{ phone }}</li>
+                <li><strong>Email:</strong> {{ email }}</li>
+                <li><strong>Комментарий:</strong> {{ comment }}</li>
+            </ul>
+            <p>Наши специалисты свяжутся с вами в ближайшее время.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Ваша Компания. Все права защищены.</p>
+            <img src="http://0.0.0.0:8000/static/core/api/assets/logo.png" alt="Great Steppe Logistics">
+        </div>
+    </div>
+</body>
+</html>
