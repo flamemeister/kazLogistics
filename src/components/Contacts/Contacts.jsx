@@ -51,38 +51,6 @@ const Contacts = () => {
         </div>
       </div>
 
-      {/* Consultation Section */}
-      <div className="bg-gray-100 py-16">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">ПОЛУЧИТЕ КОНСУЛЬТАЦИЮ</h2>
-          <p className="text-gray-600 mb-6">
-            Заполните форму, чтобы получить бесплатную консультацию от наших специалистов. Мы свяжемся с вами в ближайшее время и ответим на все ваши вопросы.
-          </p>
-          <form className="max-w-md mx-auto">
-            <div className="mb-4">
-              <input
-                type="text"
-                placeholder="Имя"
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                type="text"
-                placeholder="Номер телефона"
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-green-500 text-white py-3 rounded hover:bg-green-600 transition duration-300"
-            >
-              ОТПРАВИТЬ
-            </button>
-          </form>
-        </div>
-      </div>
-
       {/* Footer Section */}
       <Footer />
     </div>

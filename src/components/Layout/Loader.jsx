@@ -49,7 +49,7 @@ const Loader = ({ onComplete }) => {
         <div className="relative inline-block leading-[1.15]">
           {/* Gray text behind */}
           <span className="text-3xl md:text-5xl font-extrabold text-gray-300 block">
-            KazLogistics
+            Great Steppe Logistics
           </span>
 
           {/* Green text on top, clipped from right => left
@@ -62,7 +62,7 @@ const Loader = ({ onComplete }) => {
               // top = -0.15em, right = (100 - progress)%, bottom = -0.15em, left = 0
             }}
           >
-            KazLogistics
+            Great Steppe Logistics
           </span>
         </div>
       </div>
