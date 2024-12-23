@@ -9,7 +9,9 @@ import {
   About,
   Gallery,
   Contacts,
-  NotFound 
+  ExampleService,
+  Services,
+  NotFound
 } from "./components";
 
 const App = () => {
@@ -37,7 +39,7 @@ const AppContent = () => {
   return (
     <>
       {/* Show loader if `showLoader` is true */}
-      {showLoader && <Loader onComplete={handleLoaderComplete} />}
+      {/* {showLoader && <Loader onComplete={handleLoaderComplete} />} */}
 
       {/* Your normal app routes */}
       <Navbar />
@@ -46,6 +48,8 @@ const AppContent = () => {
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contacts" element={<Contacts />} />
+        <Route path="/services/all" element={<Services />} />
+        <Route path="/services/example" element={<ExampleService />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

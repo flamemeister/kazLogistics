@@ -37,6 +37,10 @@ const Navbar = () => {
     setServicesOpen(!servicesOpen);
   };
 
+  const closeServices = () => {
+    setServicesOpen(false);
+  };
+
   return (
     <header
       className={`
@@ -91,7 +95,6 @@ const Navbar = () => {
           <div className="relative">
             <button
               onClick={toggleServices}
-              onBlur={() => setServicesOpen(false)}
               className="inline-flex items-center hover:text-green-500 transition-colors duration-200 focus:outline-none"
             >
               Услуги
@@ -108,58 +111,37 @@ const Navbar = () => {
               </svg>
             </button>
             {servicesOpen && (
-              <div
-                className="absolute left-0 mt-2 w-48 bg-white text-gray-900 rounded-md shadow-lg"
-              >
+              <div className="absolute left-0 mt-2 w-48 bg-white text-gray-900 rounded-md shadow-lg">
                 <ul className="py-2">
                   <li>
                     <Link
-                      to="/jd-perevozki"
+                      to="/services/all"
                       className="block px-4 py-2 hover:bg-gray-200"
+                      onClick={closeServices}
                     >
                       Все услуги
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to="/services/example"
+                      className="block px-4 py-2 hover:bg-gray-200"
+                      onClick={closeServices}
+                    >
+                      Пример услуги
+                    </Link>
+                  </li>
+                  {/* Uncomment or add more items as needed */}
                   {/* <li>
                     <Link
                       to="/avto-perevozki"
                       className="block px-4 py-2 hover:bg-gray-200"
+                      onClick={closeServices}
                     >
                       Автоперевозки
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      to="/proektnaya-logistika"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                    >
-                      Проектная логистика
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/perevozki-pod-klyuch"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                    >
-                      Перевозки "под ключ"
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/ekspress-dostavka"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                    >
-                      Экспресс доставка
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/skladskie-uslugi"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                    >
-                      Складские услуги
-                    </Link>
-                  </li> */}
+                  ... */}
                 </ul>
               </div>
             )}
@@ -228,7 +210,7 @@ const Navbar = () => {
               <li>
                 <button
                   type="button"
-                  onClick={toggleServices}
+                  onClick={() => setServicesOpen(!servicesOpen)}
                   className="flex justify-between w-full px-4 py-2 hover:bg-gray-200"
                 >
                   Услуги
@@ -249,76 +231,29 @@ const Navbar = () => {
                     <ul>
                       <li>
                         <Link
-                          to="/jd-perevozki"
+                          to="/services/all"
                           className="block px-6 py-2 hover:bg-gray-200"
                           onClick={() => {
                             setMenuOpen(false);
                             setServicesOpen(false);
                           }}
                         >
-                          ЖД перевозки
+                          Все услуги
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/avto-perevozki"
+                          to="/services/example"
                           className="block px-6 py-2 hover:bg-gray-200"
                           onClick={() => {
                             setMenuOpen(false);
                             setServicesOpen(false);
                           }}
                         >
-                          Автоперевозки
+                          Пример услуги
                         </Link>
                       </li>
-                      <li>
-                        <Link
-                          to="/proektnaya-logistika"
-                          className="block px-6 py-2 hover:bg-gray-200"
-                          onClick={() => {
-                            setMenuOpen(false);
-                            setServicesOpen(false);
-                          }}
-                        >
-                          Проектная логистика
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/perevozki-pod-klyuch"
-                          className="block px-6 py-2 hover:bg-gray-200"
-                          onClick={() => {
-                            setMenuOpen(false);
-                            setServicesOpen(false);
-                          }}
-                        >
-                          Перевозки "под ключ"
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/ekspress-dostavka"
-                          className="block px-6 py-2 hover:bg-gray-200"
-                          onClick={() => {
-                            setMenuOpen(false);
-                            setServicesOpen(false);
-                          }}
-                        >
-                          Экспресс доставка
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/skladskie-uslugi"
-                          className="block px-6 py-2 hover:bg-gray-200"
-                          onClick={() => {
-                            setMenuOpen(false);
-                            setServicesOpen(false);
-                          }}
-                        >
-                          Складские услуги
-                        </Link>
-                      </li>
+                      {/* Add more items if needed */}
                     </ul>
                   </div>
                 )}
