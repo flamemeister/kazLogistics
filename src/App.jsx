@@ -1,8 +1,11 @@
-import { Route, Routes } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import { 
   Navbar,
   Home,
+  Loader,
+
   About,
   Gallery,
   Contacts,
@@ -12,6 +15,31 @@ import {
 const App = () => {
   return (
     <>
+      <AppContent />
+    </>
+  );
+}
+
+const AppContent = () => {
+  const location = useLocation();
+  const [showLoader, setShowLoader] = useState(false);
+
+  useEffect(() => {
+    // Start loader
+    setShowLoader(true);
+  }, [location]);
+
+  // Callback from the loader once 100% is reached
+  const handleLoaderComplete = () => {
+    setShowLoader(false);
+  };
+
+  return (
+    <>
+      {/* Show loader if `showLoader` is true */}
+      {showLoader && <Loader onComplete={handleLoaderComplete} />}
+
+      {/* Your normal app routes */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,5 +51,6 @@ const App = () => {
     </>
   );
 }
+
 
 export default App;
