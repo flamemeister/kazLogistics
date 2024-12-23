@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { 
   Navbar,
-  Main,
+  Home,
   About,
   Gallery,
   Contacts,
@@ -14,7 +14,7 @@ const App = () => {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contacts" element={<Contacts />} />

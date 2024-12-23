@@ -1,7 +1,7 @@
 import Navbar from "./Layout/Navbar";
 import NotFound from "./Layout/NotFound";
 
-import Main from "./Main/Main";
+import Home from "./Home/Home";
 import Contacts from "./Contacts/Contacts";
 import About from "./About/About";
 import Gallery from "./Gallery/Gallery";
@@ -11,7 +11,7 @@ export {
   NotFound, 
 
   // Pages
-  Main, 
+  Home, 
   Contacts, 
   About, 
   Gallery
