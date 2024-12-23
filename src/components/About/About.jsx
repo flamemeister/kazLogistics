@@ -10,7 +10,6 @@ import {
   AcademicCapIcon,
 } from "@heroicons/react/24/outline";
 
-
 const fadeAnimations = `
 @keyframes fadeInUp {
   0% {
@@ -30,9 +29,12 @@ const fadeAnimations = `
 const AboutUs = () => {
   return (
     <div>
+      {/* Inject Animation Styles */}
+      <style>{fadeAnimations}</style>
+
       {/* Hero Section */}
       <div
-        className="relative bg-cover bg-center text-white h-[50vh]"
+        className="relative bg-cover bg-center text-white h-[50vh] fade-in-up"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
@@ -45,7 +47,7 @@ const AboutUs = () => {
       </div>
 
       {/* Content Section */}
-      <div className="bg-white py-16">
+      <div className="bg-white py-16 fade-in-up">
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
@@ -94,12 +96,12 @@ const AboutUs = () => {
       </div>
 
       {/* Divider Line */}
-      <div className="my-16 flex justify-center">
+      <div className="my-16 flex justify-center fade-in-up">
         <hr className="border-gray-300 w-3/5" />
       </div>
 
       {/* Why Choose Us Section */}
-      <div className="max-w-6xl mx-auto px-8 mb-10">
+      <div className="max-w-6xl mx-auto px-8 mb-10 fade-in-up">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-800">Почему выбирают нас?</h2>
           <p className="text-gray-600 text-lg mt-4">
@@ -110,7 +112,7 @@ const AboutUs = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
           {/* Надежность */}
-          <div className="flex items-start">
+          <div className="flex items-start fade-in-up">
             <div className="flex-shrink-0">
               <CheckCircleIcon className="h-8 w-8 text-green-500" />
             </div>
@@ -128,7 +130,7 @@ const AboutUs = () => {
           </div>
 
           {/* Индивидуальные решения */}
-          <div className="flex items-start">
+          <div className="flex items-start fade-in-up">
             <div className="flex-shrink-0">
               <PuzzlePieceIcon className="h-8 w-8 text-green-500" />
             </div>
@@ -148,7 +150,7 @@ const AboutUs = () => {
           </div>
 
           {/* Интегрированный подход */}
-          <div className="flex items-start">
+          <div className="flex items-start fade-in-up">
             <div className="flex-shrink-0">
               <ChartBarIcon className="h-8 w-8 text-green-500" />
             </div>
@@ -168,7 +170,7 @@ const AboutUs = () => {
           </div>
 
           {/* Опыт и профессионализм */}
-          <div className="flex items-start">
+          <div className="flex items-start fade-in-up">
             <div className="flex-shrink-0">
               <AcademicCapIcon className="h-8 w-8 text-green-500" />
             </div>
@@ -189,6 +191,8 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+      
+      {/* Footer Section */}
       <Footer />
     </div>
   );

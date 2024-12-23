@@ -39,7 +39,7 @@ const AppContent = () => {
   return (
     <>
       {/* Show loader if `showLoader` is true */}
-      {/* {showLoader && <Loader onComplete={handleLoaderComplete} />} */}
+      {showLoader && <Loader onComplete={handleLoaderComplete} />}
 
       {/* Your normal app routes */}
       <Navbar />
