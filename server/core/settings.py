@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "api",
     "rest_framework",
-    "corsheaders",  # Add this
+    "corsheaders",
+    "chat",
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,10 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'aldiyar.saken123@gmail.com'
 EMAIL_HOST_PASSWORD = 'twpj xzdx mlop gvsn'  
 
+import os
+from dotenv import load_dotenv
+        
+load_dotenv()
+     
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+CORS_ALLOW_ALL_ORIGINS = True

@@ -9,6 +9,9 @@ import {
 import Footer from "../Footer/Footer";
 import bgImage from "../../assets/images/home_bg_image.png";
 import endpoint from "../../services/api";
+import { FaComments, FaTimes, FaSyncAlt } from "react-icons/fa";
+import "../../styles/spinner.css";
+
 
 const fadeAnimations = `
 @keyframes fadeInUp {
@@ -29,6 +32,69 @@ const Home = () => {
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [chatVisible, setChatVisible] = useState(false); 
+  const [isTyping, setIsTyping] = useState(false); 
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      text: "Привет! Я бот компании KazakhTransTrade. Как я могу помочь вам сегодня?",
+      type: "bot",
+      timestamp: "26h ago",
+    },
+  ]);
+
+  const [userInput, setUserInput] = useState("");
+
+  const toggleChat = () => {
+    setChatVisible(!chatVisible);
+  };
+
+  const handleInputChange = (e) => {
+    setUserInput(e.target.value);
+  };
+
+  const handleSendMessage = async () => {
+    if (userInput.trim() === "") return;
+  
+    const newMessage = {
+      id: messages.length + 1,
+      text: userInput,
+      type: "user",
+      timestamp: "Just now",
+    };
+  
+    setMessages((prevMessages) => [...prevMessages, newMessage]);
+    setUserInput("");
+    setIsTyping(true); 
+  
+    try {
+      const response = await axios.post("http://localhost:8000/chat/chat/", {
+        message: userInput,
+      });
+  
+      const botResponse = {
+        id: messages.length + 2,
+        text: response.data.response, 
+        type: "bot",
+        timestamp: new Date().toLocaleTimeString(),
+      };
+  
+      setMessages((prevMessages) => [...prevMessages, botResponse]);
+    } catch (error) {
+      const errorMessage = {
+        id: messages.length + 2,
+        text: "Произошла ошибка. Попробуйте позже.",
+        type: "bot",
+        timestamp: new Date().toLocaleTimeString(),
+      };
+  
+      setMessages((prevMessages) => [...prevMessages, errorMessage]);
+    } finally {
+      setIsTyping(false); 
+    }
+  };
+  
+  
 
   const handleScrollToForm = () => {
     const formEl = document.getElementById("consultation-form");
@@ -105,7 +171,7 @@ const Home = () => {
               Great Steppe Logistics
             </h1>
             <p className="text-gray-200 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Ваша международная транспортно-логистическая компания
+            DELIVERING YOUR VALUE
             </p>
             <button
               onClick={handleScrollToForm}
@@ -117,7 +183,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== НАШИ УСЛУГИ SECTION ===== */}
+      {/* ===== НАШИ УСЛУГИ SECTION =====
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center fade-in-up">
@@ -130,9 +196,9 @@ const Home = () => {
           </p>
 
           {/* Services List */}
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-6">
+          {/* <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* Service 1 */}
-            <div
+            {/*<div
               className="fade-in-up bg-gray-50 border border-gray-200 rounded-md p-6 
                             flex flex-col items-center text-center hover:shadow-lg 
                             transition-shadow duration-300 hover:-translate-y-1"
@@ -144,10 +210,10 @@ const Home = () => {
               <p className="text-gray-600 text-sm">
                 Краткое описание предоставляемой услуги.
               </p>
-            </div>
+            </div> */}
 
             {/* Service 2 */}
-            <div
+            {/*<div
               className="fade-in-up bg-gray-50 border border-gray-200 rounded-md p-6 
                             flex flex-col items-center text-center hover:shadow-lg 
                             transition-shadow duration-300 hover:-translate-y-1"
@@ -162,7 +228,7 @@ const Home = () => {
             </div>
 
             {/* Service 3 */}
-            <div
+            {/*<div
               className="fade-in-up bg-gray-50 border border-gray-200 rounded-md p-6 
                             flex flex-col items-center text-center hover:shadow-lg 
                             transition-shadow duration-300 hover:-translate-y-1"
@@ -176,8 +242,8 @@ const Home = () => {
               </p>
             </div>
 
-            {/* Service 4 */}
-            <div
+            {/*{/* Service 4 */}
+            {/*<div
               className="fade-in-up bg-gray-50 border border-gray-200 rounded-md p-6 
                             flex flex-col items-center text-center hover:shadow-lg 
                             transition-shadow duration-300 hover:-translate-y-1"
@@ -192,14 +258,14 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ===== О КОМПАНИИ SECTION ===== */}
-      <section className="bg-gray-50 py-16 md:py-20">
+      {/*<section className="bg-gray-50 py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center md:items-start md:space-x-12">
-            {/* Text */}
-            <div className="flex-1 mb-8 md:mb-0 fade-in-up">
+            {/* Text */} 
+            {/*<div className="flex-1 mb-8 md:mb-0 fade-in-up">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
                 О компании
               </h2>
@@ -214,7 +280,7 @@ const Home = () => {
             </div>
 
             {/* Achievements / placeholders */}
-            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 fade-in-up">
+            {/*<div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 fade-in-up">
               <div
                 className="bg-white border border-gray-200 p-6 rounded-md shadow-sm 
                            hover:shadow-md transition-shadow"
@@ -265,7 +331,7 @@ const Home = () => {
       </section>
 
       {/* ===== STATS SECTION (BLACK BACKGROUND) ===== */}
-      <section className="bg-black py-12 fade-in-up">
+      {/*<section className="bg-black py-12 fade-in-up">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div>
             <p className="text-green-500 text-3xl md:text-4xl font-bold">
@@ -290,7 +356,7 @@ const Home = () => {
             <p className="text-gray-200 mt-1">Арендованных вагонов</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section
         id="consultation-form"
@@ -352,6 +418,106 @@ const Home = () => {
           </form>
         </div>
       </section>
+
+{/* Floating Chat Icon */}
+<div className="fixed bottom-5 right-5 z-50">
+        <button
+          onClick={toggleChat}
+          className="bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition transform hover:scale-110"
+        >
+          {chatVisible ? <FaTimes className="h-6 w-6" /> : <FaComments className="h-6 w-6" />}
+        </button>
+      </div>
+
+      {/* Chat Window */}
+      {chatVisible && (
+        <div
+          className="fixed bottom-20 right-5 bg-white border border-gray-300 rounded-lg shadow-lg w-80 animate-fade-in-up"
+          style={{
+            animation: "fadeInUp 0.3s ease-out",
+          }}
+        >
+          <div className="p-4 border-b border-gray-200 flex justify-between items-center">
+            <h3 className="text-lg font-bold text-gray-800">Чат с нами</h3>
+            <button
+              onClick={() => setMessages([])}
+              className="text-gray-500 hover:text-gray-800"
+              title="Обновить чат"
+            >
+              <FaSyncAlt />
+            </button>
+          </div>
+
+          <div className="p-4 h-64 overflow-y-auto">
+            {messages.map((message) => (
+              <div
+                key={message.id}
+                className={`flex mb-3 ${
+                  message.type === "bot" ? "justify-start" : "justify-end"
+                }`}>
+                <div
+                  className={`p-3 rounded-lg shadow-sm ${
+                    message.type === "bot"
+                      ? "bg-gray-100 text-gray-800"
+                      : "bg-green-600 text-white"
+                  }`}
+                  style={{
+                    maxWidth: "75%",
+                  }}>
+                  <p className="text-sm">{message.text}</p>
+                  <span className="text-xs text-gray-500 mt-1 block">
+                    {message.timestamp}
+                  </span>
+                </div>
+              </div>
+            ))}
+              {/* Индикатор загрузки */}
+                {isTyping && (
+                  <div className="flex items-center mb-3">
+                    <div className="w-10 h-10 border-4 border-green-600 border-t-transparent rounded-full animate-spin"></div>
+                    <span className="ml-3 text-gray-500 text-sm">Бот печатает...</span>
+                  </div>
+                )}
+          </div>
+                <div className="p-3 border-t border-gray-200 flex items-center">
+                  <input
+                    type="text"
+                    placeholder="Введите сообщение..."
+                    className="flex-1 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-green-600"
+                    value={userInput}
+                    onChange={handleInputChange}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") handleSendMessage(); 
+                    }}
+                  />
+                  <button
+                    onClick={handleSendMessage}
+                    className="ml-2 bg-green-600 text-white p-2 rounded-md hover:bg-green-700 transition"
+                  >
+                    ➤
+                  </button>
+                </div>
+        </div>
+      )}
+
+      <style>
+        {`
+          @keyframes fadeInUp {
+            0% {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          .animate-fade-in-up {
+            animation: fadeInUp 0.3s ease-out;
+          }
+        `}
+      </style>
+  
 
       <Footer />
     </>

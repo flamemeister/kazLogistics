@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
-
-import logo from "../../assets/images/logo.png"; 
-// Adjust path if needed
+import logo from "../../assets/images/logo.png"; // Adjust path if needed
 
 const Navbar = () => {
   // Track if user has scrolled past a certain point
   const [navScrolled, setNavScrolled] = useState(false);
   // Track mobile menu open/close
   const [menuOpen, setMenuOpen] = useState(false);
-  // Track dropdown (“Услуги”) open/close
+  // Track dropdown ("Услуги") open/close
   const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
@@ -131,17 +129,6 @@ const Navbar = () => {
                       Пример услуги
                     </Link>
                   </li>
-                  {/* Uncomment or add more items as needed */}
-                  {/* <li>
-                    <Link
-                      to="/avto-perevozki"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                      onClick={closeServices}
-                    >
-                      Автоперевозки
-                    </Link>
-                  </li>
-                  ... */}
                 </ul>
               </div>
             )}
@@ -173,121 +160,81 @@ const Navbar = () => {
             onClick={toggleMenu}
             className="text-current focus:outline-none"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
+            {menuOpen ? (
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            )}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {menuOpen && (
-          <div
-            className={`
-              absolute top-full left-0 w-full bg-white text-gray-900 shadow-md md:hidden
-            `}
-          >
-            <ul className="flex flex-col py-2">
-              <li>
-                <Link
-                  to="/"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Главная
-                </Link>
-              </li>
-              {/* Услуги dropdown on mobile */}
-              <li>
-                <button
-                  type="button"
-                  onClick={() => setServicesOpen(!servicesOpen)}
-                  className="flex justify-between w-full px-4 py-2 hover:bg-gray-200"
-                >
-                  Услуги
-                  <svg
-                    className="ml-2 h-4 w-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.23 7.21a.75.75 0 011.06.02L10 10.67l3.71-3.44a.75.75 0 111.04 1.08l-4.24 3.92a.75.75 0 01-1.04 0L5.21 8.29a.75.75 0 01.02-1.08z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
-                {servicesOpen && (
-                  <div className="bg-gray-50 text-gray-900">
-                    <ul>
-                      <li>
-                        <Link
-                          to="/services/all"
-                          className="block px-6 py-2 hover:bg-gray-200"
-                          onClick={() => {
-                            setMenuOpen(false);
-                            setServicesOpen(false);
-                          }}
-                        >
-                          Все услуги
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/services/example"
-                          className="block px-6 py-2 hover:bg-gray-200"
-                          onClick={() => {
-                            setMenuOpen(false);
-                            setServicesOpen(false);
-                          }}
-                        >
-                          Пример услуги
-                        </Link>
-                      </li>
-                      {/* Add more items if needed */}
-                    </ul>
-                  </div>
-                )}
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  О нас
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/gallery"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Галерея
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contacts"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Контакты
-                </Link>
-              </li>
-            </ul>
+        <div
+          className={`fixed top-0 left-0 w-full h-screen bg-green-600 text-white z-40 transform transition-transform duration-300 ${
+            menuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <div className="flex justify-between items-center px-4 py-4">
+            <img src={logo} alt="Logo" className="h-8" />
+            <button onClick={toggleMenu} className="text-white focus:outline-none">
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
           </div>
-        )}
+          <ul className="mt-12 space-y-6 text-center">
+            <li>
+              <Link to="/" onClick={toggleMenu} className="text-lg font-semibold">
+                Главная
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/all" onClick={toggleMenu} className="text-lg font-semibold">
+                Услуги
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" onClick={toggleMenu} className="text-lg font-semibold">
+                О нас
+              </Link>
+            </li>
+            <li>
+              <Link to="/contacts" onClick={toggleMenu} className="text-lg font-semibold">
+                Контакты
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
   );

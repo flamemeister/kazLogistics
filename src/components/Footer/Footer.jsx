@@ -1,5 +1,6 @@
 import React from "react";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -14,11 +15,7 @@ const Footer = () => {
             */}
             <h3 className="text-xl font-bold mb-2">Great Steppe Logistics</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Компания Great Steppe Logistics – международная транспортно-логистическая компания, 
-              работающая с 2024 года, обеспечивает полный комплекс услуг по доставке 
-              и хранению грузов. Доставим груз железнодорожными, автомобильными и морскими 
-              видами транспорта. Мы осуществляем грузовые перевозки по Казахстану, и по 
-              странам СНГ. Так же из Китая и с Юго-восточной Азии в Казахстан.
+              Наша миссия - это создание ценностей в наших продуктах для наших партнеров за счет качественного сервиса
             </p>
           </div>
 
@@ -38,18 +35,30 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li className="flex items-center space-x-2">
                 <PhoneIcon className="h-5 w-5 text-green-500" />
-                <span className="text-gray-300">+7 (727) 352 88 80</span>
+                <span className="text-gray-300">+7 777 154 4455</span>
               </li>
               <li className="flex items-center space-x-2">
                 <EnvelopeIcon className="h-5 w-5 text-green-500" />
                 <span className="text-gray-300">info@gslog.kz</span>
               </li>
               <li className="text-gray-300">
-              Казахстан, город Алматы, Алмалинский район,
-              Проспект Сейфуллина, БЦ «Алтын Заман», дом 498, второй этаж, 201 кабинет
+              Казахстан, г. Алматы, пр. Сейфуллина, БЦ «Алтын Заман»
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Social Icons */}
+        <div className="flex justify-center space-x-4 mb-4">
+          <a href="https://wa.me/77771544455" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <FaWhatsapp className="h-6 w-6 text-green-500 hover:text-green-400" />
+          </a>
+          <a href="tel:+77771544455" aria-label="Phone">
+            <PhoneIcon className="h-6 w-6 text-green-500 hover:text-green-400" />
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <FaLinkedin className="h-6 w-6 text-green-500 hover:text-green-400" />
+          </a>
         </div>
 
         {/* Copyright */}
