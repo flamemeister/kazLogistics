@@ -52,7 +52,7 @@ const Navbar = () => {
           ${navScrolled ? "opacity-0 h-0" : "opacity-100 h-auto"}
         `}
       >
-        <div className="max-w-7xl mx-auto px-4 py-2 flex justify-end items-center space-x-6 text-sm">
+        <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-center md:justify-end items-center space-x-4 text-sm text-center md:text-right">
           <a href="tel:+77273528880" className="flex items-center hover:opacity-80">
             <PhoneIcon className="h-5 w-5 mr-1" />
             +7 (727) 344 00 40
@@ -66,7 +66,6 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-
       {/* Main navbar */}
       <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between relative">
         {/* Logo */}
