@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundImage from '../../assets/images/image3.jpg';
+import backgroundImage from '../../assets/images/image5.jpg';
 import { TruckIcon, GlobeAltIcon, ClockIcon, ClipboardDocumentIcon } from '@heroicons/react/24/solid';
 import Footer from "../Footer/Footer";
 

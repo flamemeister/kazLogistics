@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from "../../assets/aboutus.jpg";
+import backgroundImage from "../../assets/images/image7.jpg";
 import image1 from "../../assets/image1.jpeg";
 import image2 from "../../assets/image2.jpg";
 import Footer from "../Footer/Footer";

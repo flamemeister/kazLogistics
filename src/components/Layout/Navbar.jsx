@@ -55,7 +55,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 py-2 flex justify-end items-center space-x-6 text-sm">
           <a href="tel:+77273528880" className="flex items-center hover:opacity-80">
             <PhoneIcon className="h-5 w-5 mr-1" />
-            +7 (727) 352 88 80
+            +7 (727) 344 00 40
           </a>
           <a
             href="mailto:info@gslog.kz"
@@ -140,12 +140,7 @@ const Navbar = () => {
           >
             О нас
           </Link>
-          <Link
-            to="/gallery"
-            className="hover:text-green-500 transition-colors duration-200"
-          >
-            Галерея
-          </Link>
+ 
           <Link
             to="/contacts"
             className="hover:text-green-500 transition-colors duration-200"

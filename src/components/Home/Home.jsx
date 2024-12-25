@@ -7,11 +7,11 @@ import {
   ClipboardDocumentIcon,
 } from "@heroicons/react/24/outline";
 import Footer from "../Footer/Footer";
-import bgImage from "../../assets/images/home_bg_image.png";
+import bgImage from "../../assets/images/image9.jpg";
+import newImage from "../../assets/images/image14.png"; 
 import endpoint from "../../services/api";
 import { FaComments, FaTimes, FaSyncAlt } from "react-icons/fa";
 import "../../styles/spinner.css";
-
 
 const fadeAnimations = `
 @keyframes fadeInUp {
@@ -37,7 +37,7 @@ const Home = () => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Привет! Я бот компании KazakhTransTrade. Как я могу помочь вам сегодня?",
+      text: "Привет! Я бот компании Great Steppe Logistics. Как я могу помочь вам сегодня?",
       type: "bot",
       timestamp: "26h ago",
     },
@@ -93,8 +93,6 @@ const Home = () => {
       setIsTyping(false); 
     }
   };
-  
-  
 
   const handleScrollToForm = () => {
     const formEl = document.getElementById("consultation-form");
@@ -136,7 +134,6 @@ const Home = () => {
   return (
     <>
       <style>{fadeAnimations}</style>
-
       {alertVisible && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-md shadow-lg max-w-md text-center">
@@ -160,203 +157,31 @@ const Home = () => {
         </div>
       )}
 
-      <section
-        className="relative bg-cover bg-center bg-no-repeat min-h-[75vh] flex items-center"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-40" />
-        <div className="relative max-w-7xl mx-auto px-4 text-center w-full fade-in-up">
-          <div className="flex flex-col items-center justify-center py-8 md:py-16">
-            <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
-              Great Steppe Logistics
-            </h1>
-            <p className="text-gray-200 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            DELIVERING YOUR VALUE
-            </p>
-            <button
-              onClick={handleScrollToForm}
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors duration-300"
-            >
-              Получить консультацию
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== НАШИ УСЛУГИ SECTION =====
-      <section className="bg-white py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center fade-in-up">
-            Наши услуги
-          </h2>
-          <p className="mt-2 text-gray-600 max-w-3xl mx-auto text-center fade-in-up">
-            Высокая скорость доставки, приемлемая стоимость. Мы можем
-            предоставить современные автотранспортные средства для перевозки
-            железнодорожных и морских контейнеров, генеральных и сборных грузов.
-          </p>
-
-          {/* Services List */}
-          {/* <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-6">
-            {/* Service 1 */}
-            {/*<div
-              className="fade-in-up bg-gray-50 border border-gray-200 rounded-md p-6 
-                            flex flex-col items-center text-center hover:shadow-lg 
-                            transition-shadow duration-300 hover:-translate-y-1"
-            >
-              <TruckIcon className="h-10 w-10 text-green-600 mb-4" />
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                Услуга 1
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Краткое описание предоставляемой услуги.
-              </p>
-            </div> */}
-
-            {/* Service 2 */}
-            {/*<div
-              className="fade-in-up bg-gray-50 border border-gray-200 rounded-md p-6 
-                            flex flex-col items-center text-center hover:shadow-lg 
-                            transition-shadow duration-300 hover:-translate-y-1"
-            >
-              <GlobeAltIcon className="h-10 w-10 text-green-600 mb-4" />
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                Услуга 2
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Краткое описание предоставляемой услуги.
-              </p>
-            </div>
-
-            {/* Service 3 */}
-            {/*<div
-              className="fade-in-up bg-gray-50 border border-gray-200 rounded-md p-6 
-                            flex flex-col items-center text-center hover:shadow-lg 
-                            transition-shadow duration-300 hover:-translate-y-1"
-            >
-              <ClockIcon className="h-10 w-10 text-green-600 mb-4" />
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                Услуга 3
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Краткое описание предоставляемой услуги.
-              </p>
-            </div>
-
-            {/*{/* Service 4 */}
-            {/*<div
-              className="fade-in-up bg-gray-50 border border-gray-200 rounded-md p-6 
-                            flex flex-col items-center text-center hover:shadow-lg 
-                            transition-shadow duration-300 hover:-translate-y-1"
-            >
-              <ClipboardDocumentIcon className="h-10 w-10 text-green-600 mb-4" />
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                Услуга 4
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Краткое описание предоставляемой услуги.
+        <section
+          className="relative bg-cover bg-center bg-no-repeat min-h-[75vh] flex items-center"
+          style={{ backgroundImage: `url(${bgImage})` }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-70" />
+          <div className="relative max-w-7xl mx-auto px-4 w-full fade-in-up">
+            <div className="flex flex-col items-start justify-center py-8 md:py-16">
+              <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 text-left">
+                Great Steppe Logistics
+              </h1>
+              <p className="text-gray-200 text-lg md:text-xl mt-4 md:mt-1 mb-6 max-w-xl text-left">
+                Наша миссия - это создание ценностей в наших продуктах для наших партнеров за счет качественного сервиса
               </p>
             </div>
           </div>
-        </div>
-      </section> */}
 
-      {/* ===== О КОМПАНИИ SECTION ===== */}
-      {/*<section className="bg-gray-50 py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center md:items-start md:space-x-12">
-            {/* Text */} 
-            {/*<div className="flex-1 mb-8 md:mb-0 fade-in-up">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
-                О компании
-              </h2>
-              <p className="mt-4 text-gray-600 leading-relaxed">
-                Компания Great Steppe Logistics – международная
-                транспортно-логистическая компания, обеспечивающая полный
-                комплекс услуг по доставке и хранению грузов. Доставим груз
-                железнодорожными, автомобильными и морскими видами транспорта.
-                Мы осуществляем перевозки по Казахстану, и по странам СНГ. Так
-                же из Китая и с Юго-восточной Азии в Казахстан.
-              </p>
-            </div>
-
-            {/* Achievements / placeholders */}
-            {/*<div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 fade-in-up">
-              <div
-                className="bg-white border border-gray-200 p-6 rounded-md shadow-sm 
-                           hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  Достижение 1
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Краткий текст о достижении или ключевом факте.
-                </p>
-              </div>
-              <div
-                className="bg-white border border-gray-200 p-6 rounded-md shadow-sm 
-                           hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  Достижение 2
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Краткий текст о достижении или ключевом факте.
-                </p>
-              </div>
-              <div
-                className="bg-white border border-gray-200 p-6 rounded-md shadow-sm 
-                           hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  Достижение 3
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Краткий текст о достижении или ключевом факте.
-                </p>
-              </div>
-              <div
-                className="bg-white border border-gray-200 p-6 rounded-md shadow-sm 
-                           hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  Достижение 4
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Краткий текст о достижении или ключевом факте.
-                </p>
-              </div>
-            </div>
+          {/* Новое изображение справа */}
+          <div className="absolute top-10 right-10 w-32 h-32 md:w-48 md:h-48">
+            <img
+              src={newImage} // Используем импортированный файл
+              alt="Дополнительное изображение"
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
           </div>
-        </div>
-      </section>
-
-      {/* ===== STATS SECTION (BLACK BACKGROUND) ===== */}
-      {/*<section className="bg-black py-12 fade-in-up">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <p className="text-green-500 text-3xl md:text-4xl font-bold">
-              100+
-            </p>
-            <p className="text-gray-200 mt-1">Корпоративных клиентов</p>
-          </div>
-          <div>
-            <p className="text-green-500 text-3xl md:text-4xl font-bold">
-              2567
-            </p>
-            <p className="text-gray-200 mt-1">Выполненных заказов</p>
-          </div>
-          <div>
-            <p className="text-green-500 text-3xl md:text-4xl font-bold">
-              1000+
-            </p>
-            <p className="text-gray-200 mt-1">Перевозок LTL, FTL</p>
-          </div>
-          <div>
-            <p className="text-green-500 text-3xl md:text-4xl font-bold">178</p>
-            <p className="text-gray-200 mt-1">Арендованных вагонов</p>
-          </div>
-        </div>
-      </section> */}
+        </section>
 
       <section
         id="consultation-form"
@@ -419,12 +244,11 @@ const Home = () => {
         </div>
       </section>
 
-{/* Floating Chat Icon */}
-<div className="fixed bottom-5 right-5 z-50">
+      {/* Floating Chat Icon */}
+      <div className="fixed bottom-5 right-5 z-50">
         <button
           onClick={toggleChat}
-          className="bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition transform hover:scale-110"
-        >
+          className="bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition transform hover:scale-110">
           {chatVisible ? <FaTimes className="h-6 w-6" /> : <FaComments className="h-6 w-6" />}
         </button>
       </div>
@@ -435,8 +259,7 @@ const Home = () => {
           className="fixed bottom-20 right-5 bg-white border border-gray-300 rounded-lg shadow-lg w-80 animate-fade-in-up"
           style={{
             animation: "fadeInUp 0.3s ease-out",
-          }}
-        >
+          }}>
           <div className="p-4 border-b border-gray-200 flex justify-between items-center">
             <h3 className="text-lg font-bold text-gray-800">Чат с нами</h3>
             <button

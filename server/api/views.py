@@ -41,7 +41,7 @@ class ConsultationView(APIView):
 
             # Отправка HTML-письма пользователю
             user_subject = 'Спасибо за вашу заявку'
-            user_from_email = 'aldiyar.saken123@gmail.com'  # Ваш email
+            user_from_email = 'info@gslog.kz'  # Ваш email
             user_recipient_list = [email]  # Email пользователя
             user_msg = EmailMultiAlternatives(user_subject, '', user_from_email, user_recipient_list)
             user_msg.attach_alternative(user_html_content, "text/html")

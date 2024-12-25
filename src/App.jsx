@@ -7,7 +7,7 @@ import {
   Loader,
 
   About,
-  Gallery,
+  // Gallery,
   Contacts,
   ExampleService,
   Services,
@@ -46,7 +46,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
+        {/* <Route path="/gallery" element={<Gallery />} /> */}
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/services/all" element={<Services />} />
         <Route path="/services/example" element={<ExampleService />} />
