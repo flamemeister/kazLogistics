@@ -73,7 +73,7 @@ const GalleryPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wider">
               ГАЛЕРЕЯ
             </h1>
-            <div className="mt-2 h-1 w-16 bg-green-500 mx-auto" />
+            <div className="mt-2 h-1 w-16 bg-green-600 mx-auto" />
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@ const GalleryPage = () => {
           <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
             Посмотрите на различные сферы нашей логистической деятельности
           </p>
-          <div className="mt-2 h-1 w-16 bg-green-500 mx-auto"></div>
+          <div className="mt-2 h-1 w-16 bg-green-600 mx-auto"></div>
         </div>
 
         {/* 2×2 grid */}
@@ -110,7 +110,7 @@ const GalleryPage = () => {
                 <h3 className="text-white text-lg md:text-xl font-bold uppercase tracking-wide opacity-100 group-hover:opacity-100">
                   {item.title}
                 </h3>
-                <div className="mt-1 h-[2px] w-12 bg-green-500"></div>
+                <div className="mt-1 h-[2px] w-12 bg-green-600"></div>
               </div>
             </div>
           ))}

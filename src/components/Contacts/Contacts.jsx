@@ -14,7 +14,7 @@ const Contacts = () => {
         <div className="relative flex items-center justify-center h-full">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold">КОНТАКТЫ</h1>
-            <div className="mt-2 h-1 w-16 bg-green-500 mx-auto"></div>
+            <div className="mt-2 h-1 w-16 bg-green-600 mx-auto"></div>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@ const Contacts = () => {
               <p className="mb-2 text-center md:text-left">Почтовый индекс: 050012</p>
               <p className="mb-2 text-center md:text-left">+7 (727) 352 88 80</p>
               <p className="mb-4 text-center md:text-left">info@kazakhtranstrade.kz</p>
-              <div className="mt-2 h-1 w-16 bg-green-500"></div>
+              <div className="mt-2 h-1 w-16 bg-green-600"></div>
             </div>
           </div>
         </div>

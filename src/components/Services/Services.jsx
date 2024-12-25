@@ -15,7 +15,7 @@ const Services = () => {
         <div className="relative flex items-center justify-center h-full">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold">Наши услуги</h1>
-            <div className="mt-2 h-1 w-16 bg-green-500 mx-auto"></div>
+            <div className="mt-2 h-1 w-16 bg-green-600 mx-auto"></div>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Услуга 1 */}
             <div className="bg-gray-50 p-6 rounded-lg shadow">
-              <TruckIcon className="h-12 w-12 text-green-500 mx-auto" />
+              <TruckIcon className="h-12 w-12 text-green-600 mx-auto" />
               <h3 className="text-xl font-bold mt-4">Услуга 1</h3>
               <p className="text-gray-600 mt-2">
                 Краткое описание предоставляемой услуги.
@@ -38,7 +38,7 @@ const Services = () => {
             </div>
             {/* Услуга 2 */}
             <div className="bg-gray-50 p-6 rounded-lg shadow">
-              <GlobeAltIcon className="h-12 w-12 text-green-500 mx-auto" />
+              <GlobeAltIcon className="h-12 w-12 text-green-600 mx-auto" />
               <h3 className="text-xl font-bold mt-4">Услуга 2</h3>
               <p className="text-gray-600 mt-2">
                 Краткое описание предоставляемой услуги.
@@ -46,7 +46,7 @@ const Services = () => {
             </div>
             {/* Услуга 3 */}
             <div className="bg-gray-50 p-6 rounded-lg shadow">
-              <ClockIcon className="h-12 w-12 text-green-500 mx-auto" />
+              <ClockIcon className="h-12 w-12 text-green-600 mx-auto" />
               <h3 className="text-xl font-bold mt-4">Услуга 3</h3>
               <p className="text-gray-600 mt-2">
                 Краткое описание предоставляемой услуги.
@@ -54,7 +54,7 @@ const Services = () => {
             </div>
             {/* Услуга 4 */}
             <div className="bg-gray-50 p-6 rounded-lg shadow">
-              <ClipboardDocumentIcon className="h-12 w-12 text-green-500 mx-auto" />
+              <ClipboardDocumentIcon className="h-12 w-12 text-green-600 mx-auto" />
               <h3 className="text-xl font-bold mt-4">Услуга 4</h3>
               <p className="text-gray-600 mt-2">
                 Краткое описание предоставляемой услуги.

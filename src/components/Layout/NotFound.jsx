@@ -43,7 +43,7 @@ const NotFound = () => {
             <h1 className="text-5xl md:text-6xl font-extrabold uppercase tracking-wider">
               404
             </h1>
-            <div className="mt-2 h-1 w-16 bg-green-500 mx-auto"></div>
+            <div className="mt-2 h-1 w-16 bg-green-600 mx-auto"></div>
           </div>
         </div>
       </div>

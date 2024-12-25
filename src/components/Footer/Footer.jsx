@@ -23,13 +23,13 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex justify-center space-x-6 mb-4">
           <a href="https://wa.me/77771544455" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <FaWhatsapp className="h-8 w-8 text-green-500 hover:text-green-400" />
+            <FaWhatsapp className="h-8 w-8 text-green-600 hover:text-green-400" />
           </a>
           <a href="tel:+77015367873" aria-label="Phone">
-            <PhoneIcon className="h-8 w-8 text-green-500 hover:text-green-400" />
+            <PhoneIcon className="h-8 w-8 text-green-600 hover:text-green-400" />
           </a>
           <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <FaLinkedin className="h-8 w-8 text-green-500 hover:text-green-400" />
+            <FaLinkedin className="h-8 w-8 text-green-600 hover:text-green-400" />
           </a>
         </div>
 

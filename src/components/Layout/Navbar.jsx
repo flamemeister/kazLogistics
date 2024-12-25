@@ -84,7 +84,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-8">
           <Link
             to="/"
-            className="hover:text-green-500 transition-colors duration-200"
+            className="hover:text-green-600 transition-colors duration-200"
           >
             Главная
           </Link>
@@ -92,21 +92,21 @@ const Navbar = () => {
           {/* Услуги (dropdown) */}
           <Link
             to="/services/all"
-            className="hover:text-green-500 transition-colors duration-200"
+            className="hover:text-green-600 transition-colors duration-200"
           >
             Услуги
           </Link>
 
           <Link
             to="/about"
-            className="hover:text-green-500 transition-colors duration-200"
+            className="hover:text-green-600 transition-colors duration-200"
           >
             О нас
           </Link>
  
           <Link
             to="/contacts"
-            className="hover:text-green-500 transition-colors duration-200"
+            className="hover:text-green-600 transition-colors duration-200"
           >
             Контакты
           </Link>

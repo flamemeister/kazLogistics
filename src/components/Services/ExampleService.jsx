@@ -37,7 +37,7 @@ const ExampleService = () => {
             <h1 className="text-4xl md:text-5xl font-bold uppercase">
               ЖД Перевозки
             </h1>
-            <div className="mt-2 h-1 w-16 bg-green-500 mx-auto"></div>
+            <div className="mt-2 h-1 w-16 bg-green-600 mx-auto"></div>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@ const ExampleService = () => {
             от анализа маршрута до оперативной доставки. Заботимся о каждом этапе 
             логистики, чтобы вы могли сосредоточиться на росте вашего бизнеса.
           </p>
-          <div className="mt-2 h-1 w-16 bg-green-500 mx-auto" />
+          <div className="mt-2 h-1 w-16 bg-green-600 mx-auto" />
         </div>
       </section>
 
@@ -63,7 +63,7 @@ const ExampleService = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-              <TruckIcon className="h-12 w-12 text-green-500 mb-4" />
+              <TruckIcon className="h-12 w-12 text-green-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 Грузоперевозки
               </h3>
@@ -73,7 +73,7 @@ const ExampleService = () => {
             </div>
             {/* Card 2 */}
             <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-              <GlobeAltIcon className="h-12 w-12 text-green-500 mb-4" />
+              <GlobeAltIcon className="h-12 w-12 text-green-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 Международные решения
               </h3>
@@ -83,7 +83,7 @@ const ExampleService = () => {
             </div>
             {/* Card 3 */}
             <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-              <MapIcon className="h-12 w-12 text-green-500 mb-4" />
+              <MapIcon className="h-12 w-12 text-green-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 Оптимизация маршрута
               </h3>
@@ -94,7 +94,7 @@ const ExampleService = () => {
 
             {/* Card 4 */}
             <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-              <ShieldCheckIcon className="h-12 w-12 text-green-500 mb-4" />
+              <ShieldCheckIcon className="h-12 w-12 text-green-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 Безопасность
               </h3>
@@ -104,7 +104,7 @@ const ExampleService = () => {
             </div>
             {/* Card 5 */}
             <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-              <FireIcon className="h-12 w-12 text-green-500 mb-4" />
+              <FireIcon className="h-12 w-12 text-green-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 Срочные отгрузки
               </h3>
@@ -114,7 +114,7 @@ const ExampleService = () => {
             </div>
             {/* Card 6 */}
             <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-              <BuildingLibraryIcon className="h-12 w-12 text-green-500 mb-4" />
+              <BuildingLibraryIcon className="h-12 w-12 text-green-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 Складские услуги
               </h3>
