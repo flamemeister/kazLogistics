@@ -90,49 +90,12 @@ const Navbar = () => {
           </Link>
 
           {/* Услуги (dropdown) */}
-          <div className="relative">
-            <button
-              onClick={toggleServices}
-              className="inline-flex items-center hover:text-green-500 transition-colors duration-200 focus:outline-none"
-            >
-              Услуги
-              <svg
-                className="ml-1 h-4 w-4"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.67l3.71-3.44a.75.75 0 111.04 1.08l-4.24 3.92a.75.75 0 01-1.04 0L5.21 8.29a.75.75 0 01.02-1.08z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-            {servicesOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-white text-gray-900 rounded-md shadow-lg">
-                <ul className="py-2">
-                  <li>
-                    <Link
-                      to="/services/all"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                      onClick={closeServices}
-                    >
-                      Все услуги
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/services/example"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                      onClick={closeServices}
-                    >
-                      Пример услуги
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
+          <Link
+            to="/services/all"
+            className="hover:text-green-500 transition-colors duration-200"
+          >
+            Услуги
+          </Link>
 
           <Link
             to="/about"

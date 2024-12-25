@@ -143,7 +143,7 @@ const Home = () => {
             <p className="text-gray-600 mb-6">{alertMessage}</p>
             <button
               onClick={() => setAlertVisible(false)}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors duration-300"
             >
               Закрыть
             </button>
@@ -157,86 +157,81 @@ const Home = () => {
         </div>
       )}
 
-        <section
-          className="relative bg-cover bg-center bg-no-repeat min-h-[75vh] flex items-center"
-          style={{ backgroundImage: `url(${bgImage})` }}
-        >
-          <div className="absolute inset-0 bg-black bg-opacity-70" />
-          <div className="relative max-w-7xl mx-auto px-4 w-full fade-in-up">
-            <div className="flex flex-col items-start justify-center py-8 md:py-16">
-              <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 text-left">
-                Great Steppe Logistics
-              </h1>
-              <p className="text-gray-200 text-lg md:text-xl mt-4 md:mt-1 mb-6 max-w-xl text-left">
-                Наша миссия - это создание ценностей в наших продуктах для наших партнеров за счет качественного сервиса
-              </p>
-            </div>
-          </div>
-
-          {/* Новое изображение справа */}
-          <div className="absolute top-10 right-10 w-32 h-32 md:w-48 md:h-48">
-            <img
-              src={newImage} // Используем импортированный файл
-              alt="Дополнительное изображение"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </div>
-        </section>
+      <section
+        className="relative bg-cover bg-center bg-no-repeat flex items-center justify-center"
+        style={{ backgroundImage: `url(${bgImage})`, height: "100vh" }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center fade-in-up">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6">
+            Great Steppe Logistics
+          </h1>
+          <p className="text-gray-200 text-xl md:text-2xl mt-4 md:mt-2 mb-8">
+            Наша миссия - создание ценностей в наших продуктах для наших партнеров за счет качественного сервиса
+          </p>
+          <button
+            onClick={handleScrollToForm}
+            className="mt-4 bg-green-600 text-white py-3 px-6 rounded-md hover:bg-green-700 transition-colors duration-300"
+          >
+            Получить консультацию
+          </button>
+        </div>
+      </section>
 
       <section
         id="consultation-form"
         className="bg-white py-16 md:py-20 fade-in-up"
       >
         <div className="max-w-2xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center">
             Получите консультацию
           </h2>
-          <p className="mt-2 text-gray-600 text-center max-w-xl mx-auto">
+          <p className="mt-4 text-gray-600 text-center max-w-xl mx-auto">
             Заполните форму ниже, и мы свяжемся с вами, чтобы найти лучшие
             решения для ваших логистических задач.
           </p>
-          <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-1 gap-4">
+          <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-1 gap-6">
             <div>
-              <label className="block text-gray-700 mb-1">Имя</label>
+              <label className="block text-gray-700 mb-2">Имя</label>
               <input
                 type="text"
                 name="name"
                 placeholder="Введите ваше имя"
                 required
-                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-green-600"
+                className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:border-green-600 transition-colors duration-300"
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-1">Номер телефона</label>
+              <label className="block text-gray-700 mb-2">Номер телефона</label>
               <input
                 type="tel"
                 name="phone"
                 placeholder="Введите номер телефона"
                 required
-                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-green-600"
+                className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:border-green-600 transition-colors duration-300"
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-1">Email</label>
+              <label className="block text-gray-700 mb-2">Email</label>
               <input
                 type="email"
                 name="email"
                 placeholder="Введите адрес электронной почты"
-                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-green-600"
+                className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:border-green-600 transition-colors duration-300"
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-1">Комментарий</label>
+              <label className="block text-gray-700 mb-2">Комментарий</label>
               <textarea
                 name="comment"
                 rows="4"
                 placeholder="Опишите свой вопрос или запрос..."
-                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-green-600"
+                className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:border-green-600 transition-colors duration-300"
               />
             </div>
             <button
               type="submit"
-              className="mt-2 bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors"
+              className="mt-2 bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition-colors duration-300"
             >
               Отправить
             </button>
@@ -248,7 +243,8 @@ const Home = () => {
       <div className="fixed bottom-5 right-5 z-50">
         <button
           onClick={toggleChat}
-          className="bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition transform hover:scale-110">
+          className="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition transform hover:scale-110 focus:outline-none"
+        >
           {chatVisible ? <FaTimes className="h-6 w-6" /> : <FaComments className="h-6 w-6" />}
         </button>
       </div>
@@ -264,7 +260,7 @@ const Home = () => {
             <h3 className="text-lg font-bold text-gray-800">Чат с нами</h3>
             <button
               onClick={() => setMessages([])}
-              className="text-gray-500 hover:text-gray-800"
+              className="text-gray-500 hover:text-gray-800 transition-colors duration-300"
               title="Обновить чат"
             >
               <FaSyncAlt />
@@ -275,7 +271,7 @@ const Home = () => {
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex mb-3 ${
+                className={`flex mb-4 ${
                   message.type === "bot" ? "justify-start" : "justify-end"
                 }`}>
                 <div
@@ -294,19 +290,19 @@ const Home = () => {
                 </div>
               </div>
             ))}
-              {/* Индикатор загрузки */}
-                {isTyping && (
-                  <div className="flex items-center mb-3">
-                    <div className="w-10 h-10 border-4 border-green-600 border-t-transparent rounded-full animate-spin"></div>
-                    <span className="ml-3 text-gray-500 text-sm">Бот печатает...</span>
-                  </div>
-                )}
+            {/* Индикатор загрузки */}
+              {isTyping && (
+                <div className="flex items-center mb-4">
+                  <div className="w-6 h-6 border-4 border-green-600 border-t-transparent rounded-full animate-spin"></div>
+                  <span className="ml-3 text-gray-500 text-sm">Бот печатает...</span>
+                </div>
+              )}
           </div>
                 <div className="p-3 border-t border-gray-200 flex items-center">
                   <input
                     type="text"
                     placeholder="Введите сообщение..."
-                    className="flex-1 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-green-600"
+                    className="flex-1 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-green-600 transition-colors duration-300"
                     value={userInput}
                     onChange={handleInputChange}
                     onKeyDown={(e) => {
@@ -315,7 +311,7 @@ const Home = () => {
                   />
                   <button
                     onClick={handleSendMessage}
-                    className="ml-2 bg-green-600 text-white p-2 rounded-md hover:bg-green-700 transition"
+                    className="ml-2 bg-green-600 text-white p-2 rounded-md hover:bg-green-700 transition-colors duration-300 focus:outline-none"
                   >
                     ➤
                   </button>
