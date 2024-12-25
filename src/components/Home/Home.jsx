@@ -68,7 +68,7 @@ const Home = () => {
     setIsTyping(true); 
   
     try {
-      const response = await axios.post("http://localhost:8000/chat/chat/", {
+      const response = await axios.post("http://78.140.241.59:8009/chat/chat/", {
         message: userInput,
       });
   
