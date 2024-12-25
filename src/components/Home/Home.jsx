@@ -169,12 +169,12 @@ const Home = () => {
           <p className="text-gray-200 text-xl md:text-2xl mt-4 md:mt-2 mb-8">
             Наша миссия - создание ценностей в наших продуктах для наших партнеров за счет качественного сервиса
           </p>
-          <button
+          {/* <button
             onClick={handleScrollToForm}
             className="mt-4 bg-green-600 text-white py-3 px-6 rounded-md hover:bg-green-700 transition-colors duration-300"
           >
             Получить консультацию
-          </button>
+          </button> */}
         </div>
       </section>
 
