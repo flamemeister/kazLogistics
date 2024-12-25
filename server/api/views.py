@@ -16,6 +16,7 @@ class ConsultationView(APIView):
             email = serializer.validated_data['email']
             comment = serializer.validated_data.get('comment', '')
 
+            # Отправка письма администратору
             admin_html_content = render_to_string('email/admin_notification.html', {
                 'name': name,
                 'phone': phone,
@@ -25,23 +26,22 @@ class ConsultationView(APIView):
             })
 
             admin_subject = 'Новая заявка на консультацию'
-            admin_from_email = 'aldiyar.saken123@gmail.com'
-            admin_recipient_list = ['220051@astanait.edu.kz']  # Ваш email
+            admin_from_email = 'info@gslog.kz'  # Отправитель
+            admin_recipient_list = ['info@gslog.kz']  # Email администратора
             admin_msg = EmailMultiAlternatives(admin_subject, '', admin_from_email, admin_recipient_list)
             admin_msg.attach_alternative(admin_html_content, "text/html")
             admin_msg.send()
 
+            # Отправка письма пользователю
             user_html_content = render_to_string('email/consultation_email.html', {
-            'name': name,
-            'phone': phone,
-            'email': email,
-            'comment': comment,
-        })
+                'name': name,
+                'phone': phone,
+                'email': email,
+                'comment': comment,
+            })
 
-
-            # Отправка HTML-письма пользователю
             user_subject = 'Спасибо за вашу заявку'
-            user_from_email = 'info@gslog.kz'  # Ваш email
+            user_from_email = 'info@gslog.kz'  # Отправитель
             user_recipient_list = [email]  # Email пользователя
             user_msg = EmailMultiAlternatives(user_subject, '', user_from_email, user_recipient_list)
             user_msg.attach_alternative(user_html_content, "text/html")

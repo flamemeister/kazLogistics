@@ -44,7 +44,7 @@ const Contacts = () => {
               </p>
               <p className="mb-2 text-center md:text-left">Почтовый индекс: 050012</p>
               <p className="mb-2 text-center md:text-left">+7 (727) 352 88 80</p>
-              <p className="mb-4 text-center md:text-left">info@kazakhtranstrade.kz</p>
+              <p className="mb-4 text-center md:text-left">info@gslog.kz</p>
               <div className="mt-2 h-1 w-16 bg-green-600"></div>
             </div>
           </div>
