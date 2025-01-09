@@ -11,7 +11,9 @@ import {
   Contacts,
   ExampleService,
   Services,
-  NotFound
+  NotFound,
+  AutoServices
+  
 } from "./components";
 
 const App = () => {
@@ -49,7 +51,8 @@ const AppContent = () => {
         {/* <Route path="/gallery" element={<Gallery />} /> */}
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/services/all" element={<Services />} />
-        <Route path="/services/example" element={<ExampleService />} />
+        <Route path="/services/example" element={<AutoServices />} />
+        <Route path="/services/auto" element={<AutoServices />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

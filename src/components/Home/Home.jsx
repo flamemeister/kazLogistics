@@ -7,7 +7,7 @@ import {
   ClipboardDocumentIcon,
 } from "@heroicons/react/24/outline";
 import Footer from "../Footer/Footer";
-import bgImage from "../../assets/images/image9.jpg";
+import bgImage from "../../assets/images/iStock-1275144846.jpg";
 import newImage from "../../assets/images/image14.png"; 
 import endpoint from "../../services/api";
 import { FaComments, FaTimes, FaSyncAlt } from "react-icons/fa";

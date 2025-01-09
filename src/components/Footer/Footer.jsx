@@ -1,40 +1,58 @@
 import React from "react";
-import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import { PhoneIcon } from "@heroicons/react/24/outline";
 import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import logo from "../../assets/logo_white.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-100 pt-6 pb-3">
+    <footer className="bg-[#0A5225] text-gray-100 pt-6 pb-3">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Top row with company info and schedule/contacts */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6 text-center">
-          {/* Company info */}
-          <div className="md:col-span-3">
-            {/* If you want to show a footer logo: 
-                <img src={footerLogo} alt="KazLogistics" className="h-10 mb-4" />
-            */}
-            <h3 className="text-xl font-bold mb-2">Great Steppe Logistics</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
+        {/* Top row with logo and company info */}
+        <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between mb-6">
+          {/* Logo and centered slogan */}
+          <div className="flex flex-col items-center mb-4 md:mb-0">
+            <img
+              src={logo}
+              alt="Great Steppe Logistics"
+              className="h-12"
+            />
+            <p className="text-gray-300 text-sm leading-relaxed mt-2 text-center">
               Delivering your value
             </p>
           </div>
-        </div>
 
-        {/* Social Icons */}
-        <div className="flex justify-center space-x-6 mb-4">
-          <a href="https://wa.me/77771544455" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <FaWhatsapp className="h-8 w-8 text-green-600 hover:text-green-400" />
-          </a>
-          <a href="tel:+77015367873" aria-label="Phone">
-            <PhoneIcon className="h-8 w-8 text-green-600 hover:text-green-400" />
-          </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <FaLinkedin className="h-8 w-8 text-green-600 hover:text-green-400" />
-          </a>
+          {/* Social Icons */}
+          <div className="flex space-x-8">
+            <a
+              href="https://wa.me/77771544455"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="hover:scale-105 transition-transform"
+            >
+              <FaWhatsapp className="h-10 w-10 text-white hover:text-gray-300" />
+            </a>
+            <a
+              href="tel:+77015367873"
+              aria-label="Phone"
+              className="hover:scale-105 transition-transform"
+            >
+              <PhoneIcon className="h-10 w-10 text-white hover:text-gray-300" />
+            </a>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="hover:scale-105 transition-transform"
+            >
+              <FaLinkedin className="h-10 w-10 text-white hover:text-gray-300" />
+            </a>
+          </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-700 pt-3 text-center text-sm text-gray-400">
+        <div className="border-t border-gray-600 pt-3 text-center text-sm text-gray-300">
           © All Rights Reserved. Great Steppe Logistics
         </div>
       </div>

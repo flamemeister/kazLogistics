@@ -9,6 +9,7 @@ import Gallery from "./Gallery/Gallery";
 
 import Services from "./Services/Services";
 import ExampleService from "./Services/ExampleService";
+import AutoServices from "./Services/Auto";
 
 export { 
   Navbar, 
@@ -21,5 +22,6 @@ export {
   About, 
   Gallery,
   Services,
-  ExampleService
+  ExampleService,
+  AutoServices
 }
