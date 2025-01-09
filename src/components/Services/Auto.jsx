@@ -3,20 +3,17 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import backgroundImage from "../../assets/images/avia_service.jpg";
 import {
-  FaFileAlt,
-  FaTruck,
+  FaFileInvoice,
+  FaInbox,
+  FaBolt,
+  FaCompass,
+  FaCarSide,
+  FaHome,
+  FaSatellite,
   FaDollarSign,
   FaClipboard,
+  FaTruck,
   FaBox,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
-import {
-  FaPlane,
-  FaShieldAlt,
-  FaClock,
-  FaMapMarkedAlt,
-  FaCogs,
-  FaCube,
 } from "react-icons/fa";
 
 const AutoServices = () => {
@@ -125,7 +122,7 @@ const AutoServices = () => {
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaPlane size={28} />
+                <FaTruck size={28} />
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-bold text-gray-800">
@@ -145,7 +142,7 @@ const AutoServices = () => {
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaShieldAlt size={28} />
+                <FaBolt size={28} />
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-bold text-gray-800">
@@ -165,7 +162,7 @@ const AutoServices = () => {
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaClock size={28} />
+                <FaCarSide size={28} />
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-bold text-gray-800">
@@ -185,7 +182,7 @@ const AutoServices = () => {
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaMapMarkedAlt size={28} />
+                <FaHome size={28} />
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-bold text-gray-800">
@@ -205,7 +202,7 @@ const AutoServices = () => {
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaCogs size={28} />
+                <FaSatellite size={28} />
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-bold text-gray-800">
@@ -238,7 +235,7 @@ const AutoServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaFileAlt size={28} className="text-white" />
+                <FaInbox size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">Получение заявки</p>
             </div>
@@ -248,7 +245,7 @@ const AutoServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaTruck size={28} className="text-white" />
+                <FaCompass size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
                 Разработка оптимального маршрута
@@ -294,7 +291,7 @@ const AutoServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaMapMarkerAlt size={28} className="text-white" />
+                <FaSatellite size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
                 Отслеживание местонахождения груза
@@ -306,7 +303,7 @@ const AutoServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaMapMarkerAlt size={28} className="text-white" />
+                <FaSatellite size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
                 Отслеживание местонахождения груза
@@ -318,7 +315,7 @@ const AutoServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaMapMarkerAlt size={28} className="text-white" />
+                <FaFileInvoice size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
                 Получение закрывающих документов
