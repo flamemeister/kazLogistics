@@ -19,19 +19,6 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* About Us Section */}
-      <div className="bg-gray-50 py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-            Кто мы такие
-          </h2>
-          <div className="mt-2 h-1 w-16 bg-[#0A5225] mx-auto" />
-          <p className="text-gray-600 text-lg leading-relaxed mt-4">
-            Мы, Great Steppe Logistics, — казахстанская компания, динамично развивающаяся в сфере транспортно-логистических услуг. Наша команда объединяет профессионалов с многолетним опытом работы в ведущих международных логистических компаниях. Используя накопленный опыт и знания, мы приняли решение направить их на создание собственной компании, основанной на высоких стандартах и индивидуальном подходе к клиентам.
-          </p>
-        </div>
-      </div>
-
       {/* Mission Section */}
       <div className="bg-white py-16 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

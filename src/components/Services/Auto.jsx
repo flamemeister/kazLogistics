@@ -214,7 +214,7 @@ const AutoServices = () => {
         >
           <FaTruck size={28} className="text-white" />
         </div>
-        <p className="ml-4 text-gray-700">Разработка оптимального логистического маршрута</p>
+        <p className="ml-4 text-gray-700">Разработка оптимального маршрута</p>
       </div>
       {/* Step 3 */}
       <div className="flex items-center">
