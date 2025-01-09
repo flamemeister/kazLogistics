@@ -12,6 +12,8 @@ import ExampleService from "./Services/ExampleService";
 
 import AviaServices from "./Services/Avia";
 import AutoServices from "./Services/Auto";
+import RailServices from "./Services/RailServices";
+import ContainerServices from "./Services/ContainerServices";
 
 export { 
   Navbar, 
@@ -29,4 +31,6 @@ export {
   // Services
   AviaServices,
   AutoServices,
+  RailServices,
+  ContainerServices,
 }

@@ -14,6 +14,7 @@ import {
   FaClipboard,
   FaTruck,
   FaBox,
+  FaHandshake
 } from "react-icons/fa";
 
 const AutoServices = () => {
@@ -303,10 +304,10 @@ const AutoServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaSatellite size={28} className="text-white" />
+                <FaHandshake size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
-                Отслеживание местонахождения груза
+              Выдача груза получателю
               </p>
             </div>
             {/* Step 8 */}
