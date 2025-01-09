@@ -68,7 +68,7 @@ const Navbar = () => {
           <Link to="/" className="transition-colors duration-200">
             Главная
           </Link>
-          <Link to="/services/all" className="transition-colors duration-200">
+          <Link to="/services" className="transition-colors duration-200">
             Услуги
           </Link>
           <Link to="/about" className="transition-colors duration-200">
@@ -168,7 +168,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services/all" onClick={toggleMenu}>
+                <Link to="/services" onClick={toggleMenu}>
                   Услуги
                 </Link>
               </li>

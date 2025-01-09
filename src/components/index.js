@@ -9,6 +9,8 @@ import Gallery from "./Gallery/Gallery";
 
 import Services from "./Services/Services";
 import ExampleService from "./Services/ExampleService";
+
+import AviaServices from "./Services/Avia";
 import AutoServices from "./Services/Auto";
 
 export { 
@@ -23,5 +25,8 @@ export {
   Gallery,
   Services,
   ExampleService,
-  AutoServices
+
+  // Services
+  AviaServices,
+  AutoServices,
 }

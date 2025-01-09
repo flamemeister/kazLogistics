@@ -1,29 +1,44 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import backgroundImage from "../../assets/images/avia_service.jpg";
-import { FaFileAlt, FaTruck, FaDollarSign, FaClipboard, FaBox, FaMapMarkerAlt } from "react-icons/fa";
-import { FaPlane, FaShieldAlt, FaClock, FaMapMarkedAlt, FaCogs, FaCube } from "react-icons/fa";
+import {
+  FaFileAlt,
+  FaTruck,
+  FaDollarSign,
+  FaClipboard,
+  FaBox,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import {
+  FaPlane,
+  FaShieldAlt,
+  FaClock,
+  FaMapMarkedAlt,
+  FaCogs,
+  FaCube,
+} from "react-icons/fa";
 
 const AutoServices = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const services = [
     {
       id: 1,
-      title: "Организацию экспортных и импортных перевозок грузов",
+      title:
+        "Перевозки грузов с полной и частичной загрузкой грузового автомобиля (LTL, FTL)",
     },
     {
       id: 2,
-      title: "Организацию международных транзитных и трансферных услуг",
+      title: "Подбор оптимального маршрута и транспорта",
     },
     {
       id: 3,
-      title: "Организацию перевозок нестандартных видов грузов: опасных, ценных и грузов требующих соблюдения температурного режима",
+      title: "Перевозки тяжеловесных, негабаритных и проектных грузов",
     },
     {
       id: 4,
-      title: "Подбор оптимального маршрута и воздушного судна",
+      title: "Перевозки опасных грузов",
     },
     {
       id: 5,
@@ -31,7 +46,8 @@ const AutoServices = () => {
     },
     {
       id: 6,
-      title: "Страхование груза",
+      title:
+        "Регулярное получение информации о местонахождении и состоянии груза",
     },
   ];
 
@@ -44,7 +60,9 @@ const AutoServices = () => {
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         <div className="relative flex items-center justify-center h-full">
-          <h1 className="text-4xl md:text-5xl font-bold uppercase">Авиаперевозки</h1>
+          <h1 className="text-4xl md:text-5xl font-bold uppercase">
+            Автоперевозки
+          </h1>
         </div>
       </div>
 
@@ -65,7 +83,7 @@ const AutoServices = () => {
                 </a>
               </li>
               <li>›</li>
-              <li className="text-gray-700">Авиаперевозки</li>
+              <li className="text-gray-700">Автоперевозки</li>
             </ul>
           </nav>
         </div>
@@ -95,198 +113,307 @@ const AutoServices = () => {
 
       <hr className="border-gray-200 my-8" />
 
-{/* Advantages Section */}
-<div className="bg-white py-16">
-  <div className="max-w-6xl mx-auto px-4 md:px-8">
-    <h2 className="text-2xl font-bold mb-8 text-center">Преимущества авиаперевозок</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div className="flex items-start">
-        <div
-          className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaPlane size={28} />
-        </div>
-        <div className="ml-4">
-          <h3 className="text-lg font-bold text-gray-800">Быстрая доставка</h3>
-          <p className="text-gray-700">
-            Авиаперевозки являются наиболее быстрым способом доставки грузов на большие расстояния. Грузы могут быть доставлены за считанные часы или дни.
-          </p>
+      {/* Advantages Section */}
+      <div className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            Преимущества автоперевозок
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex items-start">
+              <div
+                className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaPlane size={28} />
+              </div>
+              <div className="ml-4">
+                <h3 className="text-lg font-bold text-gray-800">
+                  Гибкость и доступность
+                </h3>
+                <p className="text-gray-700">
+                  Автомобильные перевозки предоставляют гибкие возможности
+                  доставки грузов в различные места, даже в отдаленные или
+                  труднодоступные районы. Автотранспортная инфраструктура широко
+                  распространена, что делает автоперевозки доступными для
+                  большинства мест назначения.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div
+                className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaShieldAlt size={28} />
+              </div>
+              <div className="ml-4">
+                <h3 className="text-lg font-bold text-gray-800">
+                  Быстрая доставка
+                </h3>
+                <p className="text-gray-700">
+                  Автомобильные перевозки обычно обеспечивают быструю доставку
+                  грузов, особенно на небольшие расстояния. Отсутствие
+                  зависимости от расписаний других видов транспорта и
+                  возможность прямой доставки позволяют сократить время доставки
+                  груза до конечного пункта.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div
+                className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaClock size={28} />
+              </div>
+              <div className="ml-4">
+                <h3 className="text-lg font-bold text-gray-800">
+                  Разнообразие типов и размеров автомобилей
+                </h3>
+                <p className="text-gray-700">
+                  Автомобили различных типов и размеров могут быть использованы
+                  для перевозки различных видов грузов. Открытые грузовики,
+                  фургоны, рефрижераторы, цистерны и другие типы автомобилей
+                  предлагают возможность выбора подходящего грузового
+                  пространства в зависимости от специфики груза.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div
+                className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaMapMarkedAlt size={28} />
+              </div>
+              <div className="ml-4">
+                <h3 className="text-lg font-bold text-gray-800">
+                  Дверь-в-дверь доставка
+                </h3>
+                <p className="text-gray-700">
+                  Автоперевозки обеспечивают возможность дверь-в-дверь доставки
+                  груза, что означает, что груз забирается непосредственно от
+                  отправителя и доставляется прямо к получателю. Это
+                  минимизирует необходимость в перегрузке груза и обеспечивает
+                  более прямой и удобный путь доставки.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div
+                className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaCogs size={28} />
+              </div>
+              <div className="ml-4">
+                <h3 className="text-lg font-bold text-gray-800">
+                  Отслеживание груза
+                </h3>
+                <p className="text-gray-700">
+                  Современные технологии позволяют отслеживать автомобили и
+                  грузы в режиме реального времени. Это обеспечивает лучший
+                  контроль и видимость над перемещением груза, а также позволяет
+                  оперативно реагировать на изменения в условиях доставки.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="flex items-start">
-        <div
-          className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaShieldAlt size={28} />
-        </div>
-        <div className="ml-4">
-          <h3 className="text-lg font-bold text-gray-800">Безопасность и надежность</h3>
-          <p className="text-gray-700">
-            Аэропорты и авиалинии строго контролируются, что снижает риск потери или повреждения груза.
-          </p>
-        </div>
-      </div>
-      <div className="flex items-start">
-        <div
-          className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaClock size={28} />
-        </div>
-        <div className="ml-4">
-          <h3 className="text-lg font-bold text-gray-800">Гибкость графика</h3>
-          <p className="text-gray-700">
-            Воздушные грузовые рейсы предлагают регулярное расписание с высокой частотой полетов.
-          </p>
-        </div>
-      </div>
-      <div className="flex items-start">
-        <div
-          className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaMapMarkedAlt size={28} />
-        </div>
-        <div className="ml-4">
-          <h3 className="text-lg font-bold text-gray-800">Широкая география перевозок</h3>
-          <p className="text-gray-700">
-            Авиалинии предлагают широкий охват маршрутов, охватывающий практически весь мир.
-          </p>
-        </div>
-      </div>
-      <div className="flex items-start">
-        <div
-          className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaCogs size={28} />
-        </div>
-        <div className="ml-4">
-          <h3 className="text-lg font-bold text-gray-800">Эффективность использования пространства</h3>
-          <p className="text-gray-700">
-            Воздушные грузовые суда обычно имеют большую грузоподъемность и позволяют организовать пространство более эффективно.
-          </p>
-        </div>
-      </div>
-      <div className="flex items-start">
-        <div
-          className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaCube size={28} />
-        </div>
-        <div className="ml-4">
-          <h3 className="text-lg font-bold text-gray-800">Межмодальные перевозки</h3>
-          <p className="text-gray-700">
-            Авиаперевозки хорошо сочетаются с другими видами транспорта, такими как автоперевозки и железнодорожные перевозки.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<hr className="border-gray-200 my-8" />
+      <hr className="border-gray-200 my-8" />
 
+      {/* Stages Section */}
+      <div className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            Этапы перевозки
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Step 1 */}
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaFileAlt size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">Получение заявки</p>
+            </div>
+            {/* Step 2 */}
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaTruck size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">
+                Разработка оптимального маршрута
+              </p>
+            </div>
+            {/* Step 3 */}
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaDollarSign size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">Расчет ставки</p>
+            </div>
+            {/* Step 4 */}
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaClipboard size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">
+                Оформление необходимых документов
+              </p>
+            </div>
+            {/* Step 5 */}
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaBox size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">
+                Доставка груза до места назначения
+              </p>
+            </div>
+            {/* Step 6 */}
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaMapMarkerAlt size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">
+                Отслеживание местонахождения груза
+              </p>
+            </div>
+            {/* Step 7 */}
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaMapMarkerAlt size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">
+                Отслеживание местонахождения груза
+              </p>
+            </div>
+            {/* Step 8 */}
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaMapMarkerAlt size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">
+                Получение закрывающих документов
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-{/* Stages Section */}
-<div className="bg-white py-16">
-  <div className="max-w-6xl mx-auto px-4 md:px-8">
-    <h2 className="text-2xl font-bold mb-8 text-center">Этапы перевозки</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {/* Step 1 */}
-      <div className="flex items-center">
-        <div
-          className="w-16 h-16 flex items-center justify-center rounded-full"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaFileAlt size={28} className="text-white" />
-        </div>
-        <p className="ml-4 text-gray-700">Получение заявки</p>
-      </div>
-      {/* Step 2 */}
-      <div className="flex items-center">
-        <div
-          className="w-16 h-16 flex items-center justify-center rounded-full"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaTruck size={28} className="text-white" />
-        </div>
-        <p className="ml-4 text-gray-700">Разработка оптимального маршрута</p>
-      </div>
-      {/* Step 3 */}
-      <div className="flex items-center">
-        <div
-          className="w-16 h-16 flex items-center justify-center rounded-full"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaDollarSign size={28} className="text-white" />
-        </div>
-        <p className="ml-4 text-gray-700">Расчет ставки</p>
-      </div>
-      {/* Step 4 */}
-      <div className="flex items-center">
-        <div
-          className="w-16 h-16 flex items-center justify-center rounded-full"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaClipboard size={28} className="text-white" />
-        </div>
-        <p className="ml-4 text-gray-700">Оформление необходимых документов</p>
-      </div>
-      {/* Step 5 */}
-      <div className="flex items-center">
-        <div
-          className="w-16 h-16 flex items-center justify-center rounded-full"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaBox size={28} className="text-white" />
-        </div>
-        <p className="ml-4 text-gray-700">Доставка груза до места назначения</p>
-      </div>
-      {/* Step 6 */}
-      <div className="flex items-center">
-        <div
-          className="w-16 h-16 flex items-center justify-center rounded-full"
-          style={{ backgroundColor: "#0A5225" }}
-        >
-          <FaMapMarkerAlt size={28} className="text-white" />
-        </div>
-        <p className="ml-4 text-gray-700">Отслеживание местонахождения груза</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr className="border-gray-200 my-8" />
+      <hr className="border-gray-200 my-8" />
 
       {/* Text Section */}
       <div className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8">Авиаперевозки грузов – быстро и безопасно</h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            Грузовые авиаперевозки — это перевозки грузов с помощью авиаперевозчика. Авиасэкспедитор — это компания, которая занимается организацией авиаперевозок, согласованием тарифов и действует от имени заказчика, согласовывая с перевозчиком все детали перевозки. В Nur Zhol Company мы работаем с лучшими перевозчиками.
-          </p>
-          <h3 className="text-xl font-bold mt-6">Преимущества воздушного транспорта:</h3>
-          <ul className="list-disc list-inside text-gray-700 mt-4 space-y-2">
-            <li>Самая быстрая служба доставки</li>
-            <li>Высокая предсказуемость сроков доставки</li>
-            <li>Безопасная перевозка благодаря строгим мерам безопасности в аэропортах</li>
-            <li>Ускоренное таможенное оформление за счет быстрой выгрузки авиагруза</li>
-            <li>Товары могут быть доставлены воздушным транспортом практически в любой пункт назначения</li>
-          </ul>
-          <h3 className="text-xl font-bold mt-6">Особенности отправления грузов воздушным транспортом:</h3>
-          <ul className="list-disc list-inside text-gray-700 mt-4 space-y-2">
-            <li>Стоимость авиаперевозок выше, чем другие перевозки</li>
-            <li>Нерентабельно для перевозки легких и недорогих грузов</li>
-            <li>Есть некоторые ограниченные продукты, которые нельзя перевозить по воздуху, но можно перевозить автомобильным или морским транспортом</li>
-          </ul>
-          <h3 className="text-xl font-bold mt-6">Почему авиаперевозки являются самым дорогим видом грузоперевозок?</h3>
-          <p className="text-gray-700 leading-relaxed mt-4">
-            Стоимость авиаперевозки зависит не только от маршрута и габаритов отправления, но и от стоимости топлива и обслуживания самолета. Таким образом, ставки на международные авиаперевозки выше, чем, например, на железнодорожные перевозки. Тем не менее, даже при более высоких затратах авиаперевозки по-прежнему наиболее рекомендуются для перевозки дорогостоящих товаров, срочных грузов или документов, поскольку это один из самых безопасных видов транспорта.
-          </p>
+        <div className="max-w-6xl mx-auto px-4 md:px-3">
+          <div className="flex">
+            <div className="w-2/3">
+              <h2 className="text-2xl font-bold mb-3">
+                Автоперевозки грузов – широкие возможности и высокая
+                геодоступность
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                Автомобильный грузовой транспорт — решение, предлагающее
+                наибольшую гибкость и возможность выбора места доставки товара.
+                В Nur Zhol Company мы обслуживаем потребности как
+                индивидуальных, так и бизнес-клиентов и предлагаем широкий
+                спектр услуг по грузовым международным и по ключевым
+                направлениям. Наша компания располагает обширной сетью филиалов
+                и представительств, находящихся на территории СНГ, Балтии, КНР,
+                западной и центральной Европы, что гарантирует нашим заказчикам
+                своевременную доставку и качественный сервис.
+              </p>
+              <h2 className="text-2xl font-bold mb-3">
+                Международные и внутренние перевозки сборных грузов - что такое
+                LTL?
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                Услуги сборных грузов (LTL) экономически выгодны заказчикам, у
+                которых сравнительно небольшой груз. Совместно используя
+                автомобильный транспорт с другими грузоотправителями, вы можете
+                сэкономить на доставке. Сумма к оплате будет меньше, чем целый
+                грузовик сборных грузов. Оплатить нужно только за необходимое
+                вам место в транспортном средстве.
+              </p>
+              <h2 className="text-2xl font-bold mb-3">
+                Автоперевозки грузов – широкие возможности и высокая
+                геодоступность
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                Перевозка с полной загрузкой, также известная как FTL (Full
+                Truck Load), означает перевозку грузов, которые занимают все
+                пространство транспортного средства. Выбирайте услугу полной
+                загрузки грузовика (FTL) для одновременной международной или
+                внутренней перевозки грузов от 10 и более поддонов.
+              </p>
+              <h2 className="text-2xl font-bold mb-3">
+                Международные перевозки - что такое услуга FTL?
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                Автомобильный грузовой транспорт — решение, предлагающее
+                наибольшую гибкость и возможность выбора места доставки товара.
+                В Nur Zhol Company мы обслуживаем потребности как
+                индивидуальных, так и бизнес-клиентов и предлагаем широкий
+                спектр услуг по грузовым международным и по ключевым
+                направлениям. Наша компания располагает обширной сетью филиалов
+                и представительств, находящихся на территории СНГ, Балтии, КНР,
+                западной и центральной Европы, что гарантирует нашим заказчикам
+                своевременную доставку и качественный сервис.
+              </p>
+            </div>
+            <div className="w-1/3 ml-3">
+              <h2 className="text-2xl font-bold mb-3">Таможенные сборы</h2>
+              <p className="text-gray-700 leading-relaxed mb-3">
+                В случае перевозки автомобильным транспортом товаров через
+                границы, пошлина рассчитывается исходя из содержимого
+                отправления и объявленной стоимости. Грузополучатель обязан
+                уплатить таможенные пошлины за выпуск грузовой партии таможней.
+                Как узнать срок доставки? Срок доставки зависит от выбранного
+                маршрута и службы доставки. Специализированные службы доставки
+                имеют самые короткие сроки доставки, так как при автомобильных
+                перевозках груз доставляется непосредственно от пункта выдачи до
+                места доставки. Логистические услуги автомобильного транспорта
+                также включают в себя остановки и проверки на складах
+                поставщиков логистических услуг, что увеличивает сроки доставки.
+                Всякий раз, когда вы заказываете у нас какие-либо услуги по
+                доставке грузов, расчетное время доставки будет указано в
+                процессе бронирования до завершения вашего заказа. Чтобы
+                сократить время доставки, мы рекомендуем заказать доставку
+                фургоном или полным грузовиком, поскольку это прямые решения.
+                Также стоит помнить, что в некоторых редких случаях время
+                транзита может превышать расчетный временной интервал из-за
+                дорожного движения, погодных условий и других непредвиденных
+                обстоятельств, связанных с транспортной логистикой.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

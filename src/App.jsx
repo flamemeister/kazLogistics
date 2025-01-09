@@ -12,6 +12,8 @@ import {
   ExampleService,
   Services,
   NotFound,
+
+  AviaServices,
   AutoServices
   
 } from "./components";
@@ -50,8 +52,9 @@ const AppContent = () => {
         <Route path="/about" element={<About />} />
         {/* <Route path="/gallery" element={<Gallery />} /> */}
         <Route path="/contacts" element={<Contacts />} />
-        <Route path="/services/all" element={<Services />} />
-        <Route path="/services/example" element={<AutoServices />} />
+        <Route path="/services" element={<Services />} />
+        {/* <Route path="/services/example" element={<AutoServices />} /> */}
+        <Route path="/services/air" element={<AviaServices />} />
         <Route path="/services/auto" element={<AutoServices />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
