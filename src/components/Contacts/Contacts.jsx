@@ -26,7 +26,7 @@ const Contacts = () => {
             {/* Map Section */}
             <div className="flex justify-center">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.9881797601813!2d76.93142021548382!3d43.25161707913508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836ec4d7d86521%3A0xdeadbeef12345678!2z0JrQsNC30LDQstCw0YDQuNGG0LAg0J7QvNC40LnRgdGC0LDRjyDQn9GA0LXQvdC40L3QsCwg0JrQvtCy0LAsINCc0L7RgdC60LLQsCwg0JDQvdC10LrRgdC40Y8!5e0!3m2!1sen!2skz!4v1700000000000!5m2!1sen!2skz&marker=43.251617,76.933609"
+                src="https://www.google.com/maps?q=43.25156659873732,76.93376998601416&z=17&output=embed"
                 width="100%"
                 height="400"
                 style={{ border: 0, borderRadius: '8px' }}
