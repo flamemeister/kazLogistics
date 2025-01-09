@@ -48,7 +48,7 @@ const Services = () => {
                 key={service.id}
                 className="group block rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2"
               >
-                <div className="w-full h-48">
+                <div className="w-full h-full">
                   <img
                     src={service.image}
                     alt={`Service ${service.id}`}

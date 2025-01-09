@@ -20,35 +20,35 @@ const Footer = () => {
               Delivering your value
             </p>
           </div>
+        </div>
 
-          {/* Social Icons */}
-          <div className="flex space-x-8">
-            <a
-              href="https://wa.me/77771544455"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              className="hover:scale-105 transition-transform"
-            >
-              <FaWhatsapp className="h-10 w-10 text-white hover:text-gray-300" />
-            </a>
-            <a
-              href="tel:+77015367873"
-              aria-label="Phone"
-              className="hover:scale-105 transition-transform"
-            >
-              <PhoneIcon className="h-10 w-10 text-white hover:text-gray-300" />
-            </a>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="hover:scale-105 transition-transform"
-            >
-              <FaLinkedin className="h-10 w-10 text-white hover:text-gray-300" />
-            </a>
-          </div>
+        {/* Social Icons in the bottom center */}
+        <div className="flex justify-center items-center space-x-6 mt-4 mb-4">
+          <a
+            href="https://wa.me/77771544455"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="hover:scale-110 transition-transform"
+          >
+            <FaWhatsapp className="h-8 w-8 text-white hover:text-gray-300" />
+          </a>
+          <a
+            href="tel:+77015367873"
+            aria-label="Phone"
+            className="hover:scale-110 transition-transform"
+          >
+            <PhoneIcon className="h-8 w-8 text-white hover:text-gray-300" />
+          </a>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="hover:scale-110 transition-transform"
+          >
+            <FaLinkedin className="h-8 w-8 text-white hover:text-gray-300" />
+          </a>
         </div>
 
         {/* Copyright */}
