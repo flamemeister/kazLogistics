@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
   TruckIcon,
@@ -31,8 +31,8 @@ const Home = () => {
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [chatVisible, setChatVisible] = useState(false); 
-  const [isTyping, setIsTyping] = useState(false); 
+  const [chatVisible, setChatVisible] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
   const [messages, setMessages] = useState([
     {
       id: 1,
@@ -54,30 +54,33 @@ const Home = () => {
 
   const handleSendMessage = async () => {
     if (userInput.trim() === "") return;
-  
+
     const newMessage = {
       id: messages.length + 1,
       text: userInput,
       type: "user",
       timestamp: "Just now",
     };
-  
+
     setMessages((prevMessages) => [...prevMessages, newMessage]);
     setUserInput("");
-    setIsTyping(true); 
-  
+    setIsTyping(true);
+
     try {
-      const response = await axios.post("http://78.140.241.59:8009/chat/chat/", {
-        message: userInput,
-      });
-  
+      const response = await axios.post(
+        "http://78.140.241.59:8009/chat/chat/",
+        {
+          message: userInput,
+        }
+      );
+
       const botResponse = {
         id: messages.length + 2,
-        text: response.data.response, 
+        text: response.data.response,
         type: "bot",
         timestamp: new Date().toLocaleTimeString(),
       };
-  
+
       setMessages((prevMessages) => [...prevMessages, botResponse]);
     } catch (error) {
       const errorMessage = {
@@ -86,10 +89,10 @@ const Home = () => {
         type: "bot",
         timestamp: new Date().toLocaleTimeString(),
       };
-  
+
       setMessages((prevMessages) => [...prevMessages, errorMessage]);
     } finally {
-      setIsTyping(false); 
+      setIsTyping(false);
     }
   };
 
@@ -130,6 +133,20 @@ const Home = () => {
     }
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Run on mount + on resize
+    window.addEventListener("resize", checkIsMobile);
+    checkIsMobile(); // initial check
+
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
   return (
     <>
       <style>{fadeAnimations}</style>
@@ -156,17 +173,31 @@ const Home = () => {
         </div>
       )}
 
-      <section
-        className="relative bg-cover bg-center bg-no-repeat flex items-center justify-center"
-        style={{ backgroundImage: `url(${bgImage})`, height: "100vh" }}
+<section
+      className="relative bg-cover bg-center bg-no-repeat flex items-center justify-center"
+      style={{ backgroundImage: `url(${bgImage})`, height: "100vh" }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+      <div
+        className={`
+          relative
+          z-10
+          max-w-3xl
+          px-4
+          fade-in-up
+          ${isMobile ? "text-center" : "text-left"}
+        `}
+        style={{
+          marginLeft: isMobile ? "0" : "-50%",
+        }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-        <div className="relative z-10 max-w-3xl px-4 text-left fade-in-up" style={{ marginLeft: "-50%" }}>
-          <p className="text-gray-200 font-bold text-xl md:text-2xl mt-4 md:mt-2 mb-8">
-            Наша миссия - создание ценностей в наших продуктах для наших партнеров за счет качественного сервиса
-          </p>
-        </div>
-      </section>
+        <p className="text-gray-200 font-bold text-xl md:text-2xl mt-4 md:mt-2 mb-8">
+          Наша миссия - создание ценностей в наших продуктах для наших
+          партнеров за счет качественного сервиса
+        </p>
+      </div>
+    </section>
 
       <section
         id="consultation-form"
@@ -230,12 +261,25 @@ const Home = () => {
       </section>
 
       {/* Floating Chat Icon */}
-      <div className="fixed bottom-5 right-5 z-50">
+      <div
+        className="
+    fixed
+    right-5
+    z-50
+    bottom-20       /* default for mobile */
+    md:bottom-5     /* override for desktop and larger */
+    transition-all
+  "
+      >
         <button
           onClick={toggleChat}
           className="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition transform hover:scale-110 focus:outline-none"
         >
-          {chatVisible ? <FaTimes className="h-6 w-6" /> : <FaComments className="h-6 w-6" />}
+          {chatVisible ? (
+            <FaTimes className="h-6 w-6" />
+          ) : (
+            <FaComments className="h-6 w-6" />
+          )}
         </button>
       </div>
 
@@ -245,7 +289,8 @@ const Home = () => {
           className="fixed bottom-20 right-5 bg-white border border-gray-300 rounded-lg shadow-lg w-80 animate-fade-in-up"
           style={{
             animation: "fadeInUp 0.3s ease-out",
-          }}>
+          }}
+        >
           <div className="p-4 border-b border-gray-200 flex justify-between items-center">
             <h3 className="text-lg font-bold text-gray-800">Чат с нами</h3>
             <button
@@ -263,7 +308,8 @@ const Home = () => {
                 key={message.id}
                 className={`flex mb-4 ${
                   message.type === "bot" ? "justify-start" : "justify-end"
-                }`}>
+                }`}
+              >
                 <div
                   className={`p-3 rounded-lg shadow-sm ${
                     message.type === "bot"
@@ -272,7 +318,8 @@ const Home = () => {
                   }`}
                   style={{
                     maxWidth: "75%",
-                  }}>
+                  }}
+                >
                   <p className="text-sm">{message.text}</p>
                   <span className="text-xs text-gray-500 mt-1 block">
                     {message.timestamp}
@@ -281,31 +328,33 @@ const Home = () => {
               </div>
             ))}
             {/* Индикатор загрузки */}
-              {isTyping && (
-                <div className="flex items-center mb-4">
-                  <div className="w-6 h-6 border-4 border-green-600 border-t-transparent rounded-full animate-spin"></div>
-                  <span className="ml-3 text-gray-500 text-sm">Бот печатает...</span>
-                </div>
-              )}
+            {isTyping && (
+              <div className="flex items-center mb-4">
+                <div className="w-6 h-6 border-4 border-green-600 border-t-transparent rounded-full animate-spin"></div>
+                <span className="ml-3 text-gray-500 text-sm">
+                  Бот печатает...
+                </span>
+              </div>
+            )}
           </div>
-                <div className="p-3 border-t border-gray-200 flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Введите сообщение..."
-                    className="flex-1 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-green-600 transition-colors duration-300"
-                    value={userInput}
-                    onChange={handleInputChange}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") handleSendMessage(); 
-                    }}
-                  />
-                  <button
-                    onClick={handleSendMessage}
-                    className="ml-2 bg-green-600 text-white p-2 rounded-md hover:bg-green-700 transition-colors duration-300 focus:outline-none"
-                  >
-                    ➤
-                  </button>
-                </div>
+          <div className="p-3 border-t border-gray-200 flex items-center">
+            <input
+              type="text"
+              placeholder="Введите сообщение..."
+              className="flex-1 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-green-600 transition-colors duration-300"
+              value={userInput}
+              onChange={handleInputChange}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleSendMessage();
+              }}
+            />
+            <button
+              onClick={handleSendMessage}
+              className="ml-2 bg-green-600 text-white p-2 rounded-md hover:bg-green-700 transition-colors duration-300 focus:outline-none"
+            >
+              ➤
+            </button>
+          </div>
         </div>
       )}
 
@@ -326,7 +375,6 @@ const Home = () => {
           }
         `}
       </style>
-  
 
       <Footer />
     </>
