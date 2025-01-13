@@ -6,7 +6,7 @@ const Navbar = () => {
   const [navScrolled, setNavScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
-  const [language, setLanguage] = useState("Каз"); 
+  const [language, setLanguage] = useState("Каз");
 
   const languageImages = {
     Каз: "src/assets/images/kazakhstan.png",
@@ -19,14 +19,13 @@ const Navbar = () => {
     const handleScroll = () => {
       setNavScrolled(window.scrollY > 80);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    if (!menuOpen) setLanguageMenuOpen(false); 
+    if (!menuOpen) setLanguageMenuOpen(false);
   };
 
   const toggleLanguageMenu = () => {
@@ -66,7 +65,11 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src="src/assets/logo_white.png" alt="Logo" className="h-10 object-contain" />
+          <img
+            src="src/assets/logo_white.png"
+            alt="Logo"
+            className="h-10 object-contain"
+          />
         </Link>
 
         {/* Desktop Links */}
@@ -84,12 +87,15 @@ const Navbar = () => {
             Контакты
           </Link>
 
-          {/* Language Selector */}
+          {/* Language Selector (Desktop) */}
           <div
             className="relative"
             onMouseLeave={() => setLanguageMenuOpen(false)}
           >
-            <button onClick={toggleLanguageMenu} className="flex items-center space-x-2">
+            <button
+              onClick={toggleLanguageMenu}
+              className="flex items-center space-x-2"
+            >
               <img
                 src={languageImages[language]}
                 alt={language}
@@ -103,7 +109,11 @@ const Navbar = () => {
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </button>
             {languageMenuOpen && (
@@ -138,7 +148,11 @@ const Navbar = () => {
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             ) : (
               <svg
@@ -148,7 +162,11 @@ const Navbar = () => {
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
               </svg>
             )}
           </button>
@@ -156,10 +174,10 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="fixed top-0 left-0 w-full h-screen bg-green-600 text-white z-40 p-6">
-            <div className="flex justify-between items-center mb-6">
-              <img src="src/assets/logo_white.png" alt="Logo" className="h-8" />
-              <button onClick={toggleMenu} className="text-white focus:outline-none">
+          <div className="fixed top-0 left-0 w-full h-screen bg-green-600 text-white z-40">
+            {/* Close Button in top-right corner */}
+            <div className="absolute top-4 right-4">
+              <button onClick={toggleMenu} className="focus:outline-none">
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -167,50 +185,72 @@ const Navbar = () => {
                   strokeWidth="2"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
-            <ul className="space-y-6 text-lg font-semibold">
-              <li>
-                <Link to="/" onClick={toggleMenu}>
-                  Главная
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" onClick={toggleMenu}>
-                  Услуги
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" onClick={toggleMenu}>
-                  О нас
-                </Link>
-              </li>
-              <li>
-                <Link to="/contacts" onClick={toggleMenu}>
-                  Контакты
-                </Link>
-              </li>
-              <li>
-                <div>
-                  {Object.keys(languageImages).map((lang) => (
-                    <button
-                      key={lang}
-                      className="block text-lg font-semibold flex items-center space-x-2"
-                      onClick={() => changeLanguage(lang)}
-                    >
-                      <img
-                        src={languageImages[lang]}
-                        alt={lang}
-                        className="h-6 w-6 object-contain mr-2"
-                      />
-                      <span>{lang}</span>
-                    </button>
-                  ))}
-                </div>
-              </li>
-            </ul>
+
+            {/* 
+              We do NOT vertically center everything. 
+              Instead, we only center horizontally. 
+            */}
+            <div className="pt-16 px-6">
+              {/* Logo near the top, left as-is or slightly spaced */}
+              <div className="mb-6">
+                <img
+                  src="src/assets/logo_white.png"
+                  alt="Logo"
+                  className="h-10"
+                />
+              </div>
+
+              <ul className="space-y-6 text-lg font-semibold text-center">
+                <li>
+                  <Link to="/" onClick={toggleMenu}>
+                    Главная
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" onClick={toggleMenu}>
+                    Услуги
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" onClick={toggleMenu}>
+                    О нас
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contacts" onClick={toggleMenu}>
+                    Контакты
+                  </Link>
+                </li>
+              </ul>
+
+              <div className="mt-8 text-center">
+                {Object.keys(languageImages).map((lang) => (
+                  <button
+                    key={lang}
+                    className="block text-lg font-semibold mb-2 mx-auto flex items-center space-x-2 justify-center"
+                    onClick={() => {
+                      changeLanguage(lang);
+                      toggleMenu();
+                    }}
+                  >
+                    <img
+                      src={languageImages[lang]}
+                      alt={lang}
+                      className="h-6 w-6 object-contain"
+                    />
+                    <span>{lang}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </nav>
