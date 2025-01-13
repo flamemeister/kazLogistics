@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Footer from "../Footer/Footer";
 
 // Hero background image
-import heroBg from "../../assets/images/image4.jpg";
+// import heroBg from "../../assets/images/image4.jpg";
 
-// Example gallery images (use your actual paths)
-import gallery1 from "../../assets/image1.jpeg";
-import gallery2 from "../../assets/image1.jpeg";
-import gallery3 from "../../assets/image1.jpeg";
-import gallery4 from "../../assets/image1.jpeg";
+// // Example gallery images (use your actual paths)
+// import gallery1 from "../../assets/image1.jpeg";
+// import gallery2 from "../../assets/image1.jpeg";
+// import gallery3 from "../../assets/image1.jpeg";
+// import gallery4 from "../../assets/image1.jpeg";
 
 // Icons from Heroicons (optional)
 import { XMarkIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import backgroundImage from "../../assets/images/avia_service.jpg";
+import backgroundImage from "../../assets/images/Container shipments.jpg";
 import {
   FaFileAlt,
   FaInbox,

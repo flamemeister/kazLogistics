@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
-// Reuse your hero background image
-import backgroundImage from "../../assets/aboutus.jpg";
+import backgroundImage from "../../assets/images/Multimodal.jpg";
 
 const fadeInAnimations = `
 @keyframes fadeIn {

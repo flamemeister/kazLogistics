@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
-import logo from "../../assets/images/logo.png"; // Adjust path if needed
 
 const Navbar = () => {
   const [navScrolled, setNavScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
-  const [language, setLanguage] = useState("Каз"); // Default to Kazakh
+  const [language, setLanguage] = useState("Каз"); 
+
+  const languageImages = {
+    Каз: "src/assets/images/kazakhstan.png",
+    Рус: "src/assets/images/russia.png",
+    Eng: "src/assets/images/united-kingdom.png",
+    中文: "src/assets/images/china.png",
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +26,7 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    if (!menuOpen) setLanguageMenuOpen(false); // Close language menu if mobile menu is toggled
+    if (!menuOpen) setLanguageMenuOpen(false); 
   };
 
   const toggleLanguageMenu = () => {
@@ -35,7 +41,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed w-full z-50 transition-colors duration-300 ${
-        navScrolled ? "bg-white text-gray-900 shadow-md" : "bg-transparent text-white"
+        navScrolled ? "bg-green-600 text-gray-900 shadow-md" : "bg-transparent text-white"
       }`}
     >
       {/* Top bar */}
@@ -60,11 +66,11 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src={logo} alt="KazakhTransTrade Logo" className="h-10 object-contain" />
+          <img src="src/assets/logo_white.png" alt="Logo" className="h-10 object-contain" />
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex text-white font-semibold items-center space-x-8">
           <Link to="/" className="transition-colors duration-200">
             Главная
           </Link>
@@ -79,9 +85,17 @@ const Navbar = () => {
           </Link>
 
           {/* Language Selector */}
-          <div className="relative">
-            <button onClick={toggleLanguageMenu} className="flex items-center">
-              {language}{" "}
+          <div
+            className="relative"
+            onMouseLeave={() => setLanguageMenuOpen(false)}
+          >
+            <button onClick={toggleLanguageMenu} className="flex items-center space-x-2">
+              <img
+                src={languageImages[language]}
+                alt={language}
+                className="h-6 w-6 object-contain"
+              />
+              <span>{language}</span>
               <svg
                 className="h-4 w-4 ml-1"
                 fill="none"
@@ -93,25 +107,21 @@ const Navbar = () => {
               </svg>
             </button>
             {languageMenuOpen && (
-              <div className="absolute right-0 mt-2 bg-white text-gray-900 shadow-lg rounded-lg w-28">
-                <button
-                  className="block px-4 py-2 text-left"
-                  onClick={() => changeLanguage("Каз")}
-                >
-                  Қазақша
-                </button>
-                <button
-                  className="block px-4 py-2 text-left"
-                  onClick={() => changeLanguage("Рус")}
-                >
-                  Русский
-                </button>
-                <button
-                  className="block px-4 py-2 text-left"
-                  onClick={() => changeLanguage("Eng")}
-                >
-                  English
-                </button>
+              <div className="absolute right-0 mt-2 bg-white text-gray-900 shadow-lg rounded-lg w-40">
+                {Object.keys(languageImages).map((lang) => (
+                  <button
+                    key={lang}
+                    className="flex items-center px-4 py-2 text-left w-full"
+                    onClick={() => changeLanguage(lang)}
+                  >
+                    <img
+                      src={languageImages[lang]}
+                      alt={lang}
+                      className="h-6 w-6 mr-2 object-contain"
+                    />
+                    {lang}
+                  </button>
+                ))}
               </div>
             )}
           </div>
@@ -148,7 +158,7 @@ const Navbar = () => {
         {menuOpen && (
           <div className="fixed top-0 left-0 w-full h-screen bg-green-600 text-white z-40 p-6">
             <div className="flex justify-between items-center mb-6">
-              <img src={logo} alt="Logo" className="h-8" />
+              <img src="src/assets/logo_white.png" alt="Logo" className="h-8" />
               <button onClick={toggleMenu} className="text-white focus:outline-none">
                 <svg
                   className="h-6 w-6"
@@ -184,15 +194,20 @@ const Navbar = () => {
               </li>
               <li>
                 <div>
-                  <button className="block text-lg font-semibold" onClick={() => changeLanguage("Каз")}>
-                    Қазақша
-                  </button>
-                  <button className="block text-lg font-semibold" onClick={() => changeLanguage("Рус")}>
-                    Русский
-                  </button>
-                  <button className="block text-lg font-semibold" onClick={() => changeLanguage("Eng")}>
-                    English
-                  </button>
+                  {Object.keys(languageImages).map((lang) => (
+                    <button
+                      key={lang}
+                      className="block text-lg font-semibold flex items-center space-x-2"
+                      onClick={() => changeLanguage(lang)}
+                    >
+                      <img
+                        src={languageImages[lang]}
+                        alt={lang}
+                        className="h-6 w-6 object-contain mr-2"
+                      />
+                      <span>{lang}</span>
+                    </button>
+                  ))}
                 </div>
               </li>
             </ul>

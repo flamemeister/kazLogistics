@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import backgroundImage from "../../assets/images/avia_service.jpg";
+import backgroundImage from "../../assets/images/avia_transfer.jpg";
 import logo from "../../assets/images/logo.png"; // Adjust the path as needed
 import {
   FaRocket,
@@ -59,7 +59,6 @@ const AviaServices = () => {
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         {/* Logo Integration */}
         <div className="absolute top-4 left-4">
-          <img src={logo} alt="Nur Zhol Company Logo" className="h-12 w-auto" />
         </div>
         <div className="relative flex items-center justify-center h-full">
           <h1 className="text-4xl md:text-5xl font-bold uppercase">Авиаперевозки</h1>

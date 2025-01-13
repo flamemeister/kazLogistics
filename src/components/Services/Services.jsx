@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import backgroundImage from "../../assets/images/image5.jpg";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import card1 from "../../assets/images/auto.png";
 import card2 from "../../assets/images/air.png";
@@ -9,57 +8,123 @@ import card4 from "../../assets/images/container.png";
 import card5 from "../../assets/images/multimodal.png";
 import card6 from "../../assets/images/non-habaryte.png";
 import card7 from "../../assets/images/projective.png";
+import card8 from "../../assets/images/go_back.png";
 
 const Services = () => {
+  const navigate = useNavigate();
+
   const services = [
     { id: 1, image: card1, link: "/services/auto" },
     { id: 2, image: card2, link: "/services/air" },
     { id: 3, image: card3, link: "/services/railway" },
     { id: 4, image: card4, link: "/services/container" },
     { id: 5, image: card5, link: "/services/multimodal" },
-    { id: 6, image: card6, link: "/services/non-habaryte" },
+    { id: 6, image: card6, link: "/services/nonhabaryte" },
     { id: 7, image: card7, link: "/services/projective" },
+    { id: 8, image: card8, link: "/" },
   ];
 
   return (
     <div>
       {/* Hero Section */}
-      <div
-        className="relative bg-cover bg-center text-white h-[50vh]"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-        <div className="relative flex items-center justify-center h-full">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold">Наши услуги</h1>
-            <div className="mt-2 h-1 w-16 bg-green-600 mx-auto"></div>
+      <div className="relative text-white h-[40vh]" style={{ backgroundColor: "#0A5225" }}>
+        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+          <div className="relative flex items-center justify-center h-full">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold">Наши услуги</h1>
+              <div className="mt-2 h-1 w-16 bg-green-600 mx-auto"></div>
+            </div>
           </div>
         </div>
-      </div>
 
       {/* Services Section */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-2xl font-bold mb-8 text-center">Наши услуги</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service) => (
-              <Link
-                to={service.link}
-                key={service.id}
-                className="group block rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2"
-              >
-                <div className="w-full h-full">
-                  <img
-                    src={service.image}
-                    alt={`Service ${service.id}`}
-                    className="w-full h-full object-cover" 
-                  />
+            {services.map((service) =>
+              service.image ? (
+                <Link
+                  to={service.link}
+                  key={service.id}
+                  className="group block rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2"
+                >
+                  <div className="w-full h-full">
+                    <img
+                      src={service.image}
+                      alt={`Service ${service.id}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </Link>
+              ) : (
+                <div
+                  key={service.id}
+                  onClick={() => navigate(-1)} // Переход на предыдущую страницу
+                  className="cursor-pointer group block rounded-lg shadow-lg bg-green-600 text-white flex items-center justify-center transform transition-transform duration-300 hover:-translate-y-2"
+                >
+                  <h3 className="text-lg font-bold">Вернуться назад</h3>
                 </div>
-              </Link>
-            ))}
+              )
+            )}
           </div>
         </div>
       </div>
+
+      {/* Additional Text Section */}
+      <div className="bg-gray-100 py-16">
+        <div className="max-w-4xl mx-auto px-4 text-gray-800">
+          <h2 className="text-2xl font-bold text-center mb-6">
+            Добро пожаловать в Great Steppe Logistics
+          </h2>
+          <p className="leading-relaxed mb-6">
+            Добро пожаловать на страницу услуг компании Great Steppe Logistics
+            — вашего надежного партнера в мире транспортно-логистических
+            решений. Мы предоставляем полный спектр услуг, помогая вашему
+            бизнесу максимально эффективно организовать грузоперевозки любого
+            типа и масштаба.
+          </p>
+          <ul className="list-disc pl-6 space-y-4">
+            <li>
+              <strong>Железнодорожные перевозки:</strong> Мы предлагаем все виды
+              железнодорожных перевозок, включая контейнерные и сборные грузы.
+              Обеспечиваем быстрое и безопасное перемещение грузов как внутри
+              страны, так и за её пределами.
+            </li>
+            <li>
+              <strong>Автоперевозки:</strong> С помощью нашей широкой сети
+              партнёров мы организовываем доставку грузов автотранспортом в
+              любую точку мира. У нас есть доступ к различным видам
+              автотранспорта, включая специализированный.
+            </li>
+            <li>
+              <strong>Мультимодальные перевозки:</strong> Идеальный выбор для
+              международной логистики. Мы координируем процесс перевозки с
+              использованием различных видов транспорта.
+            </li>
+            <li>
+              <strong>Авиаперевозки:</strong> Если важна скорость, наши услуги
+              авиаперевозки обеспечат быструю и своевременную доставку,
+              сотрудничая с ведущими авиакомпаниями.
+            </li>
+            <li>
+              <strong>Проектная логистика:</strong> Мы помогаем организовать
+              сложные проекты, разрабатывая оптимальный план транспортировки.
+            </li>
+            <li>
+              <strong>Негабаритные перевозки:</strong> Для крупных и
+              тяжеловесных грузов мы предоставляем решения, учитывающие все
+              нюансы.
+            </li>
+          </ul>
+          <p className="leading-relaxed mt-6">
+            Наша цель — предоставить лучшие логистические решения, которые
+            способствуют успеху вашего бизнеса. Свяжитесь с нами уже сегодня,
+            чтобы обсудить ваши потребности и найти оптимальное решение!
+          </p>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

@@ -17,7 +17,7 @@ const Footer = () => {
               className="h-12"
             />
             <p className="text-gray-300 text-sm leading-relaxed mt-2 text-center">
-              Delivering your value
+            We deliver your value
             </p>
           </div>
         </div>

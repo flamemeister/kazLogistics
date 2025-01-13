@@ -8,7 +8,6 @@ import {
 } from "@heroicons/react/24/outline";
 import Footer from "../Footer/Footer";
 import bgImage from "../../assets/images/iStock-1275144846.jpg";
-import newImage from "../../assets/images/image14.png"; 
 import endpoint from "../../services/api";
 import { FaComments, FaTimes, FaSyncAlt } from "react-icons/fa";
 import "../../styles/spinner.css";
@@ -162,19 +161,10 @@ const Home = () => {
         style={{ backgroundImage: `url(${bgImage})`, height: "100vh" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6">
-            Great Steppe Logistics
-          </h1>
-          <p className="text-gray-200 text-xl md:text-2xl mt-4 md:mt-2 mb-8">
+        <div className="relative z-10 max-w-3xl px-4 text-left fade-in-up" style={{ marginLeft: "-50%" }}>
+          <p className="text-gray-200 font-bold text-xl md:text-2xl mt-4 md:mt-2 mb-8">
             Наша миссия - создание ценностей в наших продуктах для наших партнеров за счет качественного сервиса
           </p>
-          {/* <button
-            onClick={handleScrollToForm}
-            className="mt-4 bg-green-600 text-white py-3 px-6 rounded-md hover:bg-green-700 transition-colors duration-300"
-          >
-            Получить консультацию
-          </button> */}
         </div>
       </section>
 

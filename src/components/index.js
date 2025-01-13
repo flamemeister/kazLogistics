@@ -8,12 +8,14 @@ import About from "./About/About";
 import Gallery from "./Gallery/Gallery";
 
 import Services from "./Services/Services";
-import ExampleService from "./Services/ExampleService";
 
 import AviaServices from "./Services/Avia";
 import AutoServices from "./Services/Auto";
 import RailServices from "./Services/RailServices";
 import ContainerServices from "./Services/ContainerServices";
+import MultimodalServices from "./Services/Multimodal";
+import NonhabaryteServices from "./Services/Nonhabaryte";
+import ProjectiveServices from "./Services/Projective";
 
 export { 
   Navbar, 
@@ -26,11 +28,13 @@ export {
   About, 
   Gallery,
   Services,
-  ExampleService,
 
   // Services
   AviaServices,
   AutoServices,
   RailServices,
   ContainerServices,
+  MultimodalServices,
+  NonhabaryteServices,
+  ProjectiveServices,
 }

@@ -9,14 +9,16 @@ import {
   About,
   // Gallery,
   Contacts,
-  ExampleService,
   Services,
   NotFound,
 
   AviaServices,
   AutoServices,
   RailServices,
-  ContainerServices
+  ContainerServices,
+  MultimodalServices,
+  NonhabaryteServices,
+  ProjectiveServices,
   
 } from "./components";
 
@@ -60,6 +62,10 @@ const AppContent = () => {
         <Route path="/services/auto" element={<AutoServices />} />
         <Route path="/services/railway" element={<RailServices />} />
         <Route path="/services/container" element={<ContainerServices />} />
+        <Route path="/services/multimodal" element={<MultimodalServices />} />
+        <Route path="/services/nonhabaryte" element={<NonhabaryteServices />} />
+        <Route path="/services/projective" element={<ProjectiveServices />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
