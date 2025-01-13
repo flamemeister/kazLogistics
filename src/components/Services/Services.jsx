@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import card1 from "../../assets/images/auto.png";
-import card2 from "../../assets/images/air.png";
-import card3 from "../../assets/images/train.png";
-import card4 from "../../assets/images/container.png";
-import card5 from "../../assets/images/multimodal.png";
-import card6 from "../../assets/images/non-habaryte.png";
-import card7 from "../../assets/images/projective.png";
+import card1 from "../../assets/images/auto_card.jpeg";
+import card2 from "../../assets/images/air_card.jpeg";
+import card3 from "../../assets/images/train_card.jpeg";
+import card4 from "../../assets/images/container_card.jpeg";
+import card5 from "../../assets/images/multimodal_card.jpeg";
+import card6 from "../../assets/images/nonhabaryte_card.jpeg";
+import card7 from "../../assets/images/depo_card.jpeg";
 import card8 from "../../assets/images/go_back.png";
 
 const Services = () => {
