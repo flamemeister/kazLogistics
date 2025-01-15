@@ -21,7 +21,7 @@ const Contacts = () => {
 
 
       {/* Contacts Section */}
-      <div className="bg-white py-16">
+      <div className="bg-white pb-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Map Section */}

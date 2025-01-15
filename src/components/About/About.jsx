@@ -21,7 +21,7 @@ const AboutUs = () => {
   </div>
 
       {/* Mission Section */}
-      <div className="bg-white py-16 px-4">
+      <div className="bg-white pb-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Наша миссия</h2>
           <div className="mt-2 h-1 w-16 bg-[#0A5225]" />

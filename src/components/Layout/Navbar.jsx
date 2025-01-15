@@ -1,24 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import logo from "../../assets/logo_white.png";
+
+import rus from "../../assets/images/russia.png";
+import kaz from "../../assets/images/kazakhstan.png";
+import eng from "../../assets/images/united-kingdom.png";
+import chn from "../../assets/images/china.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [language, setLanguage] = useState("Каз");
 
+  // State to track whether to hide only the top bar (phone & email)
+  const [hideTopBar, setHideTopBar] = useState(false);
+
   const languageImages = {
-    Рус: "src/assets/images/russia.png",
-    Каз: "src/assets/images/kazakhstan.png",
-    Eng: "src/assets/images/united-kingdom.png",
-    中文: "src/assets/images/china.png",
+    Рус: rus,
+    Каз: kaz,
+    Eng: chn,
   };
 
+  // Toggle the mobile menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    if (!menuOpen) setLanguageMenuOpen(false);
+    // If we're about to open the mobile menu, close the language dropdown
+    if (!menuOpen) {
+      setLanguageMenuOpen(false);
+    }
   };
 
+  // Language dropdown toggle
   const toggleLanguageMenu = () => {
     setLanguageMenuOpen(!languageMenuOpen);
   };
@@ -28,10 +41,34 @@ const Navbar = () => {
     setLanguageMenuOpen(false);
   };
 
+  // Listen for scroll events to hide ONLY the top bar on scroll down, show on scroll up
+  useEffect(() => {
+    let lastScrollY = window.pageYOffset;
+
+    const handleScroll = () => {
+      const currentScrollY = window.pageYOffset;
+      // If scrolling down, hide top bar. If scrolling up (or near top), show it.
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setHideTopBar(true);
+      } else {
+        setHideTopBar(false);
+      }
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className="fixed w-full z-50 bg-green-600 text-white shadow-md">
-      {/* Top bar */}
-      <div className="bg-green-650">
+      {/* 
+        Top bar (phone & email) only:
+        We apply a transform to slide it out of view when hideTopBar = true.
+      */}
+      <div
+        className={`bg-green-650 transition-transform duration-300`}
+      >
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-center md:justify-end items-center space-x-4 text-sm">
           <a href="tel:+77273528880" className="flex items-center">
             <PhoneIcon className="h-5 w-5 mr-1" />
@@ -44,15 +81,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Navbar */}
-      <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      {/* Main navbar (always visible) */}
+      <nav className="max-w-7xl mx-auto my-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img
-            src="src/assets/logo_white.png"
-            alt="Logo"
-            className="h-10 object-contain"
-          />
+          <img src={logo} alt="Logo" className="h-10 object-contain" />
         </Link>
 
         {/* Desktop Links */}
@@ -72,13 +105,11 @@ const Navbar = () => {
 
           {/* Language Selector (Desktop) */}
           <div
-            className="relative"
+            className="relative inline-block"
+            onMouseEnter={() => setLanguageMenuOpen(true)}
             onMouseLeave={() => setLanguageMenuOpen(false)}
           >
-            <button
-              onClick={toggleLanguageMenu}
-              className="flex items-center space-x-2"
-            >
+            <button onClick={toggleLanguageMenu} className="flex items-center space-x-2">
               <img
                 src={languageImages[language]}
                 alt={language}
@@ -92,19 +123,17 @@ const Navbar = () => {
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
+
+            {/* Dropdown */}
             {languageMenuOpen && (
-              <div className="absolute right-0 mt-2 bg-white text-gray-900 shadow-lg rounded-lg w-40">
+              <div className="absolute right-0 top-full bg-white text-gray-900 shadow-lg rounded-lg w-40 z-50">
                 {Object.keys(languageImages).map((lang) => (
                   <button
                     key={lang}
-                    className="flex items-center px-4 py-2 text-left w-full"
+                    className="flex items-center px-4 py-2 text-left w-full hover:bg-gray-100"
                     onClick={() => changeLanguage(lang)}
                   >
                     <img
@@ -124,6 +153,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-current focus:outline-none">
             {menuOpen ? (
+              // Cross icon
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -131,13 +161,10 @@ const Navbar = () => {
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
+              // Hamburger icon
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -145,20 +172,31 @@ const Navbar = () => {
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
             )}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Overlay */}
         {menuOpen && (
           <div className="fixed top-0 left-0 w-full h-screen bg-green-700 text-white z-40">
-            <div className="pt-16 px-6">
+            {/* Close button in top-right corner */}
+            <div className="flex justify-end p-4">
+              <button onClick={toggleMenu}>
+                <svg
+                  className="h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="pt-8 px-6">
               <ul className="space-y-6 text-lg font-semibold text-center">
                 <li>
                   <Link to="/" onClick={toggleMenu}>
@@ -182,6 +220,7 @@ const Navbar = () => {
                 </li>
               </ul>
 
+              {/* Language selector in mobile menu */}
               <div className="mt-8 text-center">
                 {Object.keys(languageImages).map((lang) => (
                   <button

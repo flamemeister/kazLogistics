@@ -53,14 +53,14 @@ const AviaServices = () => {
     <div>
       {/* Hero Section */}
       <div
-        className="relative bg-cover bg-center text-white h-[50vh]"
+        className="relative bg-cover bg-center text-white h-"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         {/* Logo Integration */}
         <div className="absolute top-4 left-4">
         </div>
-        <div className="relative flex items-center justify-center h-full">
+        <div className="relative flex items-center justify-center text-center h-full">
           <h1 className="text-4xl md:text-5xl font-bold uppercase">Авиаперевозки</h1>
         </div>
       </div>
