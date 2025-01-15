@@ -4,17 +4,20 @@ import Footer from "../Footer/Footer";
 const Contacts = () => {
   return (
     <div>
-      {/* Hero Section */}
-      <div className="relative text-white h-[40vh]" style={{ backgroundColor: "#0A5225" }}>
-  <div className="absolute inset-0 bg-black bg-opacity-10"></div>
-  <div className="relative flex items-center justify-center h-full">
-    <div className="text-center">
-      <h1 className="text-4xl md:text-5xl font-bold">КОНТАКТЫ</h1>
-      <div className="mt-2 h-1 w-16 bg-green-600 mx-auto"></div>
-    </div>
+  {/* Hero Section */}
+  <div
+  className="relative text-black h-[40vh] flex items-end justify-center"
+  style={{
+    backgroundColor: "#FFFFFF", // Установлен чисто белый цвет
+    color: "black", // Для контрастного текста
+  }}
+>
+  <div className="absolute inset-0 bg-white bg-opacity-100"></div> 
+  <div className="relative text-center mb-6" style={{ transform: "translateY(-60px)" }}> 
+    <h1 className="text-4xl md:text-5xl font-bold">КОНТАКТЫ</h1>
+    <div className="mt-2 h-1 w-16 bg-green-600 mx-auto"></div>
   </div>
 </div>
-
 
 
       {/* Contacts Section */}
@@ -41,7 +44,7 @@ const Contacts = () => {
                 Казахстан, город Алматы, Алмалинский район, проспект Сейфуллина, БЦ «Алтын Заман», дом 498, второй этаж, офис 201
               </p>
               <p className="mb-2 text-center md:text-left">Почтовый индекс: 050012</p>
-              <p className="mb-2 text-center md:text-left">+7 (701) 536 78 73</p>
+              <p className="mb-2 text-center md:text-left">+7 (727) 344 00 40</p>
               <p className="mb-4 text-center md:text-left">info@gslog.kz</p>
               <div className="mt-2 h-1 w-16 bg-green-600"></div>
             </div>

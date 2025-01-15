@@ -54,7 +54,9 @@ const AutoServices = () => {
       {/* Hero Section */}
       <div
         className="relative bg-cover bg-center text-white h-[50vh]"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{
+          backgroundImage: `url(${backgroundImage})`
+        }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         <div className="relative flex items-center justify-center h-full">

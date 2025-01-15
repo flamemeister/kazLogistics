@@ -1,27 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 
 const Navbar = () => {
-  const [navScrolled, setNavScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [language, setLanguage] = useState("Каз");
 
   const languageImages = {
-    Каз: "src/assets/images/kazakhstan.png",
     Рус: "src/assets/images/russia.png",
+    Каз: "src/assets/images/kazakhstan.png",
     Eng: "src/assets/images/united-kingdom.png",
     中文: "src/assets/images/china.png",
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setNavScrolled(window.scrollY > 80);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -38,17 +29,9 @@ const Navbar = () => {
   };
 
   return (
-    <header
-      className={`fixed w-full z-50 transition-colors duration-300 ${
-        navScrolled ? "bg-green-600 text-gray-900 shadow-md" : "bg-transparent text-white"
-      }`}
-    >
+    <header className="fixed w-full z-50 bg-green-600 text-white shadow-md">
       {/* Top bar */}
-      <div
-        className={`overflow-hidden transition-all duration-300 ${
-          navScrolled ? "opacity-0 h-0" : "opacity-100 h-auto"
-        }`}
-      >
+      <div className="bg-green-650">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-center md:justify-end items-center space-x-4 text-sm">
           <a href="tel:+77273528880" className="flex items-center">
             <PhoneIcon className="h-5 w-5 mr-1" />
@@ -73,17 +56,17 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex text-white font-semibold items-center space-x-8">
-          <Link to="/" className="transition-colors duration-200">
+        <div className="hidden md:flex font-semibold items-center space-x-8">
+          <Link to="/" className="hover:text-gray-200 transition-colors duration-200">
             Главная
           </Link>
-          <Link to="/services" className="transition-colors duration-200">
+          <Link to="/services" className="hover:text-gray-200 transition-colors duration-200">
             Услуги
           </Link>
-          <Link to="/about" className="transition-colors duration-200">
+          <Link to="/about" className="hover:text-gray-200 transition-colors duration-200">
             О нас
           </Link>
-          <Link to="/contacts" className="transition-colors duration-200">
+          <Link to="/contacts" className="hover:text-gray-200 transition-colors duration-200">
             Контакты
           </Link>
 
@@ -174,40 +157,8 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="fixed top-0 left-0 w-full h-screen bg-green-600 text-white z-40">
-            {/* Close Button in top-right corner */}
-            <div className="absolute top-4 right-4">
-              <button onClick={toggleMenu} className="focus:outline-none">
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            {/* 
-              We do NOT vertically center everything. 
-              Instead, we only center horizontally. 
-            */}
+          <div className="fixed top-0 left-0 w-full h-screen bg-green-700 text-white z-40">
             <div className="pt-16 px-6">
-              {/* Logo near the top, left as-is or slightly spaced */}
-              <div className="mb-6">
-                <img
-                  src="src/assets/logo_white.png"
-                  alt="Logo"
-                  className="h-10"
-                />
-              </div>
-
               <ul className="space-y-6 text-lg font-semibold text-center">
                 <li>
                   <Link to="/" onClick={toggleMenu}>

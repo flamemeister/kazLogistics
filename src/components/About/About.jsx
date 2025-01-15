@@ -8,15 +8,17 @@ import {
 
 const AboutUs = () => {
   return (
-    <div>
-      {/* Hero Section */}
-      <div className="relative text-white h-[40vh] flex items-center justify-center" style={{ backgroundColor: "#0A5225" }}>
-        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
-        <div className="relative text-center px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">О НАС</h1>
-          <div className="mt-2 h-1 w-16 bg-[#0A5225] mx-auto" />
-        </div>
-      </div>
+<div>
+  {/* Отступ сверху для размещения Hero Section ниже */}
+  <div className="pt-32"></div> {/* Увеличено значение отступа */}
+
+  {/* Hero Section */}
+  <div className="bg-white text-black py-16 px-4 flex items-center justify-center">
+    <div className="text-center">
+      <h1 className="text-5xl md:text-6xl font-bold mb-4">О НАС</h1>
+      <div className="mt-2 h-1 w-16 bg-[#0A5225] mx-auto" />
+    </div>
+  </div>
 
       {/* Mission Section */}
       <div className="bg-white py-16 px-4">
