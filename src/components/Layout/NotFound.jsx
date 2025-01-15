@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import backgroundImage from "../../assets/images/Multimodal.jpg";
 
 const fadeInAnimations = `
 @keyframes fadeIn {
@@ -25,25 +24,18 @@ const NotFound = () => {
       <style>{fadeInAnimations}</style>
 
       {/* ===== HERO SECTION ===== */}
-      <div
-        className="relative bg-cover bg-center text-white h-[50vh]"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-70" />
+      <div className="relative bg-white text-black h-[50vh] flex items-center justify-center">
         {/* Hero content */}
-        <div className="relative flex items-center justify-center h-full">
-          <div
-            className="text-center px-4"
-            style={{
-              animation: "fadeIn 0.8s ease-out forwards",
-            }}
-          >
-            <h1 className="text-5xl md:text-6xl font-extrabold uppercase tracking-wider">
-              404
-            </h1>
-            <div className="mt-2 h-1 w-16 bg-green-600 mx-auto"></div>
-          </div>
+        <div
+          className="text-center px-4"
+          style={{
+            animation: "fadeIn 0.8s ease-out forwards",
+          }}
+        >
+          <h1 className="text-5xl md:text-6xl font-extrabold uppercase tracking-wider">
+            404
+          </h1>
+          <div className="mt-2 h-1 w-16 bg-green-600 mx-auto"></div>
         </div>
       </div>
 

@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
+import bgImage from "../../assets/logo_white.png";
 
 /**
- * Loader that fills the word "KazLogistics" from left (0%) to right (100%)
+ * Loader that fills a PNG icon from left (0%) to right (100%)
  * over ~0.5 seconds, then fades out.
- *
- * We ensure the "g" descender is shown by:
- *   1) Using a comfortable line-height.
- *   2) Expanding clip-path on bottom (and top) so the glyph isn't cut.
  */
 const Loader = ({ onComplete }) => {
-  const [progress, setProgress] = useState(0);  // from 0..100
+  const [progress, setProgress] = useState(0); 
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // 0.5s total => 50 increments (each +2%) * 10ms
     let current = 0;
     const interval = setInterval(() => {
       current += 2;
@@ -22,10 +18,8 @@ const Loader = ({ onComplete }) => {
 
       if (current === 100) {
         clearInterval(interval);
-        // Brief pause at 100% before fade-out
         setTimeout(() => {
           setFadeOut(true);
-          // After fade-out finishes, call onComplete
           setTimeout(() => {
             onComplete && onComplete();
           }, 300);
@@ -44,27 +38,31 @@ const Loader = ({ onComplete }) => {
         ${fadeOut ? "opacity-0" : "opacity-100"}
       `}
     >
-      <div className="text-center">
-        {/* Use comfortable line-height to accommodate descenders */}
-        <div className="relative inline-block leading-[1.15]">
-          {/* Gray text behind */}
-          <span className="text-3xl md:text-5xl font-extrabold text-gray-300 block">
-            Great Steppe Logistics
-          </span>
-
-          {/* Green text on top, clipped from right => left
-              We expand top/bottom by ~0.15em so descenders won't be cut off */}
-          <span
-            className="absolute inset-0 text-3xl md:text-5xl font-extrabold text-green-600 block"
-            style={{
-              whiteSpace: "nowrap",
-              clipPath: `inset(-0.15em ${100 - progress}% -0.15em 0)`,
-              // top = -0.15em, right = (100 - progress)%, bottom = -0.15em, left = 0
-            }}
-          >
-            Great Steppe Logistics
-          </span>
-        </div>
+      <div className="relative w-48 h-48">
+        {/* PNG Icon background */}
+        <img
+          src={bgImage}
+          alt="Loader Icon"
+          className="absolute inset-0 w-full h-full"
+          style={{
+            filter: "grayscale(100%)", 
+          }}
+        />
+        {/* Green fill overlay */}
+        <div
+          className="absolute inset-0 bg-green-600"
+          style={{
+            maskImage: `url(${bgImage})`,
+            WebkitMaskImage: `url(${bgImage})`,
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskPosition: "center",
+            WebkitMaskPosition: "center",
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            clipPath: `inset(0 ${100 - progress}% 0 0)`, 
+          }}
+        ></div>
       </div>
     </div>
   );

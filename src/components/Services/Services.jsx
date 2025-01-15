@@ -20,7 +20,7 @@ const Services = () => {
     { id: 4, image: card4, link: "/services/container" },
     { id: 5, image: card5, link: "/services/multimodal" },
     { id: 6, image: card6, link: "/services/nonhabaryte" },
-    { id: 7, image: card7, link: "/services/projective" },
+    { id: 7, image: card7, link: "/services/projectiveы" },
     { id: 8, image: card8, link: "/" },
   ];
 
