@@ -11,7 +11,7 @@ import chn from "../../assets/images/china.png";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
-  const [language, setLanguage] = useState("Каз");
+  const [language, setLanguage] = useState("Рус");
 
   // State to track whether to hide only the top bar (phone & email)
   const [hideTopBar, setHideTopBar] = useState(false);
@@ -19,7 +19,8 @@ const Navbar = () => {
   const languageImages = {
     Рус: rus,
     Каз: kaz,
-    Eng: chn,
+    Eng: eng,
+    中文: chn,
   };
 
   // Toggle the mobile menu
