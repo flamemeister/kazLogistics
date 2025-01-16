@@ -29,3 +29,7 @@ db.sqlite3
 
 # Server-specific directories
 server/venv/
+
+dist
+certbot
+nginx

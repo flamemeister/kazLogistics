@@ -1,6 +1,7 @@
-version: '3.9'
+version: '3'
 
 services:
+  # React frontend
   react-app:
     build:
       context: .
@@ -11,7 +12,11 @@ services:
       - .:/client
     stdin_open: true
     tty: true
+    networks:
+      - app-network
+    container_name: react-app-container
 
+  # Django backend
   django-app:
     build:
       context: .
@@ -24,6 +29,39 @@ services:
       - DJANGO_SETTINGS_MODULE=core.settings
     stdin_open: true
     tty: true
+    networks:
+      - app-network
+    container_name: django-app-container
 
+  # Nginx for handling HTTP and HTTPS
+  webserver:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/www:/var/www/certbot/:rosudo certbot certonly --standalone -d gslog.kz -d www.gslog.kz
 
+      - ./certbot/conf:/etc/nginx/ssl:ro
+    depends_on:
+      - react-app
+      - django-app
+    networks:
+      - app-network
+    container_name: nginx-container
 
+  # Certbot for generating SSL certificates
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www:/var/www/certbot/:rw
+      - ./certbot/conf:/etc/letsencrypt/:rw
+    networks:
+      - app-network
+    container_name: certbot-container
+
+networks:
+  app-network:
+    driver: bridge
