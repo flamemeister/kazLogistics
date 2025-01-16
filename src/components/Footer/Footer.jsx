@@ -99,25 +99,23 @@ const Footer = () => {
         Desktop Footer (unchanged)
         =========================
       */}
-      <footer className="bg-[#0A5225] text-gray-100 pt-6 pb-3">
+      <footer className="bg-[#0A5225] text-gray-100 py-2">
         <div className="max-w-7xl mx-auto px-4">
           {/* Top row with logo and company info */}
-          <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between mb-6">
-            {/* Logo and centered slogan */}
-            <div className="flex flex-col items-center mb-4 md:mb-0">
-              <img
-                src={logo}
-                alt="Great Steppe Logistics"
-                className="h-12"
-              />
-              <p className="text-gray-300 text-sm leading-relaxed mt-2 text-center">
-                Delivering your value
-              </p>
-            </div>
+          <div className="flex flex-col items-center mb-2">
+            {/* Centered logo and slogan */}
+            <img
+              src={logo}
+              alt="Great Steppe Logistics"
+              className="h-8 mb-1"
+            />
+            <p className="text-gray-300 text-xs text-center">
+              Delivering your value
+            </p>
           </div>
 
           {/* Social Icons for Desktop */}
-          <div className="hidden md:flex justify-center items-center space-x-6 mt-4 mb-4">
+          <div className="hidden md:flex justify-center items-center space-x-4 mb-2">
             <a
               href="https://wa.me/77771544455"
               target="_blank"
@@ -125,14 +123,14 @@ const Footer = () => {
               aria-label="WhatsApp"
               className="hover:scale-110 transition-transform"
             >
-              <FaWhatsapp className="h-8 w-8 text-white hover:text-gray-300" />
+              <FaWhatsapp className="h-6 w-6 text-white hover:text-gray-300" />
             </a>
             <a
               href="tel:+77015367873"
               aria-label="Phone"
               className="hover:scale-110 transition-transform"
             >
-              <PhoneIcon className="h-8 w-8 text-white hover:text-gray-300" />
+              <PhoneIcon className="h-6 w-6 text-white hover:text-gray-300" />
             </a>
             <a
               href="https://www.linkedin.com"
@@ -141,16 +139,17 @@ const Footer = () => {
               aria-label="LinkedIn"
               className="hover:scale-110 transition-transform"
             >
-              <FaLinkedin className="h-8 w-8 text-white hover:text-gray-300" />
+              <FaLinkedin className="h-6 w-6 text-white hover:text-gray-300" />
             </a>
           </div>
 
           {/* Copyright */}
-          <div className="border-t border-gray-600 pt-3 text-center text-sm text-gray-300">
+          <div className="border-t border-gray-600 pt-2 text-center text-xs text-gray-300">
             © All Rights Reserved. Great Steppe Logistics
           </div>
         </div>
       </footer>
+
     </>
   );
 };

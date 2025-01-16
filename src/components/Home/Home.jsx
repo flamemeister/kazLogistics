@@ -174,30 +174,31 @@ const Home = () => {
       )}
 
 <section
-      className="relative bg-cover bg-center bg-no-repeat flex items-center justify-center"
-      style={{ backgroundImage: `url(${bgImage})`, height: "100vh" }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+  className="relative bg-cover bg-center bg-no-repeat flex items-center"
+  style={{ backgroundImage: `url(${bgImage})`, height: "100vh" }}
+>
+  {/* Полупрозрачный фон */}
+  <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-      <div
-        className={`
-          relative
-          z-10
-          max-w-3xl
-          px-4
-          fade-in-up
-          ${isMobile ? "text-center" : "text-left"}
-        `}
-        style={{
-          marginLeft: isMobile ? "0" : "-50%",
-        }}
-      >
-        <p className="text-gray-200 font-bold text-xl md:text-2xl mt-4 md:mt-2 mb-8">
-          Наша миссия - создание ценностей в наших продуктах для наших
-          партнеров за счет качественного сервиса
-        </p>
-      </div>
-    </section>
+  {/* Контейнер для текста */}
+  <div
+    className={`
+      relative
+      z-10
+      px-4
+      fade-in-up
+    `}
+    style={{
+      maxWidth: isMobile ? "90%" : "40%", // Уменьшаем ширину текста на компьютерах
+      marginLeft: isMobile ? "5%" : "10%", // Отступ слева
+      textAlign: isMobile ? "center" : "left", // Центрирование текста на мобильных
+    }}
+  >
+    <p className="text-gray-200 font-bold text-lg sm:text-xl md:text-2xl mt-4 md:mt-2 mb-8">
+      Наша миссия - создание ценностей в наших продуктах для наших партнеров за счет качественного сервиса
+    </p>
+  </div>
+</section>
 
       <section
         id="consultation-form"

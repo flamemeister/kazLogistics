@@ -85,7 +85,7 @@ const Navbar = () => {
       {/* Main navbar (always visible) */}
       <nav className="max-w-7xl mx-auto my-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex-shrink-0">
+        <Link to="/" className="flex-shrink-0 flex items-center">
           <img src={logo} alt="Logo" className="h-10 object-contain" />
         </Link>
 
