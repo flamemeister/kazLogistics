@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import card1 from "../../assets/images/auto_card.jpeg";
@@ -12,6 +12,11 @@ import card8 from "../../assets/images/go_back.png";
 
 const Services = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll to top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   const services = [
     { id: 1, image: card1, link: "/services/auto" },
@@ -33,7 +38,6 @@ const Services = () => {
           <div className="mt-2 h-1 w-16 bg-[#0A5225] mx-auto" />
         </div>
       </div>
-
       {/* Services Section */}
       <div className="bg-white pb-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
@@ -67,7 +71,6 @@ const Services = () => {
           </div>
         </div>
       </div>
-
       {/* Additional Text Section */}
       <div className="bg-gray-100 py-16">
         <div className="max-w-4xl mx-auto px-4 text-gray-800">
@@ -121,7 +124,6 @@ const Services = () => {
           </p>
         </div>
       </div>
-
       <Footer />
     </div>
   );

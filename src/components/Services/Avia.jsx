@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import backgroundImage from "../../assets/images/avia_transfer.jpg";
@@ -20,6 +20,11 @@ import {
 
 const AviaServices = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll to top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   const services = [
     {
@@ -55,7 +60,7 @@ const AviaServices = () => {
       <div
         className="relative bg-cover bg-center text-white h-screen"
         style={{
-          backgroundImage: `url(${backgroundImage})`
+          backgroundImage: `url(${backgroundImage})`,
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
@@ -116,7 +121,9 @@ const AviaServices = () => {
       {/* Advantages Section */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-center">Преимущества авиаперевозок</h2>
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            Преимущества авиаперевозок
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Advantage 1 */}
             <div className="flex items-start">
@@ -127,9 +134,13 @@ const AviaServices = () => {
                 <FaRocket size={28} aria-label="Быстрая доставка" />
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-bold text-gray-800">Быстрая доставка</h3>
+                <h3 className="text-lg font-bold text-gray-800">
+                  Быстрая доставка
+                </h3>
                 <p className="text-gray-700">
-                  Авиаперевозки являются наиболее быстрым способом доставки грузов на большие расстояния. Грузы могут быть доставлены за считанные часы или дни.
+                  Авиаперевозки являются наиболее быстрым способом доставки
+                  грузов на большие расстояния. Грузы могут быть доставлены за
+                  считанные часы или дни.
                 </p>
               </div>
             </div>
@@ -142,9 +153,12 @@ const AviaServices = () => {
                 <FaShieldAlt size={28} aria-label="Безопасность и надежность" />
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-bold text-gray-800">Безопасность и надежность</h3>
+                <h3 className="text-lg font-bold text-gray-800">
+                  Безопасность и надежность
+                </h3>
                 <p className="text-gray-700">
-                  Аэропорты и авиалинии строго контролируются, что снижает риск потери или повреждения груза.
+                  Аэропорты и авиалинии строго контролируются, что снижает риск
+                  потери или повреждения груза.
                 </p>
               </div>
             </div>
@@ -157,9 +171,12 @@ const AviaServices = () => {
                 <FaCalendarCheck size={28} aria-label="Гибкость графика" />
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-bold text-gray-800">Гибкость графика</h3>
+                <h3 className="text-lg font-bold text-gray-800">
+                  Гибкость графика
+                </h3>
                 <p className="text-gray-700">
-                  Воздушные грузовые рейсы предлагают регулярное расписание с высокой частотой полетов.
+                  Воздушные грузовые рейсы предлагают регулярное расписание с
+                  высокой частотой полетов.
                 </p>
               </div>
             </div>
@@ -172,9 +189,12 @@ const AviaServices = () => {
                 <FaGlobe size={28} aria-label="Широкая география перевозок" />
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-bold text-gray-800">Широкая география перевозок</h3>
+                <h3 className="text-lg font-bold text-gray-800">
+                  Широкая география перевозок
+                </h3>
                 <p className="text-gray-700">
-                  Авиалинии предлагают широкий охват маршрутов, охватывающий практически весь мир.
+                  Авиалинии предлагают широкий охват маршрутов, охватывающий
+                  практически весь мир.
                 </p>
               </div>
             </div>
@@ -184,12 +204,18 @@ const AviaServices = () => {
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaBoxes size={28} aria-label="Эффективность использования пространства" />
+                <FaBoxes
+                  size={28}
+                  aria-label="Эффективность использования пространства"
+                />
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-bold text-gray-800">Эффективность использования пространства</h3>
+                <h3 className="text-lg font-bold text-gray-800">
+                  Эффективность использования пространства
+                </h3>
                 <p className="text-gray-700">
-                  Воздушные грузовые суда обычно имеют большую грузоподъемность и позволяют организовать пространство более эффективно.
+                  Воздушные грузовые суда обычно имеют большую грузоподъемность
+                  и позволяют организовать пространство более эффективно.
                 </p>
               </div>
             </div>
@@ -202,9 +228,12 @@ const AviaServices = () => {
                 <FaExchangeAlt size={28} aria-label="Межмодальные перевозки" />
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-bold text-gray-800">Межмодальные перевозки</h3>
+                <h3 className="text-lg font-bold text-gray-800">
+                  Межмодальные перевозки
+                </h3>
                 <p className="text-gray-700">
-                  Авиаперевозки хорошо сочетаются с другими видами транспорта, такими как автоперевозки и железнодорожные перевозки.
+                  Авиаперевозки хорошо сочетаются с другими видами транспорта,
+                  такими как автоперевозки и железнодорожные перевозки.
                 </p>
               </div>
             </div>
@@ -217,7 +246,9 @@ const AviaServices = () => {
       {/* Stages Section */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-center">Этапы перевозки</h2>
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            Этапы перевозки
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Step 1 */}
             <div className="flex items-center">
@@ -225,7 +256,11 @@ const AviaServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaClipboardList size={28} className="text-white" aria-label="Получение заявки" />
+                <FaClipboardList
+                  size={28}
+                  className="text-white"
+                  aria-label="Получение заявки"
+                />
               </div>
               <p className="ml-4 text-gray-700">Получение заявки</p>
             </div>
@@ -235,9 +270,15 @@ const AviaServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaRoute size={28} className="text-white" aria-label="Разработка оптимального маршрута" />
+                <FaRoute
+                  size={28}
+                  className="text-white"
+                  aria-label="Разработка оптимального маршрута"
+                />
               </div>
-              <p className="ml-4 text-gray-700">Разработка оптимального маршрута</p>
+              <p className="ml-4 text-gray-700">
+                Разработка оптимального маршрута
+              </p>
             </div>
             {/* Step 3 */}
             <div className="flex items-center">
@@ -245,7 +286,11 @@ const AviaServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaCalculator size={28} className="text-white" aria-label="Расчет ставки" />
+                <FaCalculator
+                  size={28}
+                  className="text-white"
+                  aria-label="Расчет ставки"
+                />
               </div>
               <p className="ml-4 text-gray-700">Расчет ставки</p>
             </div>
@@ -255,9 +300,15 @@ const AviaServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaFileAlt size={28} className="text-white" aria-label="Оформление необходимых документов" />
+                <FaFileAlt
+                  size={28}
+                  className="text-white"
+                  aria-label="Оформление необходимых документов"
+                />
               </div>
-              <p className="ml-4 text-gray-700">Оформление необходимых документов</p>
+              <p className="ml-4 text-gray-700">
+                Оформление необходимых документов
+              </p>
             </div>
             {/* Step 5 */}
             <div className="flex items-center">
@@ -265,9 +316,15 @@ const AviaServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaTruckMoving size={28} className="text-white" aria-label="Доставка груза до места назначения" />
+                <FaTruckMoving
+                  size={28}
+                  className="text-white"
+                  aria-label="Доставка груза до места назначения"
+                />
               </div>
-              <p className="ml-4 text-gray-700">Доставка груза до места назначения</p>
+              <p className="ml-4 text-gray-700">
+                Доставка груза до места назначения
+              </p>
             </div>
             {/* Step 6 */}
             <div className="flex items-center">
@@ -275,9 +332,15 @@ const AviaServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaSatelliteDish size={28} className="text-white" aria-label="Отслеживание местонахождения груза" />
+                <FaSatelliteDish
+                  size={28}
+                  className="text-white"
+                  aria-label="Отслеживание местонахождения груза"
+                />
               </div>
-              <p className="ml-4 text-gray-700">Отслеживание местонахождения груза</p>
+              <p className="ml-4 text-gray-700">
+                Отслеживание местонахождения груза
+              </p>
             </div>
           </div>
         </div>
@@ -288,27 +351,57 @@ const AviaServices = () => {
       {/* Text Section */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8">Авиаперевозки грузов – быстро и безопасно</h2>
+          <h2 className="text-2xl font-bold mb-8">
+            Авиаперевозки грузов – быстро и безопасно
+          </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Грузовые авиаперевозки — это перевозки грузов с помощью авиаперевозчика. Авиасэкспедитор — это компания, которая занимается организацией авиаперевозок, согласованием тарифов и действует от имени заказчика, согласовывая с перевозчиком все детали перевозки. В Nur Zhol Company мы работаем с лучшими перевозчиками.
+            Грузовые авиаперевозки — это перевозки грузов с помощью
+            авиаперевозчика. Авиасэкспедитор — это компания, которая занимается
+            организацией авиаперевозок, согласованием тарифов и действует от
+            имени заказчика, согласовывая с перевозчиком все детали перевозки. В
+            Nur Zhol Company мы работаем с лучшими перевозчиками.
           </p>
-          <h3 className="text-xl font-bold mt-6">Преимущества воздушного транспорта:</h3>
+          <h3 className="text-xl font-bold mt-6">
+            Преимущества воздушного транспорта:
+          </h3>
           <ul className="list-disc list-inside text-gray-700 mt-4 space-y-2">
             <li>Самая быстрая служба доставки</li>
             <li>Высокая предсказуемость сроков доставки</li>
-            <li>Безопасная перевозка благодаря строгим мерам безопасности в аэропортах</li>
-            <li>Ускоренное таможенное оформление за счет быстрой выгрузки авиагруза</li>
-            <li>Товары могут быть доставлены воздушным транспортом практически в любой пункт назначения</li>
+            <li>
+              Безопасная перевозка благодаря строгим мерам безопасности в
+              аэропортах
+            </li>
+            <li>
+              Ускоренное таможенное оформление за счет быстрой выгрузки
+              авиагруза
+            </li>
+            <li>
+              Товары могут быть доставлены воздушным транспортом практически в
+              любой пункт назначения
+            </li>
           </ul>
-          <h3 className="text-xl font-bold mt-6">Особенности отправления грузов воздушным транспортом:</h3>
+          <h3 className="text-xl font-bold mt-6">
+            Особенности отправления грузов воздушным транспортом:
+          </h3>
           <ul className="list-disc list-inside text-gray-700 mt-4 space-y-2">
             <li>Стоимость авиаперевозок выше, чем другие перевозки</li>
             <li>Нерентабельно для перевозки легких и недорогих грузов</li>
-            <li>Есть некоторые ограниченные продукты, которые нельзя перевозить по воздуху, но можно перевозить автомобильным или морским транспортом</li>
+            <li>
+              Есть некоторые ограниченные продукты, которые нельзя перевозить по
+              воздуху, но можно перевозить автомобильным или морским транспортом
+            </li>
           </ul>
-          <h3 className="text-xl font-bold mt-6">Почему авиаперевозки являются самым дорогим видом грузоперевозок?</h3>
+          <h3 className="text-xl font-bold mt-6">
+            Почему авиаперевозки являются самым дорогим видом грузоперевозок?
+          </h3>
           <p className="text-gray-700 leading-relaxed mt-4">
-            Стоимость авиаперевозки зависит не только от маршрута и габаритов отправления, но и от стоимости топлива и обслуживания самолета. Таким образом, ставки на международные авиаперевозки выше, чем, например, на железнодорожные перевозки. Тем не менее, даже при более высоких затратах авиаперевозки по-прежнему наиболее рекомендуются для перевозки дорогостоящих товаров, срочных грузов или документов, поскольку это один из самых безопасных видов транспорта.
+            Стоимость авиаперевозки зависит не только от маршрута и габаритов
+            отправления, но и от стоимости топлива и обслуживания самолета.
+            Таким образом, ставки на международные авиаперевозки выше, чем,
+            например, на железнодорожные перевозки. Тем не менее, даже при более
+            высоких затратах авиаперевозки по-прежнему наиболее рекомендуются
+            для перевозки дорогостоящих товаров, срочных грузов или документов,
+            поскольку это один из самых безопасных видов транспорта.
           </p>
         </div>
       </div>

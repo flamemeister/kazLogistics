@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import backgroundImage from "../../assets/images/Container shipments.jpg";
@@ -20,6 +20,11 @@ import {
 
 const ContainerServices = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll to top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   const services = [
     {
@@ -130,7 +135,10 @@ const ContainerServices = () => {
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaShieldAlt size={28} aria-label="Защита и безопасность груза" />
+                <FaShieldAlt
+                  size={28}
+                  aria-label="Защита и безопасность груза"
+                />
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-bold text-gray-800">
@@ -150,7 +158,10 @@ const ContainerServices = () => {
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaBoxes size={28} aria-label="Стандартизация и универсальность" />
+                <FaBoxes
+                  size={28}
+                  aria-label="Стандартизация и универсальность"
+                />
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-bold text-gray-800">
@@ -179,8 +190,8 @@ const ContainerServices = () => {
                 </h3>
                 <p className="text-gray-700">
                   Контейнерные перевозки позволяют оптимизировать затраты на
-                  транспортировку за счет стандартизации и возможности использования
-                  различных видов транспорта.
+                  транспортировку за счет стандартизации и возможности
+                  использования различных видов транспорта.
                 </p>
               </div>
             </div>
@@ -190,7 +201,10 @@ const ContainerServices = () => {
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaClipboardCheck size={28} aria-label="Удобство погрузки и разгрузки" />
+                <FaClipboardCheck
+                  size={28}
+                  aria-label="Удобство погрузки и разгрузки"
+                />
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-bold text-gray-800">
@@ -230,7 +244,10 @@ const ContainerServices = () => {
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaSatelliteDish size={28} aria-label="Отслеживание и управление" />
+                <FaSatelliteDish
+                  size={28}
+                  aria-label="Отслеживание и управление"
+                />
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-bold text-gray-800">
@@ -262,7 +279,11 @@ const ContainerServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaInbox size={28} className="text-white" aria-label="Получение заявки" />
+                <FaInbox
+                  size={28}
+                  className="text-white"
+                  aria-label="Получение заявки"
+                />
               </div>
               <p className="ml-4 text-gray-700">Получение заявки</p>
             </div>
@@ -272,7 +293,11 @@ const ContainerServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaRoute size={28} className="text-white" aria-label="Разработка оптимального маршрута" />
+                <FaRoute
+                  size={28}
+                  className="text-white"
+                  aria-label="Разработка оптимального маршрута"
+                />
               </div>
               <p className="ml-4 text-gray-700">
                 Разработка оптимального маршрута
@@ -284,7 +309,11 @@ const ContainerServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaCalculator size={28} className="text-white" aria-label="Расчет ставки" />
+                <FaCalculator
+                  size={28}
+                  className="text-white"
+                  aria-label="Расчет ставки"
+                />
               </div>
               <p className="ml-4 text-gray-700">Расчет ставки</p>
             </div>
@@ -294,7 +323,11 @@ const ContainerServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaFileAlt size={28} className="text-white" aria-label="Оформление необходимых документов" />
+                <FaFileAlt
+                  size={28}
+                  className="text-white"
+                  aria-label="Оформление необходимых документов"
+                />
               </div>
               <p className="ml-4 text-gray-700">
                 Оформление необходимых документов
@@ -306,7 +339,11 @@ const ContainerServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaTruckMoving size={28} className="text-white" aria-label="Доставка груза до места назначения" />
+                <FaTruckMoving
+                  size={28}
+                  className="text-white"
+                  aria-label="Доставка груза до места назначения"
+                />
               </div>
               <p className="ml-4 text-gray-700">
                 Доставка груза до места назначения
@@ -318,7 +355,11 @@ const ContainerServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaSatelliteDish size={28} className="text-white" aria-label="Отслеживание местонахождения груза" />
+                <FaSatelliteDish
+                  size={28}
+                  className="text-white"
+                  aria-label="Отслеживание местонахождения груза"
+                />
               </div>
               <p className="ml-4 text-gray-700">
                 Отслеживание местонахождения груза
@@ -330,7 +371,11 @@ const ContainerServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaHandshake size={28} className="text-white" aria-label="Выдача груза получателю" />
+                <FaHandshake
+                  size={28}
+                  className="text-white"
+                  aria-label="Выдача груза получателю"
+                />
               </div>
               <p className="ml-4 text-gray-700">Выдача груза получателю</p>
             </div>
@@ -340,7 +385,11 @@ const ContainerServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaFileInvoice size={28} className="text-white" aria-label="Получение закрывающих документов" />
+                <FaFileInvoice
+                  size={28}
+                  className="text-white"
+                  aria-label="Получение закрывающих документов"
+                />
               </div>
               <p className="ml-4 text-gray-700">
                 Получение закрывающих документов
@@ -373,34 +422,41 @@ const ContainerServices = () => {
                 грузов:
               </h2>
               <p className="text-gray-700 leading-relaxed mb-3">
-                <strong>1) Безопасность груза:</strong> Грузы в контейнере защищены от внешних
-                воздействий и механических повреждений. Это особенно важно для
-                транспортировки хрупких или деликатных товаров.
-                <br /><br />
-                <strong>2) Универсальность:</strong> Контейнеры могут использоваться для перевозки
-                самых разных видов грузов, начиная от сыпучих и заканчивая
-                температурно-чувствительными. Существуют специальные контейнеры,
-                оборудованные системами поддержания нужного температурного
-                режима, или такие, которые предназначены для перевозки опасных
-                грузов.
-                <br /><br />
-                <strong>3) Модульность и удобство погрузки/разгрузки:</strong> Благодаря
-                стандартизированным размерам контейнеров, они легко стыкуются и
-                укладываются на складе или на транспортных средствах. Это
-                упрощает процесс погрузки и разгрузки, сокращая затраты на эти
-                операции.
-                <br /><br />
-                <strong>4) Мультимодальность перевозок:</strong> Контейнеры легко
-                перевозятся любым видом транспорта (автомобиль, железнодорожный,
-                морской, воздушный), что позволяет использовать разные виды
-                транспорта в одной цепочке доставки для оптимизации маршрута и
-                снижения затрат.
-                <br /><br />
-                Компания «NurZhol Company» — это логистическая
-                компания, специализирующаяся на организации грузоперевозок по
-                СНГ, Ближнему Востоку и Европе. За годы работы мы накопили
-                огромный опыт, позволяющий нам обеспечить наивысшее качество
-                услуг и удовлетворить потребности самых требовательных клиентов.
+                <strong>1) Безопасность груза:</strong> Грузы в контейнере
+                защищены от внешних воздействий и механических повреждений. Это
+                особенно важно для транспортировки хрупких или деликатных
+                товаров.
+                <br />
+                <br />
+                <strong>2) Универсальность:</strong> Контейнеры могут
+                использоваться для перевозки самых разных видов грузов, начиная
+                от сыпучих и заканчивая температурно-чувствительными. Существуют
+                специальные контейнеры, оборудованные системами поддержания
+                нужного температурного режима, или такие, которые предназначены
+                для перевозки опасных грузов.
+                <br />
+                <br />
+                <strong>
+                  3) Модульность и удобство погрузки/разгрузки:
+                </strong>{" "}
+                Благодаря стандартизированным размерам контейнеров, они легко
+                стыкуются и укладываются на складе или на транспортных
+                средствах. Это упрощает процесс погрузки и разгрузки, сокращая
+                затраты на эти операции.
+                <br />
+                <br />
+                <strong>4) Мультимодальность перевозок:</strong> Контейнеры
+                легко перевозятся любым видом транспорта (автомобиль,
+                железнодорожный, морской, воздушный), что позволяет использовать
+                разные виды транспорта в одной цепочке доставки для оптимизации
+                маршрута и снижения затрат.
+                <br />
+                <br />
+                Компания «NurZhol Company» — это логистическая компания,
+                специализирующаяся на организации грузоперевозок по СНГ,
+                Ближнему Востоку и Европе. За годы работы мы накопили огромный
+                опыт, позволяющий нам обеспечить наивысшее качество услуг и
+                удовлетворить потребности самых требовательных клиентов.
               </p>
             </div>
             <div className="w-1/3 ml-3">

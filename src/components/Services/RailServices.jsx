@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import backgroundImage from "../../assets/images/train_transfer.jpg";
@@ -19,6 +19,11 @@ import {
 
 const RailServices = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll to top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   const services = [
     {

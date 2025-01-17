@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+
 import logo from "../../assets/logo_white.png";
 
 import rus from "../../assets/images/russia.png";
 import kaz from "../../assets/images/kazakhstan.png";
 import eng from "../../assets/images/united-kingdom.png";
 import chn from "../../assets/images/china.png";
+import kz_flag from "../../assets/images/kz_flag.png";
+import ru_flag from "../../assets/images/ru_flag.png";
+import eng_flag from "../../assets/images/eng_flag.png";
+import ch_flag from "../../assets/images/ch_flag.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,10 +23,10 @@ const Navbar = () => {
   const [hideTopBar, setHideTopBar] = useState(false);
 
   const languageImages = {
-    Рус: rus,
-    Каз: kaz,
-    Eng: eng,
-    中文: chn,
+    Рус: ru_flag,
+    Каз: kz_flag,
+    Eng: eng_flag,
+    中文: ch_flag,
   };
 
   // Toggle the mobile menu
@@ -67,9 +73,7 @@ const Navbar = () => {
         Top bar (phone & email) only:
         We apply a transform to slide it out of view when hideTopBar = true.
       */}
-      <div
-        className={`bg-green-650 transition-transform duration-300`}
-      >
+      <div className={`bg-green-650 transition-transform duration-300`}>
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-center md:justify-end items-center space-x-4 text-sm">
           <a href="tel:+77273528880" className="flex items-center">
             <PhoneIcon className="h-5 w-5 mr-1" />
@@ -91,16 +95,28 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex font-semibold items-center space-x-8">
-          <Link to="/" className="hover:text-gray-200 transition-colors duration-200">
+          <Link
+            to="/"
+            className="hover:text-gray-200 transition-colors duration-200"
+          >
             Главная
           </Link>
-          <Link to="/services" className="hover:text-gray-200 transition-colors duration-200">
+          <Link
+            to="/services"
+            className="hover:text-gray-200 transition-colors duration-200"
+          >
             Услуги
           </Link>
-          <Link to="/about" className="hover:text-gray-200 transition-colors duration-200">
+          <Link
+            to="/about"
+            className="hover:text-gray-200 transition-colors duration-200"
+          >
             О нас
           </Link>
-          <Link to="/contacts" className="hover:text-gray-200 transition-colors duration-200">
+          <Link
+            to="/contacts"
+            className="hover:text-gray-200 transition-colors duration-200"
+          >
             Контакты
           </Link>
 
@@ -110,7 +126,10 @@ const Navbar = () => {
             onMouseEnter={() => setLanguageMenuOpen(true)}
             onMouseLeave={() => setLanguageMenuOpen(false)}
           >
-            <button onClick={toggleLanguageMenu} className="flex items-center space-x-2">
+            <button
+              onClick={toggleLanguageMenu}
+              className="flex items-center space-x-2"
+            >
               <img
                 src={languageImages[language]}
                 alt={language}
@@ -124,7 +143,11 @@ const Navbar = () => {
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </button>
 
@@ -152,29 +175,14 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-current focus:outline-none">
+          <button
+            onClick={toggleMenu}
+            className="text-current focus:outline-none"
+          >
             {menuOpen ? (
-              // Cross icon
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <XMarkIcon className="h-6 w-6" />
             ) : (
-              // Hamburger icon
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
+              <Bars3Icon className="h-6 w-6" />
             )}
           </button>
         </div>
@@ -192,7 +200,11 @@ const Navbar = () => {
                   strokeWidth="2"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>

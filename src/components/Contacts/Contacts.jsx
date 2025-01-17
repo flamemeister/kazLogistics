@@ -39,14 +39,15 @@ const Contacts = () => {
 
             {/* Contact Details */}
             <div className="text-gray-800 flex flex-col items-center md:items-start md:pl-8">
-              <h2 className="text-2xl font-bold mb-4">КОНТАКТЫ</h2>
+              {/* <h2 className="text-2xl font-bold mb-4">КОНТАКТЫ</h2> */}
+              {/* <div className="mb-5 mx-auto h-1 w-1/2 bg-green-600"></div> */}
               <p className="mb-2 text-center md:text-left">
                 Казахстан, город Алматы, Алмалинский район, проспект Сейфуллина, БЦ «Алтын Заман», дом 498, второй этаж, офис 201
               </p>
               <p className="mb-2 text-center md:text-left">Почтовый индекс: 050012</p>
               <p className="mb-2 text-center md:text-left">+7 (727) 344 00 40</p>
               <p className="mb-4 text-center md:text-left">info@gslog.kz</p>
-              <div className="mt-2 h-1 w-16 bg-green-600"></div>
+              <div className="mt-2 mx-auto h-1 w-full bg-green-600"></div>
             </div>
           </div>
         </div>
