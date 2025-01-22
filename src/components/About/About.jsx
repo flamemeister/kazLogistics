@@ -8,64 +8,89 @@ import {
 
 const AboutUs = () => {
   return (
-<div>
-  {/* Отступ сверху для размещения Hero Section ниже */}
-  <div className="pt-32"></div> {/* Увеличено значение отступа */}
+    <div>
+      {/* Отступ сверху для размещения Hero Section ниже */}
+      <div className="pt-32"></div>
 
-  {/* Hero Section */}
-  <div className="bg-white text-black py-16 px-4 flex items-center justify-center">
-    <div className="text-center">
-      <h1 className="text-5xl md:text-6xl font-bold mb-4">О НАС</h1>
-      <div className="mt-2 h-1 w-16 bg-[#0A5225] mx-auto" />
-    </div>
-  </div>
+      {/* Hero Section */}
+      <div className="bg-white text-black py-16 px-4 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4">О НАС</h1>
+          <div className="mt-2 h-1 w-16 bg-[#0A5225] mx-auto" />
+        </div>
+      </div>
 
-      {/* Mission Section */}
+      {/* Company Overview Section */}
       <div className="bg-white pb-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Наша миссия</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            О компании
+          </h2>
           <div className="mt-2 h-1 w-16 bg-[#0A5225]" />
           <p className="text-gray-600 text-lg leading-relaxed mt-4 text-justify">
-            Наша миссия — это создание ценностей в наших продуктах для наших
-            партнёров за счёт качественного сервиса. Мы стремимся обеспечивать
-            высокий уровень надёжности на всех этапах логистической цепочки,
-            предлагая профессиональное обслуживание, на которое можно положиться
-            даже в самых сложных условиях.
+            Мы, <strong>Great Steppe Logistics</strong>, — казахстанская компания, 
+            динамично развивающаяся в сфере транспортно-логистических услуг. Наша команда 
+            объединяет профессионалов с многолетним опытом работы в ведущих международных 
+            логистических компаниях. Используя накопленный опыт и знания, мы приняли решение 
+            направить их на создание собственной компании, основанной на высоких стандартах и 
+            индивидуальном подходе к клиентам.
+          </p>
+        </div>
+      </div>
+
+      {/* Mission Section */}
+      <div className="bg-gray-50 py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Наша миссия
+          </h2>
+          <div className="mt-2 h-1 w-16 bg-[#0A5225]" />
+          <p className="text-gray-600 text-lg leading-relaxed mt-4 text-justify">
+            Наша миссия — это создание ценностей в наших продуктах для наших 
+            партнеров за счёт качественного сервиса. Мы стремимся обеспечивать высокий 
+            уровень надёжности на всех этапах логистической цепочки, предлагая 
+            профессиональное обслуживание, на которое можно положиться даже в самых 
+            сложных условиях.
           </p>
         </div>
       </div>
 
       {/* Principles Section */}
-      <div className="bg-gray-50 py-16 px-4">
+      <div className="bg-white py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Наши принципы</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Наши принципы
+          </h2>
           <div className="mt-2 h-1 w-16 bg-[#0A5225]" />
           <p className="text-gray-600 text-lg leading-relaxed mt-4 text-justify">
-            Ключевые принципы нашей работы заключаются в доверии, ответственности
-            и стремлении к долгосрочному сотрудничеству. Мы выстраиваем отношения
-            с клиентами на основе взаимного уважения и прозрачности, что позволяет
-            нам становиться надёжным партнёром для каждого. Индивидуальный подход
-            занимает центральное место в нашей работе: мы внимательно изучаем
-            потребности каждого клиента, чтобы разрабатывать решения, максимально
-            адаптированные к их задачам и ожиданиям. Высокие стандарты качества и
-            надёжности являются неотъемлемой частью нашей деятельности. На каждом
-            этапе логистической цепочки мы обеспечиваем профессиональное
-            обслуживание, которое гарантирует устойчивый результат даже в самых
-            сложных условиях.
+            Ключевые принципы нашей работы заключаются в доверии, ответственности 
+            и стремлении к долгосрочному сотрудничеству. Мы выстраиваем отношения 
+            с клиентами на основе взаимного уважения и прозрачности, что позволяет нам 
+            становиться надёжным партнёром для каждого. Индивидуальный подход занимает 
+            центральное место в нашей работе: мы внимательно изучаем потребности каждого 
+            клиента, чтобы разрабатывать решения, максимально адаптированные к их задачам 
+            и ожиданиям. Высокие стандарты качества и надёжности являются неотъемлемой 
+            частью нашей деятельности. На каждом этапе логистической цепочки мы 
+            обеспечиваем профессиональное обслуживание, которое гарантирует устойчивый 
+            результат даже в самых сложных условиях.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             <div className="text-left">
               <CheckCircleIcon className="h-8 w-8 text-[#0A5225] mb-4" />
               <h3 className="text-xl font-bold text-gray-800 mb-2">Доверие</h3>
               <p className="text-gray-600 text-justify">
-                Мы строим отношения на основе взаимного уважения и прозрачности.
+                Мы выстраиваем отношения с клиентами на основе взаимного 
+                уважения и прозрачности.
               </p>
             </div>
             <div className="text-left">
               <PuzzlePieceIcon className="h-8 w-8 text-[#0A5225] mb-4" />
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Ответственность</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">
+                Ответственность
+              </h3>
               <p className="text-gray-600 text-justify">
-                Мы гарантируем высокий уровень надёжности на каждом этапе.
+                Мы гарантируем высокие стандарты качества и надежности на 
+                каждом этапе логистической цепочки.
               </p>
             </div>
             <div className="text-left">
@@ -74,7 +99,8 @@ const AboutUs = () => {
                 Индивидуальный подход
               </h3>
               <p className="text-gray-600 text-justify">
-                Мы адаптируем наши решения под задачи и ожидания клиентов.
+                Мы детально изучаем потребности каждого клиента, чтобы 
+                предлагать максимально адаптированные решения.
               </p>
             </div>
           </div>
@@ -82,17 +108,19 @@ const AboutUs = () => {
       </div>
 
       {/* Closing Section */}
-      <div className="bg-white py-16 px-4">
+      <div className="bg-gray-50 py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Благодарим за ваш выбор
           </h2>
           <div className="mt-2 h-1 w-16 bg-[#0A5225]" />
           <p className="text-gray-600 text-lg leading-relaxed mt-4 text-justify">
-            Следуя этим принципам, мы не просто предоставляем услуги, а создаём
+            Следуя этим принципам, мы не просто предоставляем услуги, а создаём 
             ценность для наших партнёров, помогая им достигать их целей.
-            Благодарим за выбор компании Great Steppe Logistics. Мы высоко ценим
-            ваше доверие и с нетерпением ждём плодотворного сотрудничества.
+          </p>
+          <p className="text-gray-600 text-lg leading-relaxed mt-4 text-justify">
+            Благодарим за выбор компании <strong>Great Steppe Logistics</strong>. Мы высоко 
+            ценим ваше доверие и с нетерпением ждём плодотворного сотрудничества.
           </p>
         </div>
       </div>

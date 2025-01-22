@@ -63,15 +63,24 @@ const MultimodalServices = () => {
     <div>
       {/* Hero Section */}
       <div
-        className="relative bg-cover bg-center text-white h-screen"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        className="relative bg-cover bg-center text-white h-screen hidden md:block"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+        }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         <div className="relative flex items-center justify-center text-center h-full">
           <h1 className="text-4xl md:text-5xl font-bold uppercase">
-            МУЛЬТИМОДАЛЬНЫЕ ПЕРЕВОЗКИ
+            Мультимодальные перевозки
           </h1>
         </div>
+      </div>
+
+      {/* Hero Section without Background Image (Visible on small screens) */}
+      <div className="relative bg-green-600 text-white h-screen md:hidden flex items-center justify-center text-center px-4">
+        <h1 className="text-3xl font-bold uppercase">
+          Мультимодальные перевозки
+        </h1>
       </div>
 
       {/* Breadcrumbs */}

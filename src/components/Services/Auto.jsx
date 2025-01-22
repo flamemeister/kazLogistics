@@ -56,9 +56,9 @@ const AutoServices = () => {
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Section with Background Image (Visible on md and larger screens) */}
       <div
-        className="relative bg-cover bg-center text-white h-screen"
+        className="relative bg-cover bg-center text-white h-screen hidden md:block"
         style={{
           backgroundImage: `url(${backgroundImage})`
         }}
@@ -69,6 +69,13 @@ const AutoServices = () => {
             Автоперевозки
           </h1>
         </div>
+      </div>
+
+      {/* Hero Section without Background Image (Visible on small screens) */}
+      <div className="relative bg-green-600 text-white h-screen md:hidden flex items-center justify-center text-center px-4">
+        <h1 className="text-3xl font-bold uppercase">
+          Автоперевозки
+        </h1>
       </div>
 
       {/* Breadcrumbs */}
@@ -314,7 +321,7 @@ const AutoServices = () => {
                 <FaHandshake size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
-              Выдача груза получателю
+                Выдача груза получателю
               </p>
             </div>
             {/* Step 8 */}
@@ -338,8 +345,8 @@ const AutoServices = () => {
       {/* Text Section */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-3">
-          <div className="flex">
-            <div className="w-2/3">
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full lg:w-2/3">
               <h2 className="text-2xl font-bold mb-3">
                 Автоперевозки грузов – широкие возможности и высокая
                 геодоступность
@@ -393,7 +400,7 @@ const AutoServices = () => {
                 своевременную доставку и качественный сервис.
               </p>
             </div>
-            <div className="w-1/3 ml-3">
+            <div className="w-full lg:w-1/3 lg:ml-3 mt-8 lg:mt-0">
               <h2 className="text-2xl font-bold mb-3">Таможенные сборы</h2>
               <p className="text-gray-700 leading-relaxed mb-3">
                 В случае перевозки автомобильным транспортом товаров через

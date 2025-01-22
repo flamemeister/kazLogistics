@@ -58,7 +58,7 @@ const AviaServices = () => {
     <div>
       {/* Hero Section */}
       <div
-        className="relative bg-cover bg-center text-white h-screen"
+        className="relative bg-cover bg-center text-white h-screen hidden md:block"
         style={{
           backgroundImage: `url(${backgroundImage})`,
         }}
@@ -69,6 +69,11 @@ const AviaServices = () => {
             Авиаперевозки
           </h1>
         </div>
+      </div>
+
+      {/* Hero Section without Background Image (Visible on small screens) */}
+      <div className="relative bg-green-600 text-white h-screen md:hidden flex items-center justify-center text-center px-4">
+        <h1 className="text-3xl font-bold uppercase">Авиаперевозки</h1>
       </div>
 
       {/* Breadcrumbs */}
