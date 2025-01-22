@@ -77,14 +77,14 @@ const Services = () => {
           <h2 className="text-2xl font-bold text-center mb-6">
             Добро пожаловать в Great Steppe Logistics
           </h2>
-          <p className="leading-relaxed mb-6">
+          <p className="leading-relaxed mb-6 text-justify">
             Добро пожаловать на страницу услуг компании Great Steppe Logistics —
             вашего надежного партнера в мире транспортно-логистических решений.
             Мы предоставляем полный спектр услуг, помогая вашему бизнесу
             максимально эффективно организовать грузоперевозки любого типа и
             масштаба.
           </p>
-          <ul className="list-disc pl-6 space-y-4">
+          <ul className="list-disc pl-6 space-y-4 text-justify">
             <li>
               <strong>Железнодорожные перевозки:</strong> Мы предлагаем все виды
               железнодорожных перевозок, включая контейнерные и сборные грузы.
@@ -117,7 +117,7 @@ const Services = () => {
               нюансы.
             </li>
           </ul>
-          <p className="leading-relaxed mt-6">
+          <p className="leading-relaxed mt-6 text-justify">
             Наша цель — предоставить лучшие логистические решения, которые
             способствуют успеху вашего бизнеса. Свяжитесь с нами уже сегодня,
             чтобы обсудить ваши потребности и найти оптимальное решение!

@@ -24,7 +24,7 @@ const Navbar = () => {
 
   const languageImages = {
     Рус: ru_flag,
-    Каз: kz_flag,
+    Қаз: kz_flag,
     Eng: eng_flag,
     中文: ch_flag,
   };
