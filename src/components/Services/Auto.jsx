@@ -60,7 +60,8 @@ const AutoServices = () => {
       <div
         className="relative bg-cover bg-center text-white h-screen hidden md:block"
         style={{
-          backgroundImage: `url(${backgroundImage})`
+          backgroundImage: `url(${backgroundImage})`,
+          filter: "brightness(1.2)" // Увеличена яркость
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>

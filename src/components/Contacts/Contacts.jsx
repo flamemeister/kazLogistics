@@ -40,19 +40,14 @@ const Contacts = () => {
             </div>
 
             {/* Contact Details */}
-            <div className="text-gray-800 flex flex-col items-center md:items-start md:pl-8">
-              <p className="mb-2 text-center md:text-left">
-                Казахстан, город Алматы, Алмалинский район, проспект Сейфуллина,
-                БЦ «Алтын Заман», дом 498, второй этаж, офис 201
+            <div className="text-gray-800 flex flex-col justify-center md:pl-8">
+              <p className="mb-2 text-center md:text-left leading-relaxed">
+                Казахстан, г. Алматы, Алмалинский район, проспект Сейфуллина, дом 498, 2 этаж, офис 201, <strong>БЦ «Алтын Заман»</strong>
               </p>
-              <p className="mb-2 text-center md:text-left">
-                Почтовый индекс: 050012
-              </p>
-              <p className="mb-2 text-center md:text-left">
-                +7 (727) 344 00 40
-              </p>
+              <p className="mb-2 text-center md:text-left">Почтовый индекс: 050012</p>
+              <p className="mb-2 text-center md:text-left">+7 (727) 344 00 40</p>
               <p className="mb-4 text-center md:text-left">info@gslog.kz</p>
-              <div className="mt-2 mx-auto h-1 w-full bg-green-600"></div>
+              <div className="mt-2 h-1 w-full bg-green-600"></div>
             </div>
           </div>
         </div>
