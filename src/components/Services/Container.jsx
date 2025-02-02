@@ -78,7 +78,8 @@ const ContainerServices = () => {
       </div>
 
       {/* Hero Section without Background Image (Visible on small screens) */}
-      <div className="relative bg-green-600 text-white h-screen md:hidden flex items-center justify-center text-center px-4">
+      <div className="relative bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-20 md:hidden flex flex-col items-center justify-center text-center">
+        <div className="mt-10"></div>
         <h1 className="text-3xl font-bold uppercase">
           Контейнерные перевозки
         </h1>
