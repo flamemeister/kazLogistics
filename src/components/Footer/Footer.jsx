@@ -13,7 +13,7 @@ const Footer = () => {
       const currentScrollY = window.pageYOffset;
       const windowHeight = window.innerHeight;
       const pageHeight = document.body.offsetHeight;
-      const isAtBottom = windowHeight + currentScrollY >= pageHeight - 10; 
+      const isAtBottom = windowHeight + currentScrollY >= pageHeight - 10;
       // ^ adjust the offset (e.g. `-10`) as needed
 
       if (isAtBottom) {
@@ -30,11 +30,9 @@ const Footer = () => {
       lastScrollY = currentScrollY;
     };
 
-    // Attach scroll listener
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      // Clean up listener on component unmount
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -96,12 +94,12 @@ const Footer = () => {
 
       {/* 
         =========================
-        Desktop Footer (unchanged)
+        Desktop Footer
         =========================
       */}
       <footer className="bg-[#0A5225] text-gray-100 py-2">
         <div className="max-w-7xl mx-auto px-4">
-          {/* Social Icons for Desktop */}
+          {/* Desktop Social Icons */}
           <div className="hidden md:flex justify-center items-center space-x-4 mb-2">
             <a
               href="https://wa.me/77771544455"
@@ -129,9 +127,13 @@ const Footer = () => {
               <FaLinkedin className="h-8 w-8 text-white hover:text-gray-300" />
             </a>
           </div>
+
+          {/* Copyright */}
+          <p className="text-center text-sm mt-2">
+            &copy; 2024 <span className="font-semibold">Great Steppe Logistics</span>
+          </p>
         </div>
       </footer>
-
     </>
   );
 };
