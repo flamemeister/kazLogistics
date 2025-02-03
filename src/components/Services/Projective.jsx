@@ -63,6 +63,7 @@ const ProjectiveServices = () => {
         className="relative bg-cover bg-center text-white h-screen hidden md:block"
         style={{
           backgroundImage: `url(${backgroundImage})`,
+          filter: "brightness(1.7)",
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
@@ -230,11 +231,11 @@ const ProjectiveServices = () => {
       {/* Text Section */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-[#0A5225]">
+          <h2 className="text-2xl font-bold mb-8">
             Контейнерное депо – комплексное решение для хранения и обработки
             контейнеров
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="text-gray-700 leading-relaxed mb-6 text-justify">
             Контейнерные перевозки играют ключевую роль в глобальной логистике,
             а эффективное управление пустыми и загруженными контейнерами требует
             высокой степени организации, опыта и применения современных
@@ -249,7 +250,7 @@ const ProjectiveServices = () => {
             организованных процессов, координации персонала и автоматизированных
             систем управления.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="text-gray-700 leading-relaxed mb-6 text-justify">
             Комплексное решение для вашей логистики Контейнерное депо Great
             Steppe Logistics – это стратегически важный элемент в цепочке
             поставок, который помогает избежать узких мест в логистике,
@@ -262,6 +263,7 @@ const ProjectiveServices = () => {
           </p>
         </div>
       </div>
+
       <Footer />
     </div>
   );

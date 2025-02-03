@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import backgroundImage from "../../assets/images/avia_transfer.jpg";
-import logo from "../../assets/images/logo.png"; // Adjust the path as needed
+import backgroundImage from "../../assets/images/avia_transfer_2.png";
+import logo from "../../assets/images/logo.png";
 import {
   FaRocket,
   FaShieldAlt,
@@ -61,6 +61,7 @@ const AviaServices = () => {
         className="relative bg-cover bg-center text-white h-screen hidden md:block"
         style={{
           backgroundImage: `url(${backgroundImage})`,
+          filter: "brightness(1.7)",
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
@@ -360,7 +361,7 @@ const AviaServices = () => {
           <h2 className="text-2xl font-bold mb-8">
             Авиаперевозки грузов – быстро и безопасно
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="text-gray-700 leading-relaxed mb-6 text-justify">
             Грузовые авиаперевозки — это перевозки грузов с помощью
             авиаперевозчика. Авиаэкспедитор — это компания, которая занимается
             организацией авиаперевозок, согласованием тарифов и действует от
@@ -400,7 +401,7 @@ const AviaServices = () => {
           <h3 className="text-xl font-bold mt-6">
             Почему авиаперевозки являются самым дорогим видом грузоперевозок?
           </h3>
-          <p className="text-gray-700 leading-relaxed mt-4">
+          <p className="text-gray-700 leading-relaxed mt-4 text-justify">
             Стоимость авиаперевозки зависит не только от маршрута и габаритов
             отправления, но и от стоимости топлива и обслуживания самолета.
             Таким образом, ставки на международные авиаперевозки выше, чем,

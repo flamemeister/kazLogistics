@@ -5,10 +5,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 import logo from "../../assets/logo_white.png";
 
-import rus from "../../assets/images/russia.png";
-import kaz from "../../assets/images/kazakhstan.png";
-import eng from "../../assets/images/united-kingdom.png";
-import chn from "../../assets/images/china.png";
 import kz_flag from "../../assets/images/kz_flag.png";
 import ru_flag from "../../assets/images/ru_flag.png";
 import eng_flag from "../../assets/images/eng_flag.png";

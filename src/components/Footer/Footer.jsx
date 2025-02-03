@@ -81,7 +81,7 @@ const Footer = () => {
           <span className="text-xs">Телефон</span>
         </a>
         <a
-          href="https://www.linkedin.com"
+          href="https://www.linkedin.com/company/great-steppe-logistics-llp/about/?viewAsMember=true"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"

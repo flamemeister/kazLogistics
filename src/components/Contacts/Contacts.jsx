@@ -42,7 +42,7 @@ const Contacts = () => {
             {/* Contact Details */}
             <div className="text-gray-800 flex flex-col justify-center md:pl-8">
               <p className="mb-2 text-center md:text-left leading-relaxed">
-                Казахстан, г. Алматы, Алмалинский район, проспект Сейфуллина, дом 498, 2 этаж, офис 201, <strong>БЦ «Алтын Заман»</strong>
+                Казахстан, г. Алматы, Алмалинский район, проспект Сейфуллина, дом 498, 2 этаж, офис 201, БЦ «Алтын Заман»
               </p>
               <p className="mb-2 text-center md:text-left">Почтовый индекс: 050012</p>
               <p className="mb-2 text-center md:text-left">+7 (727) 344 00 40</p>
