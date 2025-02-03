@@ -14,16 +14,12 @@ const Footer = () => {
       const windowHeight = window.innerHeight;
       const pageHeight = document.body.offsetHeight;
       const isAtBottom = windowHeight + currentScrollY >= pageHeight - 10;
-      // ^ adjust the offset (e.g. `-10`) as needed
-
+      
       if (isAtBottom) {
-        // If the user is at (or near) the bottom, show the navbar
         setShowMobileSocials(true);
       } else if (currentScrollY < lastScrollY) {
-        // User is scrolling UP
         setShowMobileSocials(true);
       } else {
-        // User is scrolling DOWN (and not at bottom)
         setShowMobileSocials(false);
       }
 
@@ -39,11 +35,7 @@ const Footer = () => {
 
   return (
     <>
-      {/* 
-        =========================
-        Mobile Socials as Bottom Navbar
-        =========================
-      */}
+      {/* Mobile Socials */}
       <div
         className={`
           fixed
@@ -92,15 +84,14 @@ const Footer = () => {
         </a>
       </div>
 
-      {/* 
-        =========================
-        Desktop Footer
-        =========================
-      */}
+      {/* Desktop Footer */}
       <footer className="bg-[#0A5225] text-gray-100 py-2">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between relative">
+          {/* Copyright */}
+          <p className="text-sm">&copy; 2024 <span className="font-semibold">Great Steppe Logistics</span></p>
+
           {/* Desktop Social Icons */}
-          <div className="hidden md:flex justify-center items-center space-x-4 mb-2">
+          <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-4">
             <a
               href="https://wa.me/77771544455"
               target="_blank"
@@ -127,11 +118,6 @@ const Footer = () => {
               <FaLinkedin className="h-8 w-8 text-white hover:text-gray-300" />
             </a>
           </div>
-
-          {/* Copyright */}
-          <p className="text-center text-sm mt-2">
-            &copy; 2024 <span className="font-semibold">Great Steppe Logistics</span>
-          </p>
         </div>
       </footer>
     </>

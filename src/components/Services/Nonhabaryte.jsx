@@ -79,7 +79,7 @@ const NonhabaryteServices = () => {
 
       {/* Hero Section (mobile) */}
       <div className="relative bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-20 md:hidden flex flex-col items-center justify-center text-center">
-        <div className="mt-10"></div>
+        <div className="mt-[100px]"></div>
         <h1 className="text-3xl font-bold uppercase">Негабаритные перевозки</h1>
       </div>
 
