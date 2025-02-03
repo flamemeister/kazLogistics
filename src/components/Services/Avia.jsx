@@ -61,7 +61,7 @@ const AviaServices = () => {
         className="relative bg-cover bg-center text-white h-screen hidden md:block"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          filter: "brightness(1.7)",
+          filter: "brightness(1.5)",
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
@@ -74,8 +74,10 @@ const AviaServices = () => {
 
       {/* Hero Section without Background Image (Visible on small screens) */}
       <div className="relative bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-20 md:hidden flex flex-col items-center justify-center text-center">
-        <div className="mt-[100px]"></div>
-        <h1 className="text-3xl font-bold uppercase">Авиаперевозки</h1>
+        <div className="mt-[20px]"></div> 
+        <h1 className="text-4xl font-bold uppercase mb-1 mt-6">
+          Авиаперевозки
+        </h1>
       </div>
 
       {/* Breadcrumbs */}

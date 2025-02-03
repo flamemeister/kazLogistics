@@ -48,7 +48,7 @@ const Footer = () => {
           flex
           justify-around
           items-center
-          py-3
+          py-4
           transition-transform
           duration-300
           ${showMobileSocials ? "translate-y-0" : "translate-y-full"}
@@ -61,16 +61,16 @@ const Footer = () => {
           aria-label="WhatsApp"
           className="text-white flex flex-col items-center hover:opacity-80 transition-opacity"
         >
-          <FaWhatsapp className="h-8 w-8" />
-          <span className="text-xs">WhatsApp</span>
+          <FaWhatsapp className="h-10 w-10" />
+          <span className="text-sm">WhatsApp</span>
         </a>
         <a
           href="tel:+77015367873"
           aria-label="Phone"
           className="text-white flex flex-col items-center hover:opacity-80 transition-opacity"
         >
-          <PhoneIcon className="h-8 w-8" />
-          <span className="text-xs">Телефон</span>
+          <PhoneIcon className="h-10 w-10" />
+          <span className="text-sm">Телефон</span>
         </a>
         <a
           href="https://www.linkedin.com/company/great-steppe-logistics-llp/about/?viewAsMember=true"
@@ -79,19 +79,19 @@ const Footer = () => {
           aria-label="LinkedIn"
           className="text-white flex flex-col items-center hover:opacity-80 transition-opacity"
         >
-          <FaLinkedin className="h-8 w-8" />
-          <span className="text-xs">LinkedIn</span>
+          <FaLinkedin className="h-10 w-10" />
+          <span className="text-sm">LinkedIn</span>
         </a>
       </div>
 
       {/* Desktop Footer */}
-      <footer className="bg-[#0A5225] text-gray-100 py-2">
+      <footer className="bg-[#0A5225] text-gray-100 py-6">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between relative">
           {/* Copyright */}
-          <p className="text-sm">&copy; 2024 <span className="font-semibold">Great Steppe Logistics</span></p>
+          <p className="text-lg">&copy; 2024 <span className="font-semibold">Great Steppe Logistics</span></p>
 
           {/* Desktop Social Icons */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-4">
+          <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-6">
             <a
               href="https://wa.me/77771544455"
               target="_blank"
@@ -99,14 +99,14 @@ const Footer = () => {
               aria-label="WhatsApp"
               className="hover:scale-110 transition-transform"
             >
-              <FaWhatsapp className="h-8 w-8 text-white hover:text-gray-300" />
+              <FaWhatsapp className="h-10 w-10 text-white hover:text-gray-300" />
             </a>
             <a
               href="tel:+77015367873"
               aria-label="Phone"
               className="hover:scale-110 transition-transform"
             >
-              <PhoneIcon className="h-8 w-8 text-white hover:text-gray-300" />
+              <PhoneIcon className="h-10 w-10 text-white hover:text-gray-300" />
             </a>
             <a
               href="https://www.linkedin.com"
@@ -115,7 +115,7 @@ const Footer = () => {
               aria-label="LinkedIn"
               className="hover:scale-110 transition-transform"
             >
-              <FaLinkedin className="h-8 w-8 text-white hover:text-gray-300" />
+              <FaLinkedin className="h-10 w-10 text-white hover:text-gray-300" />
             </a>
           </div>
         </div>

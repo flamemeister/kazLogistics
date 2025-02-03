@@ -72,8 +72,10 @@ const RailServices = () => {
 
       {/* Hero Section without Background Image (mobile) */}
       <div className="relative bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-20 md:hidden flex flex-col items-center justify-center text-center">
-        <div className="mt-[100px]"></div>
-        <h1 className="text-3xl font-bold uppercase">ЖД перевозки</h1>
+        <div className="mt-[20px]"></div> 
+        <h1 className="text-4xl font-bold uppercase mb-1 mt-6">
+          ЖД перевозки
+        </h1>
       </div>
 
       {/* Breadcrumbs */}
