@@ -70,12 +70,11 @@ const MultimodalServices = () => {
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-        <div className="relative bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-20 md:hidden flex flex-col items-center justify-center text-center">
-        <div className="mt-[20px]"></div> 
-        <h1 className="text-4xl font-bold uppercase mb-1 mt-6">
-          Мультимодальные перевозки
-        </h1>
-      </div>
+        <div className="relative flex items-center justify-center text-center h-full">
+          <h1 className="text-4xl md:text-5xl font-bold uppercase">
+            Мультимодальные перевозки
+          </h1>
+        </div>
       </div>
 
       {/* Hero Section (mobile) */}
@@ -140,18 +139,19 @@ const MultimodalServices = () => {
             Преимущества мультимодальных перевозок
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="flex items-start">
+            {/* Advantage 1 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaShieldAlt size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Гибкость и оптимизация маршрута
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Мультимодальные перевозки позволяют выбирать оптимальный
                   маршрут, используя разные виды транспорта для доставки груза.
                   Это помогает обойти ограничения и выбрать наиболее эффективные
@@ -159,18 +159,19 @@ const MultimodalServices = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 2 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaDollarSign size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Снижение затрат
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Комбинирование разных видов транспорта может помочь снизить
                   общие затраты на перевозку. Например, использование морского
                   или железнодорожного транспорта на долгие дистанции и
@@ -179,18 +180,19 @@ const MultimodalServices = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 3 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaCube size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Увеличение скорости доставки
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Мультимодальные перевозки могут значительно сократить общее
                   время доставки груза. Груз начинается движение сразу после
                   погрузки на первый вид транспорта, не дожидаясь, например,
@@ -198,36 +200,38 @@ const MultimodalServices = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 4 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaLeaf size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Большая географическая доступность
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   При помощи разных видов транспорта можно охватить и те районы,
                   где отсутствует, к примеру, железная дорога или морской порт.
                   Это особенно удобно для отдаленных регионов.
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 5 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaRoute size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Легкость отслеживания и управления
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Для мультимодальных перевозок используются системы
                   отслеживания и координации, позволяющие видеть движение груза
                   по всем этапам. Это облегчает управление логистикой и
@@ -235,18 +239,19 @@ const MultimodalServices = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 6 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaShieldAlt size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Улучшенная безопасность
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Использование нескольких видов транспорта подразумевает
                   различные протоколы и системы безопасности, что в совокупности
                   снижает риск потери или повреждения груза на разных этапах.

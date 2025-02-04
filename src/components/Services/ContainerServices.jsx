@@ -80,7 +80,7 @@ const ContainerServices = () => {
 
       {/* Hero Section (mobile) */}
       <div className="relative bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-20 md:hidden flex flex-col items-center justify-center text-center">
-        <div className="mt-[10px]"></div> 
+        <div className="mt-[10px]"></div>
         <h1 className="text-4xl font-bold uppercase mb-1 mt-6">
           Контейнерные перевозки
         </h1>
@@ -141,7 +141,7 @@ const ContainerServices = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Advantage 1 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
@@ -151,11 +151,11 @@ const ContainerServices = () => {
                   aria-label="Защита и безопасность груза"
                 />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Защита и безопасность груза
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Контейнеры обеспечивают защиту груза от повреждений, влаги,
                   воздействия погодных условий и внешних факторов. Грузы
                   упаковываются в контейнеры, что уменьшает риск потери или
@@ -164,7 +164,7 @@ const ContainerServices = () => {
               </div>
             </div>
             {/* Advantage 2 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
@@ -174,11 +174,11 @@ const ContainerServices = () => {
                   aria-label="Стандартизация и универсальность"
                 />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Стандартизация и универсальность
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Контейнеры имеют стандартные размеры и характеристики, что
                   облегчает их использование и перевозку на различных видах
                   транспорта, включая морские, железнодорожные и автомобильные
@@ -188,18 +188,18 @@ const ContainerServices = () => {
               </div>
             </div>
             {/* Advantage 3 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaDollarSign size={28} aria-label="Экономичность" />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Экономичность
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Контейнерные перевозки позволяют оптимизировать затраты на
                   транспортировку за счет стандартизации и возможности
                   использования различных видов транспорта.
@@ -207,7 +207,7 @@ const ContainerServices = () => {
               </div>
             </div>
             {/* Advantage 4 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
@@ -217,11 +217,11 @@ const ContainerServices = () => {
                   aria-label="Удобство погрузки и разгрузки"
                 />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Удобство погрузки и разгрузки
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Контейнеры позволяют эффективную погрузку и разгрузку грузов,
                   что сокращает время операций и увеличивает производительность.
                   Это особенно важно при перевозке больших объемов груза или при
@@ -230,18 +230,18 @@ const ContainerServices = () => {
               </div>
             </div>
             {/* Advantage 5 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaExchangeAlt size={28} aria-label="Мультимодальность" />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Мультимодальность
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Контейнерные перевозки позволяют организовывать
                   мультимодальные перевозки, используя комбинацию различных
                   видов транспорта. Это позволяет выбрать оптимальные маршруты и
@@ -250,7 +250,7 @@ const ContainerServices = () => {
               </div>
             </div>
             {/* Advantage 6 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
@@ -260,11 +260,11 @@ const ContainerServices = () => {
                   aria-label="Отслеживание и управление"
                 />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Легкость отслеживания и управления
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Современные технологии позволяют отслеживать контейнеры в
                   режиме реального времени, что обеспечивает лучший контроль над
                   грузом и улучшает управление логистическими процессами.

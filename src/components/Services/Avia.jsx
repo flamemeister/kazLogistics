@@ -74,7 +74,7 @@ const AviaServices = () => {
 
       {/* Hero Section without Background Image (Visible on small screens) */}
       <div className="relative bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-20 md:hidden flex flex-col items-center justify-center text-center">
-        <div className="mt-[20px]"></div> 
+        <div className="mt-[20px]"></div>
         <h1 className="text-4xl font-bold uppercase mb-1 mt-6">
           Авиаперевозки
         </h1>
@@ -128,25 +128,26 @@ const AviaServices = () => {
       <hr className="border-gray-200 my-8" />
 
       {/* Advantages Section */}
+      {/* Advantages Section */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-2xl font-bold mb-8 text-center">
             Преимущества авиаперевозок
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Advantage 1 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaRocket size={28} aria-label="Быстрая доставка" />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Быстрая доставка
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-left">
                   Авиаперевозки являются наиболее быстрым способом доставки
                   грузов на большие расстояния. Грузы могут быть доставлены за
                   считанные часы или дни.
@@ -154,61 +155,61 @@ const AviaServices = () => {
               </div>
             </div>
             {/* Advantage 2 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaShieldAlt size={28} aria-label="Безопасность и надежность" />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Безопасность и надежность
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-left">
                   Аэропорты и авиалинии строго контролируются, что снижает риск
                   потери или повреждения груза.
                 </p>
               </div>
             </div>
             {/* Advantage 3 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaCalendarCheck size={28} aria-label="Гибкость графика" />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Гибкость графика
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-left">
                   Воздушные грузовые рейсы предлагают регулярное расписание с
                   высокой частотой полетов.
                 </p>
               </div>
             </div>
             {/* Advantage 4 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaGlobe size={28} aria-label="Широкая география перевозок" />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Широкая география перевозок
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-left">
                   Авиалинии предлагают широкий охват маршрутов, охватывающий
                   практически весь мир.
                 </p>
               </div>
             </div>
             {/* Advantage 5 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
@@ -218,29 +219,29 @@ const AviaServices = () => {
                   aria-label="Эффективность использования пространства"
                 />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Эффективность использования пространства
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-left">
                   Воздушные грузовые суда обычно имеют большую грузоподъемность
                   и позволяют организовать пространство более эффективно.
                 </p>
               </div>
             </div>
             {/* Advantage 6 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaExchangeAlt size={28} aria-label="Межмодальные перевозки" />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Межмодальные перевозки
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-left">
                   Авиаперевозки хорошо сочетаются с другими видами транспорта,
                   такими как автоперевозки и железнодорожные перевозки.
                 </p>

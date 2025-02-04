@@ -73,7 +73,7 @@ const Footer = () => {
           <span className="text-sm">Телефон</span>
         </a>
         <a
-          href="https://www.linkedin.com/company/great-steppe-logistics-llp/about/?viewAsMember=true"
+          href="https://www.linkedin.com/company/great-steppe-logistics-llp/about/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -88,7 +88,7 @@ const Footer = () => {
       <footer className="bg-[#0A5225] text-gray-100 py-6">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between relative">
           {/* Copyright */}
-          <p className="text-lg">&copy; 2024 <span className="font-semibold">Great Steppe Logistics</span></p>
+          <p className="text-base">&copy; 2024 <span className="font-normal">Great Steppe Logistics</span></p>
 
           {/* Desktop Social Icons */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-6">
@@ -109,7 +109,7 @@ const Footer = () => {
               <PhoneIcon className="h-10 w-10 text-white hover:text-gray-300" />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/company/great-steppe-logistics-llp/about/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

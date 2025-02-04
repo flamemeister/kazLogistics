@@ -76,7 +76,7 @@ const ProjectiveServices = () => {
 
       {/* Hero Section without Background Image (Visible on small screens) */}
       <div className="relative bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-20 md:hidden flex flex-col items-center justify-center text-center">
-        <div className="mt-[20px]"></div> 
+        <div className="mt-[20px]"></div>
         <h1 className="text-4xl font-bold uppercase mb-1 mt-6">
           Контейнерное депо
         </h1>
@@ -136,91 +136,96 @@ const ProjectiveServices = () => {
             Преимущества контейнерного депо
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="flex items-start">
+            {/* Advantage 1 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaShieldAlt size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Безопасное хранение
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Контейнерное депо обеспечивает надёжную охрану и защиту
                   контейнеров от внешних факторов, таких как погодные условия,
-                  кражи и повреждения.{" "}
+                  кражи и повреждения.
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 2 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaRoute size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Эффективное управление запасами
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Использование современных технологий позволяет вести точный
                   учёт контейнеров, что сокращает время на поиск и обработку
-                  грузов.{" "}
+                  грузов.
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 3 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaCube size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Оптимизация логистики
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Гибкость в планировании и размещении контейнеров снижает
-                  издержки на транспортировку и ускоряет процесс доставки.{" "}
+                  издержки на транспортировку и ускоряет процесс доставки.
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 4 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaLeaf size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Техническое обслуживание и ремонт
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Регулярная инспекция, очистка и ремонт контейнеров
                   обеспечивают их долгосрочную эксплуатацию и соответствие
-                  международным стандартам.{" "}
+                  международным стандартам.
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 5 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaDollarSign size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Снижение операционных затрат
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Консолидация хранения контейнеров в одном месте уменьшает
-                  расходы на аренду площадей, логистику и обслуживание.{" "}
+                  расходы на аренду площадей, логистику и обслуживание.
                 </p>
               </div>
             </div>

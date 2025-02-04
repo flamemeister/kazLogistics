@@ -72,10 +72,8 @@ const RailServices = () => {
 
       {/* Hero Section without Background Image (mobile) */}
       <div className="relative bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-20 md:hidden flex flex-col items-center justify-center text-center">
-        <div className="mt-[20px]"></div> 
-        <h1 className="text-4xl font-bold uppercase mb-1 mt-6">
-          ЖД перевозки
-        </h1>
+        <div className="mt-[20px]"></div>
+        <h1 className="text-4xl font-bold uppercase mb-1 mt-6">ЖД перевозки</h1>
       </div>
 
       {/* Breadcrumbs */}
@@ -133,18 +131,18 @@ const RailServices = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Advantage 1 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaBoxOpen size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Высокая грузоподъемность
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Железнодорожные составы способны перевозить большие объемы
                   грузов, включая тяжелые и крупногабаритные, которые затруднены
                   или невозможны для иных видов транспорта.
@@ -152,18 +150,18 @@ const RailServices = () => {
               </div>
             </div>
             {/* Advantage 2 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaDollarSign size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Экономическая эффективность
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   ЖД перевозки обычно обходятся дешевле авиаперевозок и
                   эффективны при крупных партиях и длительных расстояниях,
                   особенно с долгосрочными контрактами.
@@ -171,18 +169,18 @@ const RailServices = () => {
               </div>
             </div>
             {/* Advantage 3 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaShieldAlt size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Безопасность и надежность
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Высокие стандарты контроля и охраны снижают риск повреждений и
                   краж. Вагоны обычно закрытого типа, а доступ к ним строго
                   контролируется.
@@ -190,18 +188,18 @@ const RailServices = () => {
               </div>
             </div>
             {/* Advantage 4 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaLeaf size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Экологическая эффективность
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   По сравнению с автоперевозками и авиаперевозками,
                   железнодорожный транспорт расходует меньше топлива на тонну
                   груза, сокращая выбросы и нанося меньший вред окружающей
@@ -210,18 +208,18 @@ const RailServices = () => {
               </div>
             </div>
             {/* Advantage 5 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaRoute size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Гибкость маршрутов
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Разветвленная железнодорожная сеть охватывает большую часть
                   территорий. Это способствует доставке грузов даже в удаленные
                   районы, где нет других транспортных возможностей.
@@ -229,18 +227,18 @@ const RailServices = () => {
               </div>
             </div>
             {/* Advantage 6 */}
-            <div className="flex items-start">
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaExchangeAlt size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Межмодальные перевозки
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Комбинирование ЖД с другими видами транспорта (авто, морской)
                   позволяет оптимизировать логистику, ускорить сроки доставки и
                   снизить транспортные расходы.

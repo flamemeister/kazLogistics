@@ -79,7 +79,7 @@ const NonhabaryteServices = () => {
 
       {/* Hero Section (mobile) */}
       <div className="relative bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-20 md:hidden flex flex-col items-center justify-center text-center">
-        <div className="mt-[20px]"></div> 
+        <div className="mt-[20px]"></div>
         <h1 className="text-4xl font-bold uppercase mb-1 mt-6">
           Негабаритные перевозки
         </h1>
@@ -139,18 +139,19 @@ const NonhabaryteServices = () => {
             Преимущества негабаритных перевозок
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="flex items-start">
+            {/* Advantage 1 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaShieldAlt size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Доставка больших грузов
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Негабаритные перевозки позволяют доставить грузы, которые
                   превышают стандартные размеры или вес. Это могут быть крупные
                   машины, строительное оборудование, промышленные компоненты,
@@ -158,18 +159,19 @@ const NonhabaryteServices = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 2 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaDollarSign size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Специализированные ТС
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Для перевозки тяжеловесных / крупногабаритных грузов
                   используются особые транспортные средства (низкорамные
                   платформы, гусеничные транспортеры и пр.), обладающие
@@ -177,18 +179,19 @@ const NonhabaryteServices = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 3 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaCube size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Профессиональное обслуживание
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Выполнение таких перевозок требует высокого уровня
                   профессионализма. Перевозчик и логистическая компания должны
                   иметь опыт в организации подобного рода перевозок и знать все
@@ -196,18 +199,19 @@ const NonhabaryteServices = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 4 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaLeaf size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Специальные разрешения
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Перевозка негабаритных грузов требует получения специальных
                   разрешений и, в ряде случаев, сопровождения эскортных служб
                   или полиции. Это может включать временное закрытие дорог или
@@ -215,18 +219,19 @@ const NonhabaryteServices = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            {/* Advantage 5 */}
+            <div className="flex items-start space-x-4">
               <div
                 className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                 style={{ backgroundColor: "#0A5225" }}
               >
                 <FaRoute size={28} />
               </div>
-              <div className="ml-4">
+              <div className="max-w-sm md:max-w-md">
                 <h3 className="text-lg font-bold text-gray-800">
                   Глобальная доставка
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-justify hyphens-auto">
                   Негабаритные перевозки позволяют транспортировать оборудование
                   и материалы по всему миру, что особенно важно для
                   строительных, энергетических, нефтегазовых и иных крупных

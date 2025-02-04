@@ -129,113 +129,110 @@ const AutoServices = () => {
 
       {/* Advantages Section */}
       <div className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-center">
-            Преимущества автоперевозок
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="flex items-start">
-              <div
-                className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
-                style={{ backgroundColor: "#0A5225" }}
-              >
-                <FaTruck size={28} />
-              </div>
-              <div className="ml-4">
-                <h3 className="text-lg font-bold text-gray-800">
-                  Гибкость и доступность
-                </h3>
-                <p className="text-gray-700">
-                  Автомобильные перевозки предоставляют гибкие возможности
-                  доставки грузов в различные места, даже в отдаленные или
-                  труднодоступные районы. Автотранспортная инфраструктура широко
-                  распространена, что делает автоперевозки доступными для
-                  большинства мест назначения.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div
-                className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
-                style={{ backgroundColor: "#0A5225" }}
-              >
-                <FaBolt size={28} />
-              </div>
-              <div className="ml-4">
-                <h3 className="text-lg font-bold text-gray-800">
-                  Быстрая доставка
-                </h3>
-                <p className="text-gray-700">
-                  Автомобильные перевозки обычно обеспечивают быструю доставку
-                  грузов, особенно на небольшие расстояния. Отсутствие
-                  зависимости от расписаний других видов транспорта и
-                  возможность прямой доставки позволяют сократить время доставки
-                  груза до конечного пункта.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div
-                className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
-                style={{ backgroundColor: "#0A5225" }}
-              >
-                <FaCarSide size={28} />
-              </div>
-              <div className="ml-4">
-                <h3 className="text-lg font-bold text-gray-800">
-                  Разнообразие типов и размеров автомобилей
-                </h3>
-                <p className="text-gray-700">
-                  Автомобили различных типов и размеров могут быть использованы
-                  для перевозки различных видов грузов. Открытые грузовики,
-                  фургоны, рефрижераторы, цистерны и другие типы автомобилей
-                  предлагают возможность выбора подходящего грузового
-                  пространства в зависимости от специфики груза.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div
-                className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
-                style={{ backgroundColor: "#0A5225" }}
-              >
-                <FaHome size={28} />
-              </div>
-              <div className="ml-4">
-                <h3 className="text-lg font-bold text-gray-800">
-                  Дверь-в-дверь доставка
-                </h3>
-                <p className="text-gray-700">
-                  Автоперевозки обеспечивают возможность дверь-в-дверь доставки
-                  груза, что означает, что груз забирается непосредственно от
-                  отправителя и доставляется прямо к получателю. Это
-                  минимизирует необходимость в перегрузке груза и обеспечивает
-                  более прямой и удобный путь доставки.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div
-                className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
-                style={{ backgroundColor: "#0A5225" }}
-              >
-                <FaSatellite size={28} />
-              </div>
-              <div className="ml-4">
-                <h3 className="text-lg font-bold text-gray-800">
-                  Отслеживание груза
-                </h3>
-                <p className="text-gray-700">
-                  Современные технологии позволяют отслеживать автомобили и
-                  грузы в режиме реального времени. Это обеспечивает лучший
-                  контроль и видимость над перемещением груза, а также позволяет
-                  оперативно реагировать на изменения в условиях доставки.
-                </p>
-              </div>
-            </div>
-          </div>
+  <div className="max-w-6xl mx-auto px-4 md:px-8">
+    <h2 className="text-2xl font-bold mb-8 text-center">
+      Преимущества автоперевозок
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="flex items-start">
+        <div
+          className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
+          style={{ backgroundColor: "#0A5225" }}
+        >
+          <FaTruck size={28} />
+        </div>
+        <div className="ml-4">
+          <h3 className="text-lg font-bold text-gray-800">
+            Гибкость и доступность
+          </h3>
+          <p className="text-gray-700 text-justify">
+            Автомобильные перевозки предоставляют гибкие возможности доставки
+            грузов в различные места, даже в отдаленные или труднодоступные
+            районы. Автотранспортная инфраструктура широко распространена, что
+            делает автоперевозки доступными для большинства мест назначения.
+          </p>
         </div>
       </div>
+      <div className="flex items-start">
+        <div
+          className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
+          style={{ backgroundColor: "#0A5225" }}
+        >
+          <FaBolt size={28} />
+        </div>
+        <div className="ml-4">
+          <h3 className="text-lg font-bold text-gray-800">Быстрая доставка</h3>
+          <p className="text-gray-700 text-justify">
+            Автомобильные перевозки обычно обеспечивают быструю доставку грузов,
+            особенно на небольшие расстояния. Отсутствие зависимости от
+            расписаний других видов транспорта и возможность прямой доставки
+            позволяют сократить время доставки груза до конечного пункта.
+          </p>
+        </div>
+      </div>
+      <div className="flex items-start">
+        <div
+          className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
+          style={{ backgroundColor: "#0A5225" }}
+        >
+          <FaCarSide size={28} />
+        </div>
+        <div className="ml-4">
+          <h3 className="text-lg font-bold text-gray-800">
+            Разнообразие типов и размеров автомобилей
+          </h3>
+          <p className="text-gray-700 text-justify">
+            Автомобили различных типов и размеров могут быть использованы для
+            перевозки различных видов грузов. Открытые грузовики, фургоны,
+            рефрижераторы, цистерны и другие типы автомобилей предлагают
+            возможность выбора подходящего грузового пространства в зависимости
+            от специфики груза.
+          </p>
+        </div>
+      </div>
+      <div className="flex items-start">
+        <div
+          className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
+          style={{ backgroundColor: "#0A5225" }}
+        >
+          <FaHome size={28} />
+        </div>
+        <div className="ml-4">
+          <h3 className="text-lg font-bold text-gray-800">
+            Дверь-в-дверь доставка
+          </h3>
+          <p className="text-gray-700 text-justify">
+            Автоперевозки обеспечивают возможность дверь-в-дверь доставки груза,
+            что означает, что груз забирается непосредственно от отправителя и
+            доставляется прямо к получателю. Это минимизирует необходимость в
+            перегрузке груза и обеспечивает более прямой и удобный путь
+            доставки.
+          </p>
+        </div>
+      </div>
+      <div className="flex items-start">
+        <div
+          className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
+          style={{ backgroundColor: "#0A5225" }}
+        >
+          <FaSatellite size={28} />
+        </div>
+        <div className="ml-4">
+          <h3 className="text-lg font-bold text-gray-800">
+            Отслеживание груза
+          </h3>
+          <p className="text-gray-700 text-justify">
+            Современные технологии позволяют отслеживать автомобили и грузы в
+            режиме реального времени. Это обеспечивает лучший контроль и
+            видимость над перемещением груза, а также позволяет оперативно
+            реагировать на изменения в условиях доставки.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <hr className="border-gray-200 my-8" />
 
