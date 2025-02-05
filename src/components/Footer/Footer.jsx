@@ -84,11 +84,13 @@ const Footer = () => {
         </a>
       </div>
 
-      {/* Desktop Footer */}
-      <footer className="bg-[#0A5225] text-gray-100 py-6">
+      {/* Desktop Footer (hidden on mobile) */}
+      <footer className="hidden md:block bg-[#0A5225] text-gray-100 py-6">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between relative">
           {/* Copyright */}
-          <p className="text-base">&copy; 2024 <span className="font-normal">Great Steppe Logistics</span></p>
+          <p className="text-base">
+            &copy; 2024 <span className="font-normal">Great Steppe Logistics</span>
+          </p>
 
           {/* Desktop Social Icons */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-6">

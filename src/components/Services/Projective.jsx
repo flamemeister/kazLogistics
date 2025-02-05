@@ -76,7 +76,7 @@ const ProjectiveServices = () => {
 
       {/* Hero Section without Background Image (Visible on small screens) */}
       <div className="relative bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-20 md:hidden flex flex-col items-center justify-center text-center">
-        <div className="mt-[20px]"></div>
+        <div className="mt-24"></div>
         <h1 className="text-4xl font-bold uppercase mb-1 mt-6">
           Контейнерное депо
         </h1>

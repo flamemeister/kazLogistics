@@ -173,38 +173,39 @@ const Home = () => {
         </div>
       )}
 
-<section
-  className="relative bg-cover bg-center bg-no-repeat flex items-center"
-  style={{ backgroundImage: `url(${bgImage})`, height: "100vh" }}
->
-  {/* Полупрозрачный фон */}
-  <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <section
+        className="relative bg-cover bg-center bg-no-repeat flex items-center"
+        style={{ backgroundImage: `url(${bgImage})`, height: "100vh" }}
+      >
+        {/* Полупрозрачный фон */}
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-  {/* Контейнер для текста */}
-  <div
-    className={`
+        {/* Контейнер для текста */}
+        <div
+          className={`
       relative
       z-10
       px-4
       fade-in-up
     `}
-    style={{
-      maxWidth: isMobile ? "90%" : "40%", // Уменьшаем ширину текста на компьютерах
-      marginLeft: isMobile ? "5%" : "10%", // Отступ слева
-      textAlign: isMobile ? "center" : "left", // Центрирование текста на мобильных
-    }}
-  >
-    <p className="text-gray-200 font-bold text-lg sm:text-xl md:text-2xl mt-4 md:mt-2 mb-8">
-      Наша миссия - создание ценностей в наших продуктах для наших партнеров за счет качественного сервиса
-    </p>
-  </div>
-</section>
+          style={{
+            maxWidth: isMobile ? "90%" : "40%", // Уменьшаем ширину текста на компьютерах
+            marginLeft: isMobile ? "5%" : "10%", // Отступ слева
+            textAlign: isMobile ? "center" : "left", // Центрирование текста на мобильных
+          }}
+        >
+          <p className="text-gray-200 font-bold text-lg sm:text-xl md:text-2xl mt-4 md:mt-2 mb-8">
+            Наша миссия - создание ценностей в наших продуктах для наших
+            партнеров за счет качественного сервиса
+          </p>
+        </div>
+      </section>
 
       <section
         id="consultation-form"
         className="bg-white py-16 md:py-20 fade-in-up"
       >
-        <div className="max-w-2xl mx-auto px-4">
+        <div className="max-w-2xl mx-auto px-4 mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center">
             Получите консультацию
           </h2>
