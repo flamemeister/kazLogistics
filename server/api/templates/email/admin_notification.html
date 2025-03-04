@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Новая заявка на консультацию</h2>
+        <p><strong>Имя:</strong> {{ name }}</p>
+        <p><strong>Телефон:</strong> {{ phone }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Комментарий:</strong> {{ comment }}</p>
+        <p>&copy; {{ year }} Ваша компания</p>
+    </div>
+</body>
+</html>
