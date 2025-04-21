@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import './i18n';
 
 import { 
   Navbar,
@@ -36,7 +37,7 @@ const AppContent = () => {
 
   useEffect(() => {
     // Start loader
-    setShowLoader(true);
+    // setShowLoader(true);
   }, [location]);
 
   // Callback from the loader once 100% is reached

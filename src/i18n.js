@@ -1,23 +1,28 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
-import ru from './locales/ru.json';
-import en from './locales/en.json';
-// import kz from './locales/kz.json';
-// import ch from './locales/ch.json';
+import translationEN from './locales/en/translation';
+import translationRU from './locales/ru/translation';
 
-i18n.use(initReactI18next).init({
-  resources: {
-    Рус: { translation: ru },
-    Eng: { translation: en },
-    // Қаз: { translation: kz },
-    // 中文: { translation: ch }
+const resources = {
+  en: {
+    translation: translationEN
   },
-  lng: 'Рус',
-  fallbackLng: 'Рус',
-  interpolation: {
-    escapeValue: false,
-  },
-});
+  ru: {
+    translation: translationRU
+  }
+};
+
+i18n
+  .use(LanguageDetector) // Detect browser language
+  .use(initReactI18next) // Connect with React
+  .init({
+    resources,
+    fallbackLng: 'en', // default language
+    interpolation: {
+      escapeValue: false // react already handles escaping
+    }
+  });
 
 export default i18n;

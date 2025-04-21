@@ -1,5 +1,7 @@
+// src/pages/Home.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 import {
   TruckIcon,
   GlobeAltIcon,
@@ -12,22 +14,8 @@ import endpoint from "../../services/api";
 import { FaComments, FaTimes, FaSyncAlt } from "react-icons/fa";
 import "../../styles/spinner.css";
 
-const fadeAnimations = `
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}`;
-
 const Home = () => {
+  const { t } = useTranslation();
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -36,61 +24,47 @@ const Home = () => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Привет! Я бот компании Great Steppe Logistics. Как я могу помочь вам сегодня?",
+      text: t("home.chat.initial"),
       type: "bot",
-      timestamp: "26h ago",
+      timestamp: t("home.chat.initialTimestamp"),
     },
   ]);
-
   const [userInput, setUserInput] = useState("");
 
-  const toggleChat = () => {
-    setChatVisible(!chatVisible);
-  };
+  const toggleChat = () => setChatVisible((v) => !v);
 
-  const handleInputChange = (e) => {
-    setUserInput(e.target.value);
-  };
+  const handleInputChange = (e) => setUserInput(e.target.value);
 
   const handleSendMessage = async () => {
-    if (userInput.trim() === "") return;
+    if (!userInput.trim()) return;
 
     const newMessage = {
       id: messages.length + 1,
       text: userInput,
       type: "user",
-      timestamp: "Just now",
+      timestamp: t("home.chat.now"),
     };
-
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
+    setMessages((prev) => [...prev, newMessage]);
     setUserInput("");
     setIsTyping(true);
 
     try {
       const response = await axios.post(
         "http://78.140.241.59:8009/chat/chat/",
-        {
-          message: userInput,
-        }
+        { message: userInput }
       );
-
       const botResponse = {
         id: messages.length + 2,
         text: response.data.response,
         type: "bot",
         timestamp: new Date().toLocaleTimeString(),
       };
-
-      setMessages((prevMessages) => [...prevMessages, botResponse]);
-    } catch (error) {
-      const errorMessage = {
-        id: messages.length + 2,
-        text: "Произошла ошибка. Попробуйте позже.",
-        type: "bot",
-        timestamp: new Date().toLocaleTimeString(),
-      };
-
-      setMessages((prevMessages) => [...prevMessages, errorMessage]);
+      setMessages((prev) => [...prev, botResponse]);
+    } catch {
+      setMessages((prev) => [
+        ...prev,
+        { id: messages.length + 2, text: t("home.chat.error"), type: "bot", timestamp: t("home.chat.now") },
+      ]);
     } finally {
       setIsTyping(false);
     }
@@ -98,9 +72,7 @@ const Home = () => {
 
   const handleScrollToForm = () => {
     const formEl = document.getElementById("consultation-form");
-    if (formEl) {
-      formEl.scrollIntoView({ behavior: "smooth" });
-    }
+    formEl?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleSubmit = async (e) => {
@@ -117,16 +89,12 @@ const Home = () => {
     try {
       const response = await axios.post(endpoint, formData);
       if (response.status === 200) {
-        setAlertMessage(
-          "Форма успешно отправлена! Мы свяжемся с вами в ближайшее время."
-        );
+        setAlertMessage(t("home.form.success"));
         setAlertVisible(true);
         e.target.reset();
       }
-    } catch (error) {
-      setAlertMessage(
-        "Произошла ошибка при отправке формы. Попробуйте еще раз позже."
-      );
+    } catch {
+      setAlertMessage(t("home.form.error"));
       setAlertVisible(true);
     } finally {
       setLoading(false);
@@ -134,147 +102,131 @@ const Home = () => {
   };
 
   const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    // Run on mount + on resize
+    const checkIsMobile = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", checkIsMobile);
-    checkIsMobile(); // initial check
-
+    checkIsMobile();
     return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
   return (
     <>
-      <style>{fadeAnimations}</style>
+      {/* ALERT MODAL */}
       {alertVisible && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-md shadow-lg max-w-md text-center">
             <h3 className="text-lg font-bold text-gray-800 mb-4">
-              Уведомление
+              {t("home.notification.title")}
             </h3>
             <p className="text-gray-600 mb-6">{alertMessage}</p>
             <button
               onClick={() => setAlertVisible(false)}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors duration-300"
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
             >
-              Закрыть
+              {t("home.notification.close")}
             </button>
           </div>
         </div>
       )}
 
+      {/* LOADER */}
       {loading && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="loader border-t-4 border-green-600 border-solid rounded-full w-16 h-16 animate-spin"></div>
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="loader border-t-4 border-green-600 rounded-full w-16 h-16 animate-spin"></div>
         </div>
       )}
 
+      {/* HERO SECTION */}
       <section
         className="relative bg-cover bg-center bg-no-repeat flex items-center"
         style={{ backgroundImage: `url(${bgImage})`, height: "100vh" }}
       >
-        {/* Полупрозрачный фон */}
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-
-        {/* Контейнер для текста */}
+        <div className="absolute inset-0 bg-black bg-opacity-60" />
         <div
-          className={`
-      relative
-      z-10
-      px-4
-      fade-in-up
-    `}
+          className={`relative z-10 px-4 fade-in-up`}
           style={{
-            maxWidth: isMobile ? "90%" : "40%", // Уменьшаем ширину текста на компьютерах
-            marginLeft: isMobile ? "5%" : "10%", // Отступ слева
-            textAlign: isMobile ? "center" : "left", // Центрирование текста на мобильных
+            maxWidth: isMobile ? "90%" : "40%",
+            marginLeft: isMobile ? "5%" : "10%",
+            textAlign: isMobile ? "center" : "left",
           }}
         >
-          <p className="text-gray-200 font-bold text-lg sm:text-xl md:text-2xl mt-4 md:mt-2 mb-8">
-          Мы создаем ценность в каждом продукте, делая его надежным, эффективным и востребованным
+          <p className="text-gray-200 font-bold text-lg sm:text-xl md:text-2xl mt-4 mb-8">
+            {t("home.bannerText")}
           </p>
         </div>
       </section>
 
-      <section
-        id="consultation-form"
-        className="bg-white py-16 md:py-20 fade-in-up"
-      >
+      {/* CONSULTATION FORM */}
+      <section id="consultation-form" className="bg-white py-16 fade-in-up">
         <div className="max-w-2xl mx-auto px-4 mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center">
-            Получите консультацию
+            {t("home.consultation.title")}
           </h2>
           <p className="mt-4 text-gray-600 text-center max-w-xl mx-auto">
-            Заполните форму ниже, и мы свяжемся с вами, чтобы найти лучшие
-            решения для ваших логистических задач.
+            {t("home.consultation.description")}
           </p>
           <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-1 gap-6">
             <div>
-              <label className="block text-gray-700 mb-2">Имя</label>
+              <label className="block text-gray-700 mb-2">
+                {t("home.form.name")}
+              </label>
               <input
                 type="text"
                 name="name"
-                placeholder="Введите ваше имя"
+                placeholder={t("home.form.namePlaceholder")}
                 required
-                className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:border-green-600 transition-colors duration-300"
+                className="w-full border rounded-md p-3 focus:border-green-600"
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2">Номер телефона</label>
+              <label className="block text-gray-700 mb-2">
+                {t("home.form.phone")}
+              </label>
               <input
                 type="tel"
                 name="phone"
-                placeholder="Введите номер телефона"
+                placeholder={t("home.form.phonePlaceholder")}
                 required
-                className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:border-green-600 transition-colors duration-300"
+                className="w-full border rounded-md p-3 focus:border-green-600"
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2">Email</label>
+              <label className="block text-gray-700 mb-2">
+                {t("home.form.email")}
+              </label>
               <input
                 type="email"
                 name="email"
-                placeholder="Введите адрес электронной почты"
-                className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:border-green-600 transition-colors duration-300"
+                placeholder={t("home.form.emailPlaceholder")}
+                className="w-full border rounded-md p-3 focus:border-green-600"
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2">Комментарий</label>
+              <label className="block text-gray-700 mb-2">
+                {t("home.form.comment")}
+              </label>
               <textarea
                 name="comment"
                 rows="4"
-                placeholder="Опишите свой вопрос или запрос..."
-                className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:border-green-600 transition-colors duration-300"
+                placeholder={t("home.form.commentPlaceholder")}
+                className="w-full border rounded-md p-3 focus:border-green-600"
               />
             </div>
             <button
               type="submit"
-              className="mt-2 bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition-colors duration-300"
+              className="mt-2 bg-green-600 text-white py-3 rounded-md hover:bg-green-700"
             >
-              Отправить
+              {t("home.form.send")}
             </button>
           </form>
         </div>
       </section>
 
-      {/* Floating Chat Icon */}
-      <div
-        className="
-    fixed
-    right-5
-    z-50
-    bottom-20       /* default for mobile */
-    md:bottom-5     /* override for desktop and larger */
-    transition-all
-  "
-      >
+      {/* FLOATING CHAT ICON */}
+      <div className="fixed right-5 z-50 bottom-20 md:bottom-5">
         <button
           onClick={toggleChat}
-          className="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition transform hover:scale-110 focus:outline-none"
+          className="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transform hover:scale-110"
         >
           {chatVisible ? (
             <FaTimes className="h-6 w-6" />
@@ -284,25 +236,21 @@ const Home = () => {
         </button>
       </div>
 
-      {/* Chat Window */}
+      {/* CHAT WINDOW */}
       {chatVisible && (
-        <div
-          className="fixed bottom-20 right-5 bg-white border border-gray-300 rounded-lg shadow-lg w-80 animate-fade-in-up"
-          style={{
-            animation: "fadeInUp 0.3s ease-out",
-          }}
-        >
-          <div className="p-4 border-b border-gray-200 flex justify-between items-center">
-            <h3 className="text-lg font-bold text-gray-800">Чат с нами</h3>
+        <div className="fixed bottom-20 right-5 bg-white border rounded-lg shadow-lg w-80 animate-fade-in-up">
+          <div className="p-4 border-b flex justify-between items-center">
+            <h3 className="text-lg font-bold text-gray-800">
+              {t("home.chat.header")}
+            </h3>
             <button
               onClick={() => setMessages([])}
-              className="text-gray-500 hover:text-gray-800 transition-colors duration-300"
-              title="Обновить чат"
+              className="text-gray-500 hover:text-gray-800"
+              title={t("home.chat.refresh")}
             >
               <FaSyncAlt />
             </button>
           </div>
-
           <div className="p-4 h-64 overflow-y-auto">
             {messages.map((message) => (
               <div
@@ -317,9 +265,7 @@ const Home = () => {
                       ? "bg-gray-100 text-gray-800"
                       : "bg-green-600 text-white"
                   }`}
-                  style={{
-                    maxWidth: "75%",
-                  }}
+                  style={{ maxWidth: "75%" }}
                 >
                   <p className="text-sm">{message.text}</p>
                   <span className="text-xs text-gray-500 mt-1 block">
@@ -328,30 +274,27 @@ const Home = () => {
                 </div>
               </div>
             ))}
-            {/* Индикатор загрузки */}
             {isTyping && (
               <div className="flex items-center mb-4">
                 <div className="w-6 h-6 border-4 border-green-600 border-t-transparent rounded-full animate-spin"></div>
                 <span className="ml-3 text-gray-500 text-sm">
-                  Бот печатает...
+                  {t("home.chat.typing")}
                 </span>
               </div>
             )}
           </div>
-          <div className="p-3 border-t border-gray-200 flex items-center">
+          <div className="p-3 border-t flex items-center">
             <input
               type="text"
-              placeholder="Введите сообщение..."
-              className="flex-1 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-green-600 transition-colors duration-300"
+              placeholder={t("home.chat.inputPlaceholder")}
+              className="flex-1 border rounded-md p-2 focus:border-green-600"
               value={userInput}
               onChange={handleInputChange}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") handleSendMessage();
-              }}
+              onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
             />
             <button
               onClick={handleSendMessage}
-              className="ml-2 bg-green-600 text-white p-2 rounded-md hover:bg-green-700 transition-colors duration-300 focus:outline-none"
+              className="ml-2 bg-green-600 text-white p-2 rounded-md hover:bg-green-700"
             >
               ➤
             </button>
@@ -359,23 +302,13 @@ const Home = () => {
         </div>
       )}
 
-      <style>
-        {`
-          @keyframes fadeInUp {
-            0% {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            100% {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          .animate-fade-in-up {
-            animation: fadeInUp 0.3s ease-out;
-          }
-        `}
-      </style>
+      <style>{`
+        @keyframes fadeInUp {
+          0% { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up { animation: fadeInUp 0.3s ease-out; }
+      `}</style>
 
       <Footer />
     </>
