@@ -680,5 +680,66 @@ export default {
           "Our experts ensure full compliance and reliable delivery tailored to your needs."
       }
     }
+  },
+  containerDepot: {
+    title: "Container Depot",
+    breadcrumb: {
+      home: "Home",
+      services: "Services",
+      current: "Container Depot"
+    },
+    services: {
+      heading: "Our container depot services include:",
+      items: {
+        1: { prefix: "01", title: "Safe and efficient container storage" },
+        2: { prefix: "02", title: "Container maintenance and repair" },
+        3: { prefix: "03", title: "Container cleaning and disinfection" },
+        4: { prefix: "04", title: "Container monitoring and accounting" },
+        5: { prefix: "05", title: "Organization of further transportation" },
+        6: { prefix: "06", title: "Rent of various types of containers" },
+        7: { prefix: "07", title: "Consulting services for logistics optimization" }
+      }
+    },
+    advantages: {
+      heading: "Advantages of a container depot",
+      items: {
+        safeStorage: {
+          title: "Safe storage",
+          text:
+            "A container depot provides reliable protection and security of containers from external factors such as weather conditions, theft and damage."
+        },
+        efficientInventory: {
+          title: "Efficient inventory management",
+          text:
+            "Using modern technologies allows us to keep accurate records of containers, which reduces the time it takes to search for and process cargo."
+        },
+        optimization: {
+          title: "Optimization of logistics",
+          text:
+            "Flexibility in container planning and placement reduces transportation costs and speeds up the delivery process."
+        },
+        maintenance: {
+          title: "Maintenance and repair",
+          text:
+            "Regular inspection, cleaning and repair of containers ensure their long-term operation and compliance with international standards."
+        },
+        costReduction: {
+          title: "Reduction of operating costs",
+          text:
+            "Consolidation of container storage in one place reduces the costs of renting space, logistics and maintenance."
+        }
+      }
+    },
+    text: {
+      intro: {
+        heading:
+          "Container depot – a comprehensive solution for storing and handling containers",
+        p1:
+          "Container transportation plays a key role in global logistics, and efficient management of empty and loaded containers requires a high degree of organization, experience and the use of modern technologies. Great Steppe Logistics offers comprehensive solutions for the storage, handling and maintenance of containers, ensuring uninterrupted movement of goods and high safety standards. A container depot is not just a warehouse for empty containers, but a multifunctional logistics center that provides their accounting, preparation for further use, repair and redistribution depending on the customer's needs. Ensuring the smooth operation of a container fleet requires well-organized processes, personnel coordination, and automated management systems.",
+        p2:
+          "A comprehensive solution for your logistics – The Great Steppe Logistics container depot is a strategically important element in the supply chain, helping to avoid logistics bottlenecks, minimize storage costs, and improve overall transportation efficiency. With advanced technologies, professional staff, and strict safety standards, we guarantee the smooth management of your containers. Trust our experience and ensure maximum efficiency of your logistics network!"
+      }
+    }
   }
+  
 };
