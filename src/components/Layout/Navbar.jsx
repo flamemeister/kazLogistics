@@ -9,6 +9,7 @@ import kz_flag from "../../assets/images/kz_flag.png";
 import ru_flag from "../../assets/images/ru_flag.png";
 import eng_flag from "../../assets/images/eng_flag.png";
 import ch_flag from "../../assets/images/ch_flag.png";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,6 +18,7 @@ const Navbar = () => {
 
   // State to track whether to hide only the top bar (phone & email)
   const [hideTopBar, setHideTopBar] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const languageImages = {
     Рус: ru_flag,
@@ -39,18 +41,18 @@ const Navbar = () => {
     setLanguageMenuOpen(!languageMenuOpen);
   };
 
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-    setLanguageMenuOpen(false);
-  };
+const changeLanguage = (lang) => {
+  setLanguage(lang);
+  setLanguageMenuOpen(false);
+  i18n.changeLanguage(lang);
+};
 
-  // Listen for scroll events to hide ONLY the top bar on scroll down, show on scroll up
+
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
 
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset;
-      // If scrolling down, hide top bar. If scrolling up (or near top), show it.
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         setHideTopBar(true);
       } else {
@@ -65,10 +67,6 @@ const Navbar = () => {
 
   return (
     <header className="fixed w-full z-50 bg-green-600 text-white shadow-md">
-      {/* 
-        Top bar (phone & email) only:
-        We apply a transform to slide it out of view when hideTopBar = true.
-      */}
       <div className={`bg-green-650 transition-transform duration-300`}>
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-center md:justify-end items-center space-x-4 text-sm">
           <a href="tel:+77273528880" className="flex items-center">
@@ -82,7 +80,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Main navbar (always visible) */}
       <nav className="max-w-7xl mx-auto my-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0 flex items-center">

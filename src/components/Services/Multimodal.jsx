@@ -16,6 +16,8 @@ import {
   FaTrain,
   FaBoxOpen,
   FaWarehouse,
+  FaHandshake,
+  FaFileInvoice
 } from "react-icons/fa";
 
 const MultimodalServices = () => {
@@ -268,7 +270,7 @@ const MultimodalServices = () => {
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-2xl font-bold mb-8 text-center">
-            Этапы железнодорожной перевозки
+            Этапы мультимодальной перевозки
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Step 1 */}
@@ -280,7 +282,7 @@ const MultimodalServices = () => {
                 <FaClipboard size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
-                Подача заявки и согласование условий
+              Получение заявки
               </p>
             </div>
             {/* Step 2 */}
@@ -304,7 +306,7 @@ const MultimodalServices = () => {
                 <FaDollarSign size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
-                Заключение договора и расчет стоимости
+              Расчет ставки
               </p>
             </div>
             {/* Step 4 */}
@@ -313,9 +315,9 @@ const MultimodalServices = () => {
                 className="w-16 h-16 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: "#0A5225" }}
               >
-                <FaBoxOpen size={28} className="text-white" />
+                <FaClipboard size={28} className="text-white" />
               </div>
-              <p className="ml-4 text-gray-700">Загрузка груза</p>
+              <p className="ml-4 text-gray-700">Оформление документов</p>
             </div>
             {/* Step 5 */}
             <div className="flex items-center">
@@ -325,7 +327,7 @@ const MultimodalServices = () => {
               >
                 <FaTrain size={28} className="text-white" />
               </div>
-              <p className="ml-4 text-gray-700">Перевозка груза по маршруту</p>
+              <p className="ml-4 text-gray-700">Доставка груза до назначения</p>
             </div>
             {/* Step 6 */}
             <div className="flex items-center">
@@ -336,7 +338,29 @@ const MultimodalServices = () => {
                 <FaWarehouse size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
-                Разгрузка груза на складе назначения
+              Отслеживание местонахождения
+              </p>
+            </div>
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaHandshake size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">
+              Выдача груза получателю
+              </p>
+            </div>
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaFileInvoice size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">
+              Получение закрывающих документов
               </p>
             </div>
           </div>

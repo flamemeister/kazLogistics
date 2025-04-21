@@ -16,6 +16,8 @@ import {
   FaTrain,
   FaBoxOpen,
   FaWarehouse,
+  FaFileInvoice,
+  FaHandshake
 } from "react-icons/fa";
 
 const NonhabaryteServices = () => {
@@ -248,8 +250,8 @@ const NonhabaryteServices = () => {
       {/* Stages Section */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-center text-[#0A5225]">
-            Этапы железнодорожной перевозки
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            Этапы негабаритных перевозок
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Step 1 */}
@@ -261,7 +263,7 @@ const NonhabaryteServices = () => {
                 <FaClipboard size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
-                Подача заявки и согласование условий
+              Получение заявки
               </p>
             </div>
             {/* Step 2 */}
@@ -285,7 +287,7 @@ const NonhabaryteServices = () => {
                 <FaDollarSign size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
-                Заключение договора и расчет стоимости
+                Расчет ставки
               </p>
             </div>
             {/* Step 4 */}
@@ -296,7 +298,7 @@ const NonhabaryteServices = () => {
               >
                 <FaBoxOpen size={28} className="text-white" />
               </div>
-              <p className="ml-4 text-gray-700">Загрузка груза</p>
+              <p className="ml-4 text-gray-700">Оформление необходимых документов</p>
             </div>
             {/* Step 5 */}
             <div className="flex items-center">
@@ -306,7 +308,7 @@ const NonhabaryteServices = () => {
               >
                 <FaTrain size={28} className="text-white" />
               </div>
-              <p className="ml-4 text-gray-700">Перевозка груза по маршруту</p>
+              <p className="ml-4 text-gray-700">Доставка груза до назначения</p>
             </div>
             {/* Step 6 */}
             <div className="flex items-center">
@@ -317,7 +319,29 @@ const NonhabaryteServices = () => {
                 <FaWarehouse size={28} className="text-white" />
               </div>
               <p className="ml-4 text-gray-700">
-                Разгрузка груза на складе назначения
+              Отслеживание местонахождения груза
+              </p>
+            </div>
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaHandshake size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">
+              Выдача груза получателю
+              </p>
+            </div>
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaFileInvoice size={28} className="text-white" />
+              </div>
+              <p className="ml-4 text-gray-700">
+              Получение закрывающих документов
               </p>
             </div>
           </div>
@@ -344,7 +368,7 @@ const NonhabaryteServices = () => {
             непредвиденных препятствий и получите оперативное исполнение заказа.
           </p>
 
-          <h3 className="text-xl font-bold mt-6 text-[#0A5225]">
+          <h3 className="text-xl font-bold mt-6 text">
             Что такое негабаритный транспорт?
           </h3>
           <p className="text-gray-700 leading-relaxed mb-6 text-justify">
@@ -366,7 +390,7 @@ const NonhabaryteServices = () => {
             на всём пути.
           </p>
 
-          <h3 className="text-xl font-bold mt-6 text-[#0A5225]">
+          <h3 className="text-xl font-bold mt-6 text">
             Как организована негабаритная перевозка?
           </h3>
           <p className="text-gray-700 leading-relaxed mb-6 text-justify">

@@ -16,6 +16,8 @@ import {
   FaFileAlt,
   FaTruckMoving,
   FaSatelliteDish,
+  FaHandshake,
+  FaFileInvoice
 } from "react-icons/fa";
 
 const AviaServices = () => {
@@ -352,6 +354,36 @@ const AviaServices = () => {
                 Отслеживание местонахождения груза
               </p>
             </div>
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaHandshake
+                  size={28}
+                  className="text-white"
+                  aria-label="Выдача груза получателю"
+                />
+              </div>
+              <p className="ml-4 text-gray-700">
+              Выдача груза получателю
+              </p>
+            </div>
+            <div className="flex items-center">
+              <div
+                className="w-16 h-16 flex items-center justify-center rounded-full"
+                style={{ backgroundColor: "#0A5225" }}
+              >
+                <FaFileInvoice
+                  size={28}
+                  className="text-white"
+                  aria-label="Получение закрывающих документов"
+                />
+              </div>
+              <p className="ml-4 text-gray-700">
+              Получение закрывающих документов
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -365,11 +397,9 @@ const AviaServices = () => {
             Авиаперевозки грузов – быстро и безопасно
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6 text-justify">
-            Грузовые авиаперевозки — это перевозки грузов с помощью
-            авиаперевозчика. Авиаэкспедитор — это компания, которая занимается
-            организацией авиаперевозок, согласованием тарифов и действует от
-            имени заказчика, согласовывая с перевозчиком все детали перевозки. В
-            «Great Steppe Logistics» мы работаем с лучшими перевозчиками.
+          Грузовые авиаперевозки — это перевозки грузов с помощью авиаперевозчика. Авиаэкспедитор — это компания, 
+          которая занимается организацией авиаперевозок, согласованием тарифов и действует от имени заказчика, 
+          согласовывая с перевозчиком все детали перевозки. В "Great Steppe Logistics»" мы работаем с лучшими перевозчиками.
           </p>
           <h3 className="text-xl font-bold mt-6">
             Преимущества воздушного транспорта:
