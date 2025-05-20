@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
-import logo from "../../assets/logo_white.png";
+import logo from "../../assets/logo_new.png";
 
 // import kz_flag from "../../assets/images/kz_flag.png";
 import ru_flag from "../../assets/images/ru_flag.png";
@@ -69,7 +69,7 @@ const Navbar = () => {
 
       <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex-shrink-0 flex items-center">
-          <img src={logo} alt="Logo" className="h-10 object-contain" />
+          <img src={logo} alt="Logo" className="h-16 object-contain" />
         </Link>
 
         <div className="hidden md:flex font-semibold items-center space-x-8">

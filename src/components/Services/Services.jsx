@@ -2,33 +2,76 @@ import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Footer from "../Footer/Footer";
-import card1 from "../../assets/images/auto_card.jpeg";
-import card2 from "../../assets/images/air_card.jpeg";
-import card3 from "../../assets/images/train_card.jpeg";
-import card4 from "../../assets/images/container_card.jpeg";
-import card5 from "../../assets/images/multimodal_card.jpeg";
-import card6 from "../../assets/images/nonhabaryte_card.jpeg";
-import card7 from "../../assets/images/depo_card.jpeg";
+import card1Ru from "../../assets/images/auto_card_rus.jpeg";
+import card2Ru from "../../assets/images/air_card_rus.jpeg";
+import card3Ru from "../../assets/images/train_card_rus.jpeg";
+import card4Ru from "../../assets/images/container_card_rus.jpeg";
+import card5Ru from "../../assets/images/multimodal_card_rus.jpeg";
+import card6Ru from "../../assets/images/nonhabaryte_card_rus.jpeg";
+import card7Ru from "../../assets/images/depo_card_rus.jpeg";
+
+import card1En from "../../assets/images/auto_card_eng.jpeg";
+import card2En from "../../assets/images/air_card_eng.jpeg";
+import card3En from "../../assets/images/train_card_eng.jpeg";
+import card4En from "../../assets/images/container_card_eng.jpeg";
+import card5En from "../../assets/images/multimodal_card_eng.jpeg";
+import card6En from "../../assets/images/nonhabaryte_card_eng.jpeg";
+import card7En from "../../assets/images/depo_card_eng.jpeg";
+
 import card8 from "../../assets/images/go_back.png";
 
 const Services = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const lang = i18n.language;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const services = [
-    { id: 1, image: card1, link: "/services/auto" },
-    { id: 2, image: card2, link: "/services/air" },
-    { id: 3, image: card3, link: "/services/railway" },
-    { id: 4, image: card4, link: "/services/container" },
-    { id: 5, image: card5, link: "/services/multimodal" },
-    { id: 6, image: card6, link: "/services/nonhabaryte" },
-    { id: 7, image: card7, link: "/services/projective" },
-    { id: 8, image: card8, link: null }, // back button
-  ];
+const services = [
+  {
+    id: 1,
+    image: lang === "en" ? card1En : card1Ru,
+    link: "/services/auto",
+  },
+  {
+    id: 2,
+    image: lang === "en" ? card2En : card2Ru,
+    link: "/services/air",
+  },
+  {
+    id: 3,
+    image: lang === "en" ? card3En : card3Ru,
+    link: "/services/railway",
+  },
+  {
+    id: 4,
+    image: lang === "en" ? card4En : card4Ru,
+    link: "/services/container",
+  },
+  {
+    id: 5,
+    image: lang === "en" ? card5En : card5Ru,
+    link: "/services/multimodal",
+  },
+  {
+    id: 6,
+    image: lang === "en" ? card6En : card6Ru,
+    link: "/services/nonhabaryte",
+  },
+  {
+    id: 7,
+    image: lang === "en" ? card7En : card7Ru,
+    link: "/services/projective",
+  },
+  {
+    id: 8,
+    image: card8,
+    link: null,
+  },
+];
+
 
   return (
     <div>
