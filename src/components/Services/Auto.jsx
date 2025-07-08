@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import backgroundImage from "../../assets/images/auto_transfer.jpg";
+import backgroundImage from "../../assets/images/auto_transfer_rus.jpg";
 import {
   FaTruck,
   FaBolt,

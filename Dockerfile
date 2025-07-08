@@ -1,13 +1,13 @@
-FROM node:20-alpine AS build
+FROM node:20-alpine
 
-WORKDIR /client
+WORKDIR /app
 
 COPY package.json package-lock.json ./
-
 RUN npm install
 
 COPY . .
+COPY certs ./certs
 
 EXPOSE 5175
 
-CMD ["npm", "run", "dev", "--", "--host", "--port", "5175"]
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5175"]
