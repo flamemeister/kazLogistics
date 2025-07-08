@@ -63,7 +63,7 @@ const services = [
   {
     id: 7,
     image: lang === "en" ? card7En : card7Ru,
-    link: "/services/projective",
+    link: "/services/containerdepot",
   },
   {
     id: 8,
@@ -154,6 +154,9 @@ const services = [
           </ul>
           <p className="leading-relaxed mt-6 text-justify">
             {t("services.outro")}
+          </p>
+          <p className="leading-relaxed mt-6 text-justify">
+            {t("services.outro_2")}
           </p>
         </div>
       </div>

@@ -29,9 +29,9 @@ const ContainerServices = () => {
   }, []);
 
   const services = [1, 2, 3, 4, 5, 6, 7];
-  const advantages = ["protection", "standard", "economy", "loading", "multimodal", "tracking"];
+  const advantages = ["protection", "standard", "loading", "multimodal", "tracking"];
   const stages = ["app", "route", "rate", "docs", "delivery", "tracking", "handover", "closing"];
-  const details = [1, 2, 3];
+  const details = [1, 2, 3, 4, 5];
 
   const AdvIcon = {
     protection: FaShieldAlt,

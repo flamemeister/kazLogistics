@@ -95,7 +95,7 @@ const Footer = () => {
           {/* Desktop Social Icons */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-6">
             <a
-              href="https://wa.me/77771544455"
+              href="https://wa.me/77015367873"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"

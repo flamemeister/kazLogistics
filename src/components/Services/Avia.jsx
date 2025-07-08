@@ -166,21 +166,39 @@ const AviaServices = () => {
 
       <hr className="border-gray-200 my-8" />
 
-      {/* Details */}
-      <section className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 space-y-8">
-          {details.map((id) => (
-            <div key={id}>
-              <h3 className="text-xl font-bold">
-                {t(`avia.details.${id}.heading`)}
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                {t(`avia.details.${id}.text`)}
-              </p>
-            </div>
-          ))}
+{/* Details */}
+<section className="bg-white py-16">
+  <div className="max-w-6xl mx-auto px-4 md:px-8 space-y-8">
+    {details.map((id) => {
+      const text = t(`avia.details.${id}.text`);
+      const isList = text.includes("-");
+
+      return (
+        <div key={id}>
+          <h3 className="text-xl font-bold">
+            {t(`avia.details.${id}.heading`)}
+          </h3>
+
+          {isList ? (
+            <ul className="list-disc list-inside space-y-2 text-gray-700 leading-relaxed">
+              {text
+                .split("-")
+                .filter((line) => line.trim() !== "")
+                .map((line, idx) => (
+                  <li key={idx}>{line.trim()}</li>
+                ))}
+            </ul>
+          ) : (
+            <p className="text-gray-700 leading-relaxed">
+              {text}
+            </p>
+          )}
         </div>
-      </section>
+      );
+    })}
+  </div>
+</section>
+
 
       <Footer />
     </div>

@@ -32,7 +32,7 @@ const RailServices = () => {
   const services = [1, 2, 3, 4, 5, 6];
   const advantages = ["capacity", "economy", "safety", "eco", "routes", "intermodal"];
   const stages = ["app", "route", "rate", "docs", "delivery", "tracking", "handover", "closing"];
-  const details = [1, 2, 3, 4, 5];
+  const details = [1, 2, 3, 4, 5, 6];
 
   const AdvIcon = {
     capacity: FaBoxOpen,

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
-import logo from "../../assets/logo_new.png";
+import logo from "../../assets/logo_new_3.png";
 
 // import kz_flag from "../../assets/images/kz_flag.png";
 import ru_flag from "../../assets/images/ru_flag.png";

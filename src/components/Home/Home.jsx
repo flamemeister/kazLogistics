@@ -137,24 +137,35 @@ const Home = () => {
       )}
 
       {/* HERO SECTION */}
-      <section
-        className="relative bg-cover bg-center bg-no-repeat flex items-center"
-        style={{ backgroundImage: `url(${bgImage})`, height: "100vh" }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-60" />
-        <div
-          className={`relative z-10 px-4 fade-in-up`}
-          style={{
-            maxWidth: isMobile ? "90%" : "40%",
-            marginLeft: isMobile ? "5%" : "10%",
-            textAlign: isMobile ? "center" : "left",
-          }}
-        >
-          <p className="text-gray-200 font-bold text-lg sm:text-xl md:text-2xl mt-4 mb-8">
-            {t("home.bannerText")}
-          </p>
-        </div>
-      </section>
+<section
+  className="relative bg-cover bg-center bg-no-repeat flex items-center"
+  style={{ backgroundImage: `url(${bgImage})`, height: "100vh" }}
+>
+  {/* overlay */}
+  <div className="absolute inset-0 bg-black bg-opacity-60" />
+
+  {/* content */}
+  <div
+    className={`relative z-10 px-4`}
+    style={{
+      maxWidth: isMobile ? "90%" : "40%",
+      marginLeft: isMobile ? "5%" : "10%",
+      textAlign: isMobile ? "center" : "left",
+    }}
+  >
+    <h1 className="text-white font-bold text-3xl sm:text-4xl md:text-5xl leading-tight">
+      Перевозки от <br />
+      простых до сложных
+    </h1>
+
+    <p className="text-gray-300 mt-4 text-base sm:text-lg md:text-xl max-w-lg">
+      Мы предоставляем индивидуальные транспортные решения — от самых простых до самых сложных.
+    </p>
+
+
+  </div>
+</section>
+
 
       {/* CONSULTATION FORM */}
       <section id="consultation-form" className="bg-white py-16 fade-in-up">

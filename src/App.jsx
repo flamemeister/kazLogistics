@@ -65,7 +65,7 @@ const AppContent = () => {
         <Route path="/services/container" element={<ContainerServices />} />
         <Route path="/services/multimodal" element={<MultimodalServices />} />
         <Route path="/services/nonhabaryte" element={<NonhabaryteServices />} />
-        <Route path="/services/projective" element={<ProjectiveServices />} />
+        <Route path="/services/containerdepot" element={<ProjectiveServices />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
