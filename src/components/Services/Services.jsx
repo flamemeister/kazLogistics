@@ -58,7 +58,7 @@ const services = [
   {
     id: 6,
     image: lang === "en" ? card6En : card6Ru,
-    link: "/services/nonhabaryte",
+    link: "/services/oversized",
   },
   {
     id: 7,

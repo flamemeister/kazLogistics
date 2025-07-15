@@ -95,7 +95,7 @@ const Footer = () => {
           {/* Desktop Social Icons */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-6">
             <a
-              href="https://wa.me/77015367873"
+              href="https://wa.me/77027714828"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -104,7 +104,7 @@ const Footer = () => {
               <FaWhatsapp className="h-10 w-10 text-white hover:text-gray-300" />
             </a>
             <a
-              href="tel:+77015367873"
+              href="tel:+77027714828"
               aria-label="Phone"
               className="hover:scale-110 transition-transform"
             >

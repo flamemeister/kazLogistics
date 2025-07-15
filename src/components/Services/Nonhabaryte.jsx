@@ -111,7 +111,7 @@ const NonhabaryteServices = () => {
       {/* Advantages */}
       <section className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-center">
+          <h2 className="text-2xl font-bold mb-8 text-left">
             {t("nonhabaryte.advantages.heading")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -145,7 +145,7 @@ const NonhabaryteServices = () => {
       {/* Stages */}
       <section className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-center">
+          <h2 className="text-2xl font-bold mb-8 text-left">
             {t("nonhabaryte.stages.heading")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

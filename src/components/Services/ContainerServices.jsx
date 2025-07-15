@@ -117,7 +117,7 @@ const ContainerServices = () => {
       {/* Advantages */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-center">{t("container.advantages.heading")}</h2>
+          <h2 className="text-2xl font-bold mb-8 text-left">{t("container.advantages.heading")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {advantages.map((key) => {
               const Icon = AdvIcon[key];
@@ -149,7 +149,7 @@ const ContainerServices = () => {
       {/* Stages */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-center">{t("container.stages.heading")}</h2>
+          <h2 className="text-2xl font-bold mb-8 text-left">{t("container.stages.heading")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {stages.map((key) => {
               const Icon = StageIcon[key];
