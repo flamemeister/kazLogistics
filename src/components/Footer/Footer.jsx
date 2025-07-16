@@ -89,7 +89,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between relative">
           {/* Copyright */}
           <p className="text-base">
-            &copy; 2024 <span className="font-normal">Great Steppe Logistics</span>
+            &copy; 2025 <span className="font-normal">Great Steppe Logistics</span>
           </p>
 
           {/* Desktop Social Icons */}
