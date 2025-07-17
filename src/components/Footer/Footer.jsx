@@ -65,7 +65,7 @@ const Footer = () => {
           <span className="text-sm">WhatsApp</span>
         </a>
         <a
-          href="tel:+77015367873"
+          href="tel:+77027714828"
           aria-label="Phone"
           className="text-white flex flex-col items-center hover:opacity-80 transition-opacity"
         >

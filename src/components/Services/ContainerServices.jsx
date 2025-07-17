@@ -133,9 +133,9 @@ const ContainerServices = () => {
                     <h3 className="text-lg font-bold text-gray-800">
                       {t(`container.advantages.items.${key}.title`)}
                     </h3>
-                    <p className="text-gray-700 text-justify hyphens-auto">
-                      {t(`container.advantages.items.${key}.text`)}
-                    </p>
+                    <p className="text-gray-700 text-left hyphens-auto">
+                    {t(`container.advantages.items.${key}.text`)}
+                  </p>
                   </div>
                 </div>
               );
@@ -179,7 +179,7 @@ const ContainerServices = () => {
               <h2 className={id === 1 ? "text-2xl font-bold mb-8" : "text-xl font-bold mt-6"}>
                 {t(`container.details.${id}.heading`)}
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-6 text-justify">
+              <p className="text-gray-700 leading-relaxed mb-6 text-justify hypens-auto">
                 {t(`container.details.${id}.text`)}
               </p>
               {id === 2 && (

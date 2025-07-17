@@ -131,7 +131,7 @@ const NonhabaryteServices = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-gray-800">{title}</h3>
-                    <p className="text-gray-700">{text}</p>
+                    <p className="text-gray-700 text-justify">{text}</p>
                   </div>
                 </div>
               );
@@ -173,12 +173,12 @@ const NonhabaryteServices = () => {
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           {/* Intro */}
           <h2 className="text-2xl font-bold mb-4">{intro.heading}</h2>
-          <p className="text-gray-700 mb-8">{intro.p1}</p>
+          <p className="text-gray-700 text-justify mb-8">{intro.p1}</p>
 
           {/* Definition */}
           <h3 className="text-xl font-bold mb-2">{definition.heading}</h3>
-          <p className="text-gray-700 mb-2">{definition.p1}</p>
-          <ul className="list-disc list-inside text-gray-700 mb-4">
+          <p className="text-gray-700 text-justify mb-2">{definition.p1}</p>
+            <ul className="list-disc list-inside text-gray-700 mb-4">
             {definition.list.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
@@ -186,8 +186,8 @@ const NonhabaryteServices = () => {
 
           {/* Organization */}
           <h3 className="text-xl font-bold mb-2">{organization.heading}</h3>
-          <p className="text-gray-700 mb-4">{organization.p1}</p>
-          <p className="text-gray-700">{organization.p2}</p>
+          <p className="text-gray-700 text-justify mb-4">{organization.p1}</p>
+          <p className="text-gray-700 text-justify">{organization.p2}</p>
         </div>
       </section>
 

@@ -55,9 +55,9 @@ const Navbar = () => {
       {!hideTopBar && (
         <div className="bg-green-650 transition-transform duration-300">
           <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-center md:justify-end items-center space-x-4 text-sm">
-            <a href="tel:+77273528880" className="flex items-center">
+            <a href="tel:+77027714828" className="flex items-center">
               <PhoneIcon className="h-5 w-5 mr-1" />
-              +7 (727) 344 00 40
+              +7 (702) 771 48 28 
             </a>
             <a href="mailto:info@gslog.kz" className="flex items-center">
               <EnvelopeIcon className="h-5 w-5 mr-1" />

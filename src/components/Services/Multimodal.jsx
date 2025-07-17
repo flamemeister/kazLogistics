@@ -155,9 +155,9 @@ const MultimodalServices = () => {
                     <h3 className="text-lg font-bold text-gray-800">
                       {t(`multimodal.advantages.items.${key}.title`)}
                     </h3>
-                    <p className="text-gray-700 text-justify hyphens-auto">
-                      {t(`multimodal.advantages.items.${key}.text`)}
-                    </p>
+                <p className="text-gray-700 text-left">
+                  {t(`multimodal.advantages.items.${key}.text`)}
+                </p>
                   </div>
                 </div>
               );

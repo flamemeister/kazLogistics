@@ -138,7 +138,7 @@ const RailServices = () => {
                     <h3 className="text-lg font-bold text-gray-800">
                       {t(`rail.advantages.items.${key}.title`)}
                     </h3>
-                    <p className="text-gray-700 text-justify hyphens-auto">
+                    <p className="text-gray-700 text-left hyphens-auto">
                       {t(`rail.advantages.items.${key}.text`)}
                     </p>
                   </div>
@@ -184,7 +184,7 @@ const RailServices = () => {
               <h2 className={id === 1 ? "text-2xl font-bold mb-3" : "text-2xl font-bold mb-3"}>
                 {t(`rail.details.${id}.heading`)}
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-6 text-justify">
+              <p className="text-gray-700 leading-relaxed mb-6 text-left">
                 {t(`rail.details.${id}.text`)}
               </p>
             </div>

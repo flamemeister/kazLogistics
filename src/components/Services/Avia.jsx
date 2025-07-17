@@ -118,7 +118,7 @@ const AviaServices = () => {
                     <h3 className="text-lg font-bold text-gray-800">
                       {t(`avia.advantages.items.${key}.title`)}
                     </h3>
-                    <p className="text-gray-700">
+                <p style={{ hyphens: "auto" }} className="text-gray-700 text-justify hyphens-auto">
                       {t(`avia.advantages.items.${key}.text`)}
                     </p>
                   </div>

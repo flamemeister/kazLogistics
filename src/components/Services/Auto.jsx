@@ -135,7 +135,7 @@ const AutoServices = () => {
                   <h3 className="text-lg font-bold text-gray-800">
                     {t(`auto.advantages.items.${key}.title`)}
                   </h3>
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-gray-700 text-left">
                     {t(`auto.advantages.items.${key}.text`)}
                   </p>
                 </div>

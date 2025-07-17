@@ -131,7 +131,7 @@ const ProjectiveServices = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-gray-800">{title}</h3>
-                    <p className="text-gray-700">{text}</p>
+                  <p className="text-gray-700 text-justify">{text}</p>
                   </div>
                 </div>
               );
