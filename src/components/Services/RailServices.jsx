@@ -185,7 +185,7 @@ const RailServices = () => {
               <h2 className={id === 1 ? "text-2xl font-bold mb-3" : "text-2xl font-bold mb-3"}>
                 {t(`rail.details.${id}.heading`)}
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-6 text-left">
+            <p className="text-gray-700 leading-relaxed text-justify">
                 {t(`rail.details.${id}.text`)}
               </p>
             </div>

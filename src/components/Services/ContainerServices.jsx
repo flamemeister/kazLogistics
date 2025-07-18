@@ -180,11 +180,11 @@ const ContainerServices = () => {
               <h2 className={id === 1 ? "text-2xl font-bold mb-8" : "text-xl font-bold mt-6"}>
                 {t(`container.details.${id}.heading`)}
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-6 text-justify hyphens-auto">
+              <p className="text-gray-700 leading-relaxed mb-6 text-justify">
                 {t(`container.details.${id}.text`)}
               </p>
               {id === 2 && (
-                <ul className="list-disc list-inside text-gray-700 mt-4 space-y-2">
+                <ul className="list-disc list-inside text-gray-700 mt-4 space-y-2 text-justify">
                   {t("container.details.2.list", { returnObjects: true }).map((li, idx) => (
                     <li key={idx}>{li}</li>
                   ))}

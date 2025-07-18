@@ -145,8 +145,8 @@ const ProjectiveServices = () => {
       <section className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-2xl font-bold mb-4">{intro.heading}</h2>
-          <p className="text-gray-700 mb-6">{intro.p1}</p>
-          <p className="text-gray-700">{intro.p2}</p>
+          <p className="text-gray-700 text-justify mb-6">{intro.p1}</p>
+          <p className="text-gray-700 text-justify">{intro.p2}</p>
         </div>
       </section>
 
