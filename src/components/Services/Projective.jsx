@@ -1,4 +1,3 @@
-// src/pages/ProjectiveServices.jsx
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Footer from "../Footer/Footer";
@@ -129,9 +128,9 @@ const ProjectiveServices = () => {
                   <div className="shrink-0 w-14 h-14 flex items-center justify-center text-white rounded-full bg-[#0A5225]">
                     <Icon size={28} />
                   </div>
-                  <div>
+                  <div className="max-w-sm md:max-w-md text-left">
                     <h3 className="text-lg font-bold text-gray-800">{title}</h3>
-                  <p className="text-gray-700 text-justify">{text}</p>
+                    <p className="text-gray-700 text-left">{text}</p>
                   </div>
                 </div>
               );

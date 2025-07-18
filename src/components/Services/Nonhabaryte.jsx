@@ -1,4 +1,3 @@
-// src/pages/NonhabaryteServices.jsx
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Footer from "../Footer/Footer";
@@ -129,9 +128,9 @@ const NonhabaryteServices = () => {
                   <div className="shrink-0 w-14 h-14 flex items-center justify-center text-white rounded-full bg-[#0A5225]">
                       <Icon size={28} />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h3 className="text-lg font-bold text-gray-800">{title}</h3>
-                    <p className="text-gray-700 text-justify">{text}</p>
+                    <p className="text-gray-700 text-left">{text}</p>
                   </div>
                 </div>
               );
@@ -148,7 +147,7 @@ const NonhabaryteServices = () => {
           <h2 className="text-2xl font-bold mb-8 text-left">
             {t("nonhabaryte.stages.heading")}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-between">
             {stageKeys.map((key) => {
               const Icon = stageIcons[key];
               return (

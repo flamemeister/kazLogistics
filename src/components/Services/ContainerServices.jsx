@@ -1,4 +1,3 @@
-// src/pages/ContainerServices.jsx
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -129,13 +128,13 @@ const ContainerServices = () => {
                   >
                     <Icon size={28} aria-label={t(`container.advantages.items.${key}.title`)} />
                   </div>
-                  <div className="max-w-sm md:max-w-md">
+                  <div className="max-w-sm md:max-w-md text-left">
                     <h3 className="text-lg font-bold text-gray-800">
                       {t(`container.advantages.items.${key}.title`)}
                     </h3>
-                    <p className="text-gray-700 text-left hyphens-auto">
-                    {t(`container.advantages.items.${key}.text`)}
-                  </p>
+                    <p className="text-gray-700 text-left">
+                      {t(`container.advantages.items.${key}.text`)}
+                    </p>
                   </div>
                 </div>
               );
@@ -150,7 +149,7 @@ const ContainerServices = () => {
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-2xl font-bold mb-8 text-left">{t("container.stages.heading")}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-between">
             {stages.map((key) => {
               const Icon = StageIcon[key];
               return (
@@ -161,7 +160,9 @@ const ContainerServices = () => {
                   >
                     <Icon className="text-white" size={28} aria-label={t(`container.stages.items.${key}`)} />
                   </div>
-                  <p className="ml-4 text-gray-700">{t(`container.stages.items.${key}`)}</p>
+                  <p className="ml-4 text-gray-700">
+                    {t(`container.stages.items.${key}`)}
+                  </p>
                 </div>
               );
             })}
@@ -179,7 +180,7 @@ const ContainerServices = () => {
               <h2 className={id === 1 ? "text-2xl font-bold mb-8" : "text-xl font-bold mt-6"}>
                 {t(`container.details.${id}.heading`)}
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-6 text-justify hypens-auto">
+              <p className="text-gray-700 leading-relaxed mb-6 text-justify hyphens-auto">
                 {t(`container.details.${id}.text`)}
               </p>
               {id === 2 && (

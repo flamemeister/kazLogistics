@@ -1,4 +1,3 @@
-// src/pages/RailServices.jsx
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -155,7 +154,7 @@ const RailServices = () => {
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-2xl font-bold mb-8 text-left">{t("rail.stages.heading")}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-between">
             {stages.map((key) => {
               const Icon = StageIcon[key];
               return (
@@ -166,7 +165,9 @@ const RailServices = () => {
                   >
                     <Icon className="text-white" size={28} />
                   </div>
-                  <p className="ml-4 text-gray-700">{t(`rail.stages.items.${key}`)}</p>
+                  <p className="ml-4 text-gray-700">
+                    {t(`rail.stages.items.${key}`)}
+                  </p>
                 </div>
               );
             })}

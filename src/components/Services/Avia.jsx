@@ -1,4 +1,3 @@
-// src/pages/AviaServices.jsx
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Footer from "../Footer/Footer";
@@ -114,11 +113,11 @@ const AviaServices = () => {
                   <div className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0 bg-[#0A5225]">
                     <Icon size={28} />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h3 className="text-lg font-bold text-gray-800">
                       {t(`avia.advantages.items.${key}.title`)}
                     </h3>
-                <p style={{ hyphens: "auto" }} className="text-gray-700 text-justify hyphens-auto">
+                  <p className="text-gray-700 text-left">
                       {t(`avia.advantages.items.${key}.text`)}
                     </p>
                   </div>
@@ -137,7 +136,7 @@ const AviaServices = () => {
           <h2 className="text-2xl font-bold mb-8 text-left">
             {t("avia.stages.heading")}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between">
             {stages.map((key) => {
               const Icon = {
                 app: FaClipboardList,
@@ -166,39 +165,38 @@ const AviaServices = () => {
 
       <hr className="border-gray-200 my-8" />
 
-{/* Details */}
-<section className="bg-white py-16">
-  <div className="max-w-6xl mx-auto px-4 md:px-8 space-y-8">
-    {details.map((id) => {
-      const text = t(`avia.details.${id}.text`);
-      const isList = text.includes("-");
+      {/* Details */}
+      <section className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 space-y-8">
+          {details.map((id) => {
+            const text = t(`avia.details.${id}.text`);
+            const isList = text.includes("-");
 
-      return (
-        <div key={id}>
-          <h3 className="text-xl font-bold">
-            {t(`avia.details.${id}.heading`)}
-          </h3>
+            return (
+              <div key={id}>
+                <h3 className="text-xl font-bold">
+                  {t(`avia.details.${id}.heading`)}
+                </h3>
 
-          {isList ? (
-            <ul className="list-disc list-inside space-y-2 text-gray-700 leading-relaxed">
-              {text
-                .split("-")
-                .filter((line) => line.trim() !== "")
-                .map((line, idx) => (
-                  <li key={idx}>{line.trim()}</li>
-                ))}
-            </ul>
-          ) : (
-            <p className="text-gray-700 leading-relaxed">
-              {text}
-            </p>
-          )}
+                {isList ? (
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 leading-relaxed">
+                    {text
+                      .split("-")
+                      .filter((line) => line.trim() !== "")
+                      .map((line, idx) => (
+                        <li key={idx}>{line.trim()}</li>
+                      ))}
+                  </ul>
+                ) : (
+                  <p className="text-gray-700 leading-relaxed">
+                    {text}
+                  </p>
+                )}
+              </div>
+            );
+          })}
         </div>
-      );
-    })}
-  </div>
-</section>
-
+      </section>
 
       <Footer />
     </div>
