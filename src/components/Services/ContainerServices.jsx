@@ -30,7 +30,7 @@ const ContainerServices = () => {
   const services = [1, 2, 3, 4, 5, 6, 7];
   const advantages = ["protection", "standard", "loading", "multimodal", "tracking"];
   const stages = ["app", "route", "rate", "docs", "delivery", "tracking", "handover", "closing"];
-  const details = [1, 2, 3, 4, 5];
+  const details = [1, 2, 3];
 
   const AdvIcon = {
     protection: FaShieldAlt,
@@ -180,13 +180,13 @@ const ContainerServices = () => {
               <h2 className={id === 1 ? "text-2xl font-bold mb-8" : "text-xl font-bold mt-6"}>
                 {t(`container.details.${id}.heading`)}
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-6 text-justify">
+                <p className="text-gray-700 leading-loose mb-6 text-justify">
                 {t(`container.details.${id}.text`)}
               </p>
               {id === 2 && (
-                <ul className="list-disc list-inside text-gray-700 mt-4 space-y-2 text-justify">
-                  {t("container.details.2.list", { returnObjects: true }).map((li, idx) => (
-                    <li key={idx}>{li}</li>
+              <ul className="list-disc list-inside text-gray-700 mt-4 text-justify">
+                    {t("container.details.2.list", { returnObjects: true }).map((li, idx) => (
+                        <li key={idx} className="mb-4">{li}</li>  
                   ))}
                 </ul>
               )}

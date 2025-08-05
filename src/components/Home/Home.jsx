@@ -153,14 +153,14 @@ const Home = () => {
       textAlign: isMobile ? "center" : "left",
     }}
   >
-    <h1 className="text-white font-bold text-3xl sm:text-4xl md:text-5xl leading-tight">
-      Перевозки от <br />
-      простых до сложных
-    </h1>
+<h1 className="text-white font-bold text-3xl sm:text-4xl md:text-5xl leading-tight">
+  {t("home.bannerHeading")}
+</h1>
 
-    <p className="text-gray-300 mt-4 text-base sm:text-lg md:text-xl max-w-lg">
-      Мы доставляем грузы в Казахстан и Центральную Азию из любой точки мира
-    </p>
+<p className="text-gray-300 mt-4 text-base sm:text-lg md:text-xl max-w-lg">
+  {t("home.bannerSubheading")}
+</p>
+
 
 
   </div>

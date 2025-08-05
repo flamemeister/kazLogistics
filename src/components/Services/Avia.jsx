@@ -36,7 +36,7 @@ const AviaServices = () => {
     "intermodal",
   ];
   const stages = ["app", "route", "rate", "docs", "delivery", "tracking", "handover", "closing"];
-  const details = [1, 2, 3, 4, 5, 6, 7, 8];
+  const details = [1, 2, 3, 4, 5, 6, 7];
 
   return (
     <div>

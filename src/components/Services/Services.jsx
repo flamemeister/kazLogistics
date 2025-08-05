@@ -156,7 +156,6 @@ const services = [
             {t("services.outro")}
           </p>
           <p className="leading-relaxed mt-6 text-justify">
-            {t("services.outro_2")}
           </p>
         </div>
       </div>
