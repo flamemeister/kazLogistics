@@ -28,9 +28,24 @@ const ContainerServices = () => {
   }, []);
 
   const services = [1, 2, 3, 4, 5, 6, 7];
-  const advantages = ["protection", "standard", "loading", "multimodal", "tracking"];
-  const stages = ["app", "route", "rate", "docs", "delivery", "tracking", "handover", "closing"];
-  const details = [1, 2, 3];
+  const advantages = [
+    "protection",
+    "standard",
+    "loading",
+    "multimodal",
+    "tracking",
+  ];
+  const stages = [
+    "app",
+    "route",
+    "rate",
+    "docs",
+    "delivery",
+    "tracking",
+    "handover",
+    "closing",
+  ];
+  const details = [1, 2, 3, 4, 5];
 
   const AdvIcon = {
     protection: FaShieldAlt,
@@ -81,14 +96,20 @@ const ContainerServices = () => {
           <nav className="text-gray-500 text-sm">
             <ul className="flex space-x-2">
               <li>
-                <a href="/" className="hover:text-green-600">{t("container.breadcrumb.home")}</a>
+                <a href="/" className="hover:text-green-600">
+                  {t("container.breadcrumb.home")}
+                </a>
               </li>
               <li>›</li>
               <li>
-                <a href="/services" className="hover:text-green-600">{t("container.breadcrumb.services")}</a>
+                <a href="/services" className="hover:text-green-600">
+                  {t("container.breadcrumb.services")}
+                </a>
               </li>
               <li>›</li>
-              <li className="text-gray-700">{t("container.breadcrumb.current")}</li>
+              <li className="text-gray-700">
+                {t("container.breadcrumb.current")}
+              </li>
             </ul>
           </nav>
         </div>
@@ -97,14 +118,21 @@ const ContainerServices = () => {
       {/* Services List */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mt-8">{t("container.services.heading")}</h2>
+          <h2 className="text-2xl font-bold mt-8">
+            {t("container.services.heading")}
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {services.map((id) => (
-              <div key={id} className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition">
+              <div
+                key={id}
+                className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition"
+              >
                 <h3 className="text-xl font-bold text-green-600 mb-2">
                   {t(`container.services.items.${id}.prefix`)}
                 </h3>
-                <p className="text-gray-700">{t(`container.services.items.${id}.title`)}</p>
+                <p className="text-gray-700">
+                  {t(`container.services.items.${id}.title`)}
+                </p>
               </div>
             ))}
           </div>
@@ -116,7 +144,9 @@ const ContainerServices = () => {
       {/* Advantages */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-left">{t("container.advantages.heading")}</h2>
+          <h2 className="text-2xl font-bold mb-8 text-left">
+            {t("container.advantages.heading")}
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {advantages.map((key) => {
               const Icon = AdvIcon[key];
@@ -126,7 +156,10 @@ const ContainerServices = () => {
                     className="w-14 h-14 flex items-center justify-center text-white rounded-full shrink-0"
                     style={{ backgroundColor: "#0A5225" }}
                   >
-                    <Icon size={28} aria-label={t(`container.advantages.items.${key}.title`)} />
+                    <Icon
+                      size={28}
+                      aria-label={t(`container.advantages.items.${key}.title`)}
+                    />
                   </div>
                   <div className="max-w-sm md:max-w-md text-left">
                     <h3 className="text-lg font-bold text-gray-800">
@@ -148,7 +181,9 @@ const ContainerServices = () => {
       {/* Stages */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-left">{t("container.stages.heading")}</h2>
+          <h2 className="text-2xl font-bold mb-8 text-left">
+            {t("container.stages.heading")}
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-between">
             {stages.map((key) => {
               const Icon = StageIcon[key];
@@ -158,7 +193,11 @@ const ContainerServices = () => {
                     className="w-16 h-16 flex items-center justify-center rounded-full"
                     style={{ backgroundColor: "#0A5225" }}
                   >
-                    <Icon className="text-white" size={28} aria-label={t(`container.stages.items.${key}`)} />
+                    <Icon
+                      className="text-white"
+                      size={28}
+                      aria-label={t(`container.stages.items.${key}`)}
+                    />
                   </div>
                   <p className="ml-4 text-gray-700">
                     {t(`container.stages.items.${key}`)}
@@ -177,17 +216,30 @@ const ContainerServices = () => {
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           {details.map((id) => (
             <div key={id} className={id > 1 ? "mt-12" : ""}>
-              <h2 className={id === 1 ? "text-2xl font-bold mb-8" : "text-xl font-bold mt-6"}>
+              <h2
+                className={
+                  id === 1
+                    ? "text-2xl font-bold mb-8"
+                    : "text-xl font-bold mt-6"
+                }
+              >
                 {t(`container.details.${id}.heading`)}
               </h2>
+              <div className="mt-6">
                 <p className="text-gray-700 leading-loose mb-6 text-justify">
-                {t(`container.details.${id}.text`)}
-              </p>
+                  {t(`container.details.${id}.text`)}
+                </p>
+              </div>
+
               {id === 2 && (
-              <ul className="list-disc list-inside text-gray-700 mt-4 text-justify">
-                    {t("container.details.2.list", { returnObjects: true }).map((li, idx) => (
-                        <li key={idx} className="mb-4">{li}</li>  
-                  ))}
+                <ul className="list-disc list-inside text-gray-700 mt-4 text-justify">
+                  {t("container.details.2.list", { returnObjects: true }).map(
+                    (li, idx) => (
+                      <li key={idx} className="mb-4">
+                        {li}
+                      </li>
+                    )
+                  )}
                 </ul>
               )}
             </div>
