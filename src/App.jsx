@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import './i18n';
+import i18n from "./i18n";
+
+console.log("Current language:", i18n.language);
+console.log("Home label:", i18n.t("nav.home"));
 
 import { 
   Navbar,

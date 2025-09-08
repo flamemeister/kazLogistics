@@ -5,10 +5,10 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 import logo from "../../assets/logo_new_3.png";
 
-// import kz_flag from "../../assets/images/kz_flag.png";
+import kz_flag from "../../assets/images/kz_flag.png";
 import ru_flag from "../../assets/images/ru_flag.png";
 import eng_flag from "../../assets/images/eng_flag.png";
-// import ch_flag from "../../assets/images/ch_flag.png";
+import ch_flag from "../../assets/images/ch_flag.png";
 
 import { useTranslation } from "react-i18next";
 
@@ -20,9 +20,9 @@ const Navbar = () => {
 
   const languages = {
     ru: { label: "Рус", flag: ru_flag },
-    // kz: { label: "Қаз", flag: kz_flag },
+    kk: { label: "Қаз", flag: kz_flag },
     en: { label: "Eng", flag: eng_flag },
-    // ch: { label: "中文", flag: ch_flag },
+    zh: { label: "中文", flag: ch_flag },
   };
 
   const currentLang = i18n.language || "ru";

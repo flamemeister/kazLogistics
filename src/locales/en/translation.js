@@ -95,7 +95,7 @@ export default {
       heading: "About the company",
       text1: "We, ",
       text2:
-        " Great Steppe Logistics, - are a Kazakh company dynamically developing in the field of transport and logistics services. Our team unites professionals with many years of experience in leading international logistics companies. Using the accumulated experience and knowledge, we decided to direct them to the creation of our own company based on high standards and an individual approach to customers. "
+        " - are a Kazakh company dynamically developing in the field of transport and logistics services. Our team unites professionals with many years of experience in leading international logistics companies. Using the accumulated experience and knowledge, we decided to direct them to the creation of our own company based on high standards and an individual approach to customers. "
     },
     mission: {
       heading: "Our mission",
@@ -405,7 +405,15 @@ export default {
       },
       3: {
         heading: "",
-        text: "Transportation of goods in containers is not only a convenient, but also a safe way to transport goods. The reliable design of the containers protects the cargo from external influences, as well as from mechanical damage. All this makes container transportation a preferred solution for transporting a wide range of goods. Great Steppe Logistics offers its customers a full range of services related to container transportation. We help with choosing the best route, handle all the necessary paperwork, and offer loading and unloading services. As logistics professionals, we know how important it is to meet deadlines. That's why at Great Steppe Logistics, we offer fast and efficient solutions for all your cargo transportation needs. We make container shipping simple and reliable, helping your business reach new heights."
+        text: "Transportation of goods in containers is not only a convenient, but also a safe way to transport goods. The reliable design of the containers protects the cargo from external influences, as well as from mechanical damage. All this makes container transportation a preferred solution for transporting a wide range of goods."
+      },
+      4:{
+        heading:"",
+        text: "«Great Steppe Logistics» offers its customers a full range of services related to container transportation. We help with choosing the best route, handle all the necessary paperwork, and offer loading and unloading services."
+      }, 
+      5:{
+        heading:"",
+        text: "As logistics professionals, we know how important it is to meet deadlines. That's why at Great Steppe Logistics, we offer fast and efficient solutions for all your cargo transportation needs. We make container shipping simple and reliable, helping your business reach new heights."
       }
     }
   },

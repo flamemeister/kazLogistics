@@ -4,6 +4,10 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translationEN from './locales/en/translation';
 import translationRU from './locales/ru/translation';
+import translationKK from './locales/kk/translation';
+import translationZH from './locales/zh/translation';
+
+
 
 const resources = {
   en: {
@@ -11,18 +15,29 @@ const resources = {
   },
   ru: {
     translation: translationRU
+  },
+  kk: {
+    translation: translationKK
+  },
+  zh: {
+    translation: translationZH
   }
 };
 
 i18n
-  .use(LanguageDetector) // Detect browser language
-  .use(initReactI18next) // Connect with React
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'en', // default language
+  fallbackLng: {
+    'zh-CN': ['zh'],
+    'zh-TW': ['zh'],
+    default: ['en']
+  },
     interpolation: {
-      escapeValue: false // react already handles escaping
+      escapeValue: false
     }
   });
+
 
 export default i18n;

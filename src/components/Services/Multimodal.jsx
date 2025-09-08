@@ -37,16 +37,8 @@ const MultimodalServices = () => {
     "tracking",
     "security",
   ];
-  const stages = [
-    "app",
-    "delivery",
-    "route",
-    "tracking",
-    "rate",
-    "handover",
-    "docs",
-    "closing",
-  ];
+  const stages = ["app", "route", "rate", "docs", "delivery", "tracking", "handover", "closing"];
+
 
   const AdvIcon = {
     flexibility: FaShieldAlt,
