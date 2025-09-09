@@ -29,6 +29,14 @@ import card5Zh from "../../assets/images/multimodal_card_zh.jpeg";
 import card6Zh from "../../assets/images/nonhabaryte_card_zh.jpeg";
 import card7Zh from "../../assets/images/depo_card_zh.jpeg";
 
+import card1Kk from "../../assets/images/auto_card_kk.jpeg";
+import card2Kk from "../../assets/images/air_card_kk.jpeg";
+import card3Kk from "../../assets/images/train_card_kk.jpeg";
+import card4Kk from "../../assets/images/container_card_kk.jpeg";
+import card5Kk from "../../assets/images/multimodal_card_kk.jpeg";
+import card6Kk from "../../assets/images/nonhabaryte_card_kk.jpeg";
+import card7Kk from "../../assets/images/depo_card_kk.jpeg";
+
 import card8 from "../../assets/images/go_back.png";
 
 const Services = () => {
@@ -45,6 +53,8 @@ const Services = () => {
       en: [card1En, card2En, card3En, card4En, card5En, card6En, card7En],
       ru: [card1Ru, card2Ru, card3Ru, card4Ru, card5Ru, card6Ru, card7Ru],
       zh: [card1Zh, card2Zh, card3Zh, card4Zh, card5Zh, card6Zh, card7Zh],
+      kk: [card1Kk, card2Kk, card3Kk, card4Kk, card5Kk, card6Kk, card7Kk],
+
     }),
     []
   );
