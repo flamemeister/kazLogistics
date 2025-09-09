@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Footer from "../Footer/Footer";
+
+// RU
 import card1Ru from "../../assets/images/auto_card_rus.jpeg";
 import card2Ru from "../../assets/images/air_card_rus.jpeg";
 import card3Ru from "../../assets/images/train_card_rus.jpeg";
@@ -10,6 +12,7 @@ import card5Ru from "../../assets/images/multimodal_card_rus.jpeg";
 import card6Ru from "../../assets/images/nonhabaryte_card_rus.jpeg";
 import card7Ru from "../../assets/images/depo_card_rus.jpeg";
 
+// EN
 import card1En from "../../assets/images/auto_card_eng.jpeg";
 import card2En from "../../assets/images/air_card_eng.jpeg";
 import card3En from "../../assets/images/train_card_eng.jpeg";
@@ -18,60 +21,58 @@ import card5En from "../../assets/images/multimodal_card_eng.jpeg";
 import card6En from "../../assets/images/nonhabaryte_card_eng.jpeg";
 import card7En from "../../assets/images/depo_card_eng.jpeg";
 
+import card1Zh from "../../assets/images/auto_card_zh.jpeg";
+import card2Zh from "../../assets/images/air_card_zh.jpeg";
+import card3Zh from "../../assets/images/train_card_zh.jpeg";
+import card4Zh from "../../assets/images/container_card_zh.jpeg";
+import card5Zh from "../../assets/images/multimodal_card_zh.jpeg";
+import card6Zh from "../../assets/images/nonhabaryte_card_zh.jpeg";
+import card7Zh from "../../assets/images/depo_card_zh.jpeg";
+
 import card8 from "../../assets/images/go_back.png";
 
 const Services = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-  const lang = i18n.language;
+  const lang = (i18n.language || "en").split("-")[0]; 
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-const services = [
-  {
-    id: 1,
-    image: lang === "en" ? card1En : card1Ru,
-    link: "/services/auto",
-  },
-  {
-    id: 2,
-    image: lang === "en" ? card2En : card2Ru,
-    link: "/services/air",
-  },
-  {
-    id: 3,
-    image: lang === "en" ? card3En : card3Ru,
-    link: "/services/railway",
-  },
-  {
-    id: 4,
-    image: lang === "en" ? card4En : card4Ru,
-    link: "/services/container",
-  },
-  {
-    id: 5,
-    image: lang === "en" ? card5En : card5Ru,
-    link: "/services/multimodal",
-  },
-  {
-    id: 6,
-    image: lang === "en" ? card6En : card6Ru,
-    link: "/services/oversized",
-  },
-  {
-    id: 7,
-    image: lang === "en" ? card7En : card7Ru,
-    link: "/services/containerdepot",
-  },
-  {
-    id: 8,
-    image: card8,
-    link: null,
-  },
-];
+  const imagesByLang = useMemo(
+    () => ({
+      en: [card1En, card2En, card3En, card4En, card5En, card6En, card7En],
+      ru: [card1Ru, card2Ru, card3Ru, card4Ru, card5Ru, card6Ru, card7Ru],
+      zh: [card1Zh, card2Zh, card3Zh, card4Zh, card5Zh, card6Zh, card7Zh],
+    }),
+    []
+  );
 
+  const baseServices = useMemo(
+    () => [
+      { id: 1, link: "/services/auto" },
+      { id: 2, link: "/services/air" },
+      { id: 3, link: "/services/railway" },
+      { id: 4, link: "/services/container" },
+      { id: 5, link: "/services/multimodal" },
+      { id: 6, link: "/services/oversized" },
+      { id: 7, link: "/services/containerdepot" },
+      { id: 8, link: null }, // back
+    ],
+    []
+  );
+
+  const services = useMemo(() => {
+    const pack = imagesByLang[lang] || imagesByLang.en;
+    return baseServices.map((item, idx) => {
+      if (item.id === 8) {
+        return { ...item, image: card8 };
+      }
+      const img = pack[item.id - 1] || imagesByLang.en[item.id - 1];
+      return { ...item, image: img };
+    });
+  }, [baseServices, imagesByLang, lang]);
 
   return (
     <div>
@@ -100,17 +101,18 @@ const services = [
                     src={image}
                     alt={t(`services.alt.${id}`)}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </Link>
               ) : (
                 <div
                   key={id}
                   onClick={() => navigate(-1)}
-                  className="cursor-pointer group block rounded-lg shadow-lg bg-green-600 text-white flex items-center justify-center transform transition-transform duration-300 hover:-translate-y-2"
+                  className="cursor-pointer group block rounded-lg shadow-lg bg-green-600 text-white flex items-center justify-center transform transition-transform duration-300 hover:-translate-y-2 min-h-[180px]"
+                  role="button"
+                  aria-label={t("services.back")}
                 >
-                  <h3 className="text-lg font-bold">
-                    {t("services.back")}
-                  </h3>
+                  <h3 className="text-lg font-bold">{t("services.back")}</h3>
                 </div>
               )
             )}
@@ -154,8 +156,6 @@ const services = [
           </ul>
           <p className="leading-relaxed mt-6 text-justify">
             {t("services.outro")}
-          </p>
-          <p className="leading-relaxed mt-6 text-justify">
           </p>
         </div>
       </div>

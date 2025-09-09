@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { PhoneIcon } from "@heroicons/react/24/outline";
-import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { FaWhatsapp, FaLinkedin, FaWeixin } from "react-icons/fa"; // FaWeixin = WeChat
 import logo from "../../assets/logo_white.png";
+import wechatQr from "../../assets/images/we_chat.jpeg"; // <-- твой QR код в assets
 
 const Footer = () => {
   const [showMobileSocials, setShowMobileSocials] = useState(true);
+  const [showWeChat, setShowWeChat] = useState(false);
 
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
@@ -14,7 +16,7 @@ const Footer = () => {
       const windowHeight = window.innerHeight;
       const pageHeight = document.body.offsetHeight;
       const isAtBottom = windowHeight + currentScrollY >= pageHeight - 10;
-      
+
       if (isAtBottom) {
         setShowMobileSocials(true);
       } else if (currentScrollY < lastScrollY) {
@@ -35,6 +37,28 @@ const Footer = () => {
 
   return (
     <>
+      {/* WeChat Modal */}
+      {showWeChat && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100]">
+          <div className="bg-white p-4 rounded-lg shadow-lg relative">
+            <button
+              onClick={() => setShowWeChat(false)}
+              className="absolute top-2 right-2 text-gray-600 hover:text-black"
+            >
+              ✕
+            </button>
+            <img
+              src={wechatQr}
+              alt="WeChat QR"
+              className="w-64 h-64 object-contain"
+            />
+            <p className="text-center mt-2 text-sm text-gray-700">
+              WeChat
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Mobile Socials */}
       <div
         className={`
@@ -72,6 +96,14 @@ const Footer = () => {
           <PhoneIcon className="h-10 w-10" />
           <span className="text-sm">Телефон</span>
         </a>
+        <button
+          onClick={() => setShowWeChat(true)}
+          aria-label="WeChat"
+          className="text-white flex flex-col items-center hover:opacity-80 transition-opacity"
+        >
+          <FaWeixin className="h-10 w-10" />
+          <span className="text-sm">WeChat</span>
+        </button>
         <a
           href="https://www.linkedin.com/company/great-steppe-logistics-llp/about/"
           target="_blank"
@@ -84,7 +116,7 @@ const Footer = () => {
         </a>
       </div>
 
-      {/* Desktop Footer (hidden on mobile) */}
+      {/* Desktop Footer */}
       <footer className="hidden md:block bg-[#0A5225] text-gray-100 py-6">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between relative">
           {/* Copyright */}
@@ -110,6 +142,13 @@ const Footer = () => {
             >
               <PhoneIcon className="h-10 w-10 text-white hover:text-gray-300" />
             </a>
+            <button
+              onClick={() => setShowWeChat(true)}
+              aria-label="WeChat"
+              className="hover:scale-110 transition-transform"
+            >
+              <FaWeixin className="h-10 w-10 text-white hover:text-gray-300" />
+            </button>
             <a
               href="https://www.linkedin.com/company/great-steppe-logistics-llp/about/"
               target="_blank"
