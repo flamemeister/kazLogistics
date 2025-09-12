@@ -29,14 +29,9 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-  fallbackLng: {
-    'zh-CN': ['zh'],
-    'zh-TW': ['zh'],
-    default: ['en']
-  },
-    interpolation: {
-      escapeValue: false
-    }
+    lng: 'kk',              // всегда стартуем на казахском
+    supportedLngs: ['kk', 'ru', 'en', 'zh'],
+    interpolation: { escapeValue: false },
   });
 
 

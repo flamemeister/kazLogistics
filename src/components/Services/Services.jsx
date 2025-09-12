@@ -42,7 +42,7 @@ import card8 from "../../assets/images/go_back.png";
 const Services = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-  const lang = (i18n.language || "en").split("-")[0]; 
+  const lang = (i18n.language || "kk").split("-")[0]; 
 
   useEffect(() => {
     window.scrollTo(0, 0);

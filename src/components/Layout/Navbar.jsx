@@ -25,7 +25,7 @@ const Navbar = () => {
     zh: { label: "中文", flag: ch_flag },
   };
 
-  const currentLang = i18n.language || "ru";
+  const currentLang = i18n.language || "kk";
 
   const changeLanguage = (langCode) => {
     i18n.changeLanguage(langCode);
