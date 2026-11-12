@@ -26,6 +26,12 @@ The language switcher retains the original country flags for Kazakh, Russian, En
 
 The homepage uses real, locally hosted ship footage from Pexels (provenance and license in `public/media/video/ATTRIBUTION.md`). The desktop loop is 2.9 MB; mobile uses a separate 1 MB version. A lightweight poster appears first; footage loads only near the viewport and plays muted. The control pauses/resumes playback, and offscreen/hidden-tab playback stops. Reduced-motion and data-saver users receive the still image without a video request. Playback failure retains the poster.
 
+## Service hero films
+
+All seven detail pages use `ServiceHero` and the shared `VideoScene` player, also used on the homepage. Headings sit beside the film on desktop and above it on phones. The 16:9 media frame uses `object-fit: contain` for both poster and footage: keep the complete image visible instead of clipping it into a shallow background banner. Original service posters and translations are independent and remain unchanged.
+
+Each service has appropriate real footage: road truck, aircraft taking off, moving freight train, port crane, sailing ship for multimodal transport, low-loader carrying an excavator for oversized transport, and container terminal for depot services. The six additional clips have desktop/mobile MP4s and matching posters in `public/media/services`; per-clip attribution files record their original pages, creators and licenses. Multimodal reuses the existing ship loop. Videos are silent, controlled by the visible pause button, stopped offscreen/in hidden tabs, and skipped for reduced-motion/data-saver users. Only the current page's clip is requested.
+
 ## Interactive freight experiences
 
 `src/experience` owns the cargo journey and four-language experience controls, separately from the pinned marketing dictionaries. The cargo journey reuses existing photos, service titles and descriptions. Desktop progress follows normal scrolling through four schematic transport stages; chapter buttons and a skip link to the following company section remain available. Phones and reduced-motion layouts use a normal-height, manually selected scene. This is an illustration of possible transport stages, not a claim that every shipment uses each mode.

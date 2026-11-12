@@ -1,7 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { services, stages } from "../data/services";
-import { PageHeading, ConsultationCTA } from "../ui/Sections";
+import { ConsultationCTA } from "../ui/Sections";
+import ServiceHero from "../ui/ServiceHero";
 import Icon from "../ui/Icon";
 import NotFound from "./NotFound";
 
@@ -51,11 +52,7 @@ export default function ServiceDetail() {
   const text = t(`${k}.text`, { returnObjects: true, defaultValue: {} });
   return (
     <>
-      <PageHeading
-        image={service.photo}
-        title={t(`${k}.title`)}
-        label={t("nav.services")}
-      />
+      <ServiceHero service={service} />
       <div className="container service-breadcrumb">
         <Link to="/services">{t(`${k}.breadcrumb.services`)}</Link>
         <span>/</span>
