@@ -83,7 +83,13 @@ function Header() {
               aria-controls="language-options"
               onClick={() => setLanguage((v) => !v)}
             >
-              <Icon name="globe" size={17} />
+              <img
+                className="language-flag"
+                src={`/media/flags/${lang}.png`}
+                alt=""
+                width="24"
+                height="16"
+              />
               {languages[lang]}
               <Icon name="chevron" size={13} />
             </button>
@@ -99,7 +105,16 @@ function Header() {
                       setLanguage(false);
                     }}
                   >
-                    {label}
+                    <span className="language-option-label">
+                      <img
+                        className="language-flag"
+                        src={`/media/flags/${code}.png`}
+                        alt=""
+                        width="24"
+                        height="16"
+                      />
+                      {label}
+                    </span>
                     {code === lang && <Icon name="check" size={15} />}
                   </button>
                 ))}

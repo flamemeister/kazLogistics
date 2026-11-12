@@ -2008,3 +2008,28 @@ p {
     display: none;
   }
 }
+
+.language-flag {
+  display: block;
+  width: 24px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.language-option-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+}
+.language-options button {
+  align-items: center;
+  gap: 14px;
+}
+@media (max-width: 360px) {
+  .navigation {
+    gap: 12px;
+  }
+  .nav-actions {
+    gap: 10px;
+  }
+}
