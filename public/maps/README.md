@@ -1,0 +1,7 @@
+# Map data and attribution
+
+- Office coordinates are unchanged from the original site's Google Maps embed: longitude76.93376998601416, latitude43.25156659873732.
+- `office-style.json` is a locally styled copy of https://tiles.openfreemap.org/styles/positron (retrieved2026-11-12). Vector tiles, glyphs, and sprites are served by OpenFreeMap. Source attribution and metadata are retained; map controls display OpenFreeMap/OpenMapTiles/OpenStreetMap attribution from the vector source.
+- `world.geojson` is the Natural Earth110m admin0 countries dataset from https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_admin_0_countries.geojson. Only geometry and the country code are retained; coordinates are rounded to four decimal places for this small-scale globe. Natural Earth data is public domain: https://www.naturalearthdata.com/about/terms-of-use/ . The globe displays attribution.
+- Globe endpoints represent regions named in the site's existing `auto.details.1.text`, not offices, ports, schedules, or surveyed transport routes. The UI labels these arcs as schematic directions. The only exact business location shown is the existing Almaty office.
+- There are no API keys. Do not remove attribution or add unverified branches/destinations. Both maps load near the viewport. Animated globe particles stop offscreen, in inactive tabs, while paused, and for reduced-motion preferences.

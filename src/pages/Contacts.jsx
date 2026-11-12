@@ -2,6 +2,9 @@ import { useTranslation } from "react-i18next";
 import { PageHeading } from "../ui/Sections";
 import ConsultationForm from "../ui/ConsultationForm";
 import Icon from "../ui/Icon";
+import { lazy } from "react";
+import MapSlot from "../maps/MapSlot";
+const OfficeMap = lazy(() => import("../maps/OfficeMap"));
 export default function Contacts() {
   const { t } = useTranslation();
   return (
@@ -28,14 +31,9 @@ export default function Contacts() {
               <Icon name="northeast" size={18} />
             </a>
           </div>
-          <iframe
-            className="map"
-            src="https://www.google.com/maps?q=43.25156659873732,76.93376998601416&z=17&output=embed"
-            title={t("contacts.mapTitle")}
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          <MapSlot className="office-map-slot">
+            <OfficeMap />
+          </MapSlot>
         </div>
       </section>
       <ConsultationForm />

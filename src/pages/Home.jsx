@@ -6,6 +6,7 @@ import { ButtonLink, ServiceCards } from "../ui/Sections";
 import ConsultationForm from "../ui/ConsultationForm";
 import Chat from "../ui/Chat";
 import HeroScene from "../ui/HeroScene";
+import GeographySection from "../maps/GeographySection";
 export default function Home() {
   const { t } = useTranslation();
   return (
@@ -81,6 +82,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <GeographySection />
       <ConsultationForm />
       <Chat />
     </>

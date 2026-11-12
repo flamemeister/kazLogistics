@@ -4,5 +4,18 @@ export default defineConfig({
   plugins: [react()],
   server: { host: "127.0.0.1", port: 5176, strictPort: true },
   preview: { host: "127.0.0.1", port: 4176, strictPort: true },
-  build: { sourcemap: false },
+  build: {
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (
+            id.includes("/node_modules/maplibre-gl/") ||
+            id.includes("/node_modules/@maplibre/")
+          )
+            return "map-engine";
+        },
+      },
+    },
+  },
 });
