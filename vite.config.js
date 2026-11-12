@@ -1,20 +1,44 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import fs from 'fs'
-import path from 'path'
-
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    host: '0.0.0.0',
-    port: 5175,
-    https: {
-      key: fs.readFileSync(path.resolve(__dirname, 'certs/gslog.key')),
-      cert: fs.readFileSync(path.resolve(__dirname, 'certs/gslog_fullchain.crt'))
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+export default defineConfig(({ mode }) => ({
+  plugins: [
+    react(),
+    {
+      name: "deployment-indexing",
+      transformIndexHtml(html) {
+        return mode === "production"
+          ? html.replace(
+              'content="noindex, nofollow"',
+              'content="index, follow"',
+            )
+          : html;
+      },
+      generateBundle() {
+        this.emitFile({
+          type: "asset",
+          fileName: "robots.txt",
+          source:
+            mode === "production"
+              ? "User-agent: *\nAllow: /\n"
+              : "User-agent: *\nDisallow: /\n",
+        });
+      },
     },
-    hmr: {
-      protocol: 'wss',
-      host: 'gslog.kz',
-    }
-  }
-})
+  ],
+  server: { host: "127.0.0.1", port: 5176, strictPort: true },
+  preview: { host: "127.0.0.1", port: 4176, strictPort: true },
+  build: {
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (
+            id.includes("/node_modules/maplibre-gl/") ||
+            id.includes("/node_modules/@maplibre/")
+          )
+            return "map-engine";
+        },
+      },
+    },
+  },
+}));

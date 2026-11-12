@@ -1,0 +1,6 @@
+src/locales/
+original/
+node_modules/
+dist/
+public/
+package-lock.json

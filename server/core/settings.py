@@ -20,7 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-hdgj2o1n=7_h%b*n0%$#$_k=6u!k^@$$g+6nd^0bq=a_-s!pjo"
+import os as _secret_os
+from pathlib import Path as _SecretPath
+from dotenv import load_dotenv as _load_secret_env
+_load_secret_env(_SecretPath(__file__).resolve().parent.parent / ".django.env", override=True)
+SECRET_KEY = _secret_os.environ["DJANGO_SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -150,8 +154,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'aldiyar.saken123@gmail.com'
-EMAIL_HOST_PASSWORD = 'twpj xzdx mlop gvsn'  
+import os as _mail_os
+from dotenv import load_dotenv as _load_mail_dotenv
+_load_mail_dotenv(BASE_DIR / ".mail.env", override=True)
+EMAIL_HOST_USER = _mail_os.getenv("GSLOG_SMTP_USER", "")
+EMAIL_HOST_PASSWORD = _mail_os.getenv("GSLOG_SMTP_PASSWORD", "")
+EMAIL_TIMEOUT = 10
 
 import os
 from dotenv import load_dotenv

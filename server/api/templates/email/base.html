@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta name="color-scheme" content="light" />
+    <meta name="supported-color-schemes" content="light" />
+    <title>{% block title %}Great Steppe Logistics{% endblock %}</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      img {
+        border: 0;
+        outline: none;
+        text-decoration: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      @media only screen and (max-width: 620px) {
+        .outer-pad {
+          padding: 20px 12px !important;
+        }
+        .content-pad {
+          padding-left: 24px !important;
+          padding-right: 24px !important;
+        }
+        .mail-title {
+          font-size: 28px !important;
+          line-height: 34px !important;
+        }
+        .mail-logo {
+          width: 210px !important;
+          height: auto !important;
+        }
+        .detail-label {
+          width: 90px !important;
+          font-size: 12px !important;
+        }
+        .detail-value {
+          font-size: 13px !important;
+        }
+        .detail-row {
+          display: block !important;
+        }
+        .detail-label,
+        .detail-value {
+          display: block !important;
+          width: auto !important;
+        }
+        .detail-label {
+          padding: 14px 16px 4px !important;
+          border-bottom: 0 !important;
+        }
+        .detail-value {
+          padding: 0 16px 16px !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background-color: #eff3ed;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    "
+  >
+    <div
+      style="
+        display: none;
+        font-size: 1px;
+        line-height: 1px;
+        color: #eff3ed;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        mso-hide: all;
+      "
+    >
+      {% block preheader %}{% endblock %}
+    </div>
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      bgcolor="#eff3ed"
+      style="background-color: #eff3ed"
+    >
+      <tr>
+        <td class="outer-pad" align="center" style="padding: 40px 16px">
+          <!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+          <table
+            role="presentation"
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            style="
+              max-width: 600px;
+              font-family: Arial, Helvetica, sans-serif;
+              color: #183b2c;
+            "
+          >
+            <tr>
+              <td
+                class="content-pad"
+                bgcolor="#103c2b"
+                style="
+                  padding: 32px 40px;
+                  background-color: #103c2b;
+                  border-radius: 12px 12px 0 0;
+                "
+              >
+                <a
+                  href="https://gslog.kz/"
+                  style="
+                    display: inline-block;
+                    color: #ffffff;
+                    font-size: 22px;
+                    font-weight: bold;
+                  "
+                >
+                  <img
+                    class="mail-logo"
+                    src="https://gslog.kz/media/email/logo-header-2026.png"
+                    alt="Great Steppe Logistics"
+                    width="240"
+                    height="80"
+                    style="
+                      display: block;
+                      width: 240px;
+                      max-width: 100%;
+                      height: auto;
+                      color: #ffffff;
+                      font-family: Arial, Helvetica, sans-serif;
+                      font-size: 22px;
+                    "
+                  />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td
+                height="4"
+                bgcolor="#c3df9e"
+                style="
+                  height: 4px;
+                  line-height: 4px;
+                  font-size: 1px;
+                  background-color: #c3df9e;
+                "
+              >
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="content-pad"
+                bgcolor="#ffffff"
+                style="
+                  padding: 38px 40px 34px;
+                  background-color: #ffffff;
+                  border-left: 1px solid #dfe7dc;
+                  border-right: 1px solid #dfe7dc;
+                "
+              >
+                {% block content %}{% endblock %}
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="content-pad"
+                bgcolor="#f7f9f3"
+                style="
+                  padding: 26px 40px;
+                  background-color: #f7f9f3;
+                  border: 1px solid #dfe7dc;
+                  border-radius: 0 0 12px 12px;
+                "
+              >
+                <p
+                  style="
+                    margin: 0 0 13px;
+                    font-size: 13px;
+                    line-height: 20px;
+                    font-weight: bold;
+                    color: #214d35;
+                  "
+                >
+                  Great Steppe Logistics
+                </p>
+                <p style="margin: 0 0 7px; font-size: 13px; line-height: 20px">
+                  <a
+                    href="tel:+77027714828"
+                    style="color: #214d35; text-decoration: none"
+                    >+7 (702) 771 48 28</a
+                  >
+                </p>
+                <p style="margin: 0; font-size: 13px; line-height: 20px">
+                  <a
+                    href="mailto:info@gslog.kz"
+                    style="color: #214d35; text-decoration: none"
+                    >info@gslog.kz</a
+                  ><span style="color: #b1bea9"
+                    >&nbsp;&nbsp; / &nbsp;&nbsp;</span
+                  ><a
+                    href="https://gslog.kz/"
+                    style="color: #214d35; text-decoration: none"
+                    >gslog.kz</a
+                  >
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" style="padding: 24px 18px 0">
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 11px;
+                    line-height: 18px;
+                    color: #76836f;
+                  "
+                >
+                  &copy; {% now "Y" %} Great Steppe Logistics. Все права
+                  защищены.
+                </p>
+              </td>
+            </tr>
+          </table>
+          <!--[if mso]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

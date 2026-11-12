@@ -1,0 +1,21 @@
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #001b1d12, transparent 40%, #00170d38);
+  pointer-events: none;
+}
+.hero-shade {
+  pointer-events: none;
+}
+@media (max-width: 800px) {
+  .hero-scene .video-poster,
+  .hero-scene .video-footage {
+    object-position: 58% center;
+  }
+}

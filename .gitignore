@@ -1,35 +1,24 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+node_modules/
+dist/
+original/
+original-source.tar.gz
+artifacts/
+.env
+.env.*
+!.env.example
 
-# Dependency directories
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Database
-db.sqlite3
-
-# Server-specific directories
+# Backend runtime and private material
+**/__pycache__/
+*.py[cod]
+*.sqlite3
 server/venv/
-
-dist
-certbot
-nginx
+**/.mail.env
+**/.django.env
+**/.env
+!**/.env.example
+*.key
+*.pem
+certbot/
+nginx/
+.DS_Store
+*.log

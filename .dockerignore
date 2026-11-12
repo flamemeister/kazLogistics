@@ -1,0 +1,12 @@
+.git
+node_modules
+dist
+original
+artifacts
+**/.env
+**/.mail.env
+**/.django.env
+**/__pycache__
+**/*.pyc
+**/*.sqlite3
+certs/*.key

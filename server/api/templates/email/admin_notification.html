@@ -1,30 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Новая заявка на консультацию</h2>
-        <p><strong>Имя:</strong> {{ name }}</p>
-        <p><strong>Телефон:</strong> {{ phone }}</p>
-        <p><strong>Email:</strong> {{ email }}</p>
-        <p><strong>Комментарий:</strong> {{ comment }}</p>
-        <p>&copy; {{ year }} Great Steppe Logistics</p>
-    </div>
-</body>
-</html>
+{% extends "email/base.html" %} {% block title %}Новая заявка на консультацию —
+Great Steppe Logistics{% endblock %} {% block preheader %}Новая заявка на
+консультацию: {{ name }}.{% endblock %} {% block content %}
+<p
+  style="
+    margin: 0 0 18px;
+    color: #6a805b;
+    font-size: 10px;
+    line-height: 17px;
+    letter-spacing: 2px;
+    font-weight: bold;
+  "
+>
+  GREAT STEPPE LOGISTICS
+</p>
+<h1
+  class="mail-title"
+  style="
+    margin: 0 0 28px;
+    color: #153e29;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 34px;
+    line-height: 41px;
+    font-weight: bold;
+    letter-spacing: -1px;
+  "
+>
+  Новая заявка<br />на консультацию
+</h1>
+{% include "email/request_details.html" with show_name=True %} {% endblock %}
