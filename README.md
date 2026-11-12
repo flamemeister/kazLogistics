@@ -24,7 +24,13 @@ Keep the customer's original seven service posters and all four language variant
 
 The language switcher retains the original country flags for Kazakh, Russian, English, and Chinese in both its selected state and dropdown, including mobile layouts.
 
-The homepage's existing ship photograph has a lightweight 2.5D sailing effect with subtle water highlights. The motion control can pause it; animations also stop offscreen, in a hidden tab, and for reduced-motion preferences. Mobile movement is deliberately smaller. This effect does not require a video download or backend changes.
+The homepage uses real, locally hosted ship footage from Pexels (provenance and license in `public/media/video/ATTRIBUTION.md`). The desktop loop is 2.9 MB; mobile uses a separate 1 MB version. A lightweight poster appears first; footage loads only near the viewport and plays muted. The control pauses/resumes playback, and offscreen/hidden-tab playback stops. Reduced-motion and data-saver users receive the still image without a video request. Playback failure retains the poster.
+
+## Interactive freight experiences
+
+`src/experience` owns the two additional homepage scenes and their four-language UI labels, separately from the pinned marketing dictionaries. The cargo journey reuses existing photos, service titles and descriptions. Desktop progress follows normal scrolling through four schematic transport stages; chapter buttons and a skip link remain available. Phones and reduced-motion layouts use a normal-height, manually selected scene. This is an illustration of possible transport stages, not a claim that every shipment uses each mode.
+
+The container studio shares a lightweight six-face CSS 3D model with the journey. It supports mouse tilt, dragging, touch horizontal rotation, keyboard arrows, and camera reset. Selecting one of the seven existing services opens the doors and exposes a link to that service. Touch scrolling remains native. No 3D engine, external model, new backend API, or application dependency is required. Keep the original service posters before both experiences on the homepage.
 
 ## Maps and transportation geography
 
