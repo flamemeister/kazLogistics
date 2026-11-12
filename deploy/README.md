@@ -29,7 +29,10 @@ Production outputs `index, follow` and `robots.txt` allowing crawling. Test outp
 - The first activation check ran before nginx finished replacing workers and automatically restored the previous configuration. The helper now waits for the new workers; the subsequent activation and external checks passed.
 - Follow-up outside this release: rotate credentials exposed in historical public commits and audit past workflow executions. Development-only dependency advisories remain (18 in the full npm audit); the production dependency audit is clean. No real consultation emails were sent during this release.
 
-## Test environment
+## Test environment — retired 2026-11-12
+
+The owner disabled the test frontend after the production release. The public test vhost now uses `deploy/test-retired.conf` and redirects HTTP/HTTPS requests to `https://gslog.kz` with the original path/query, preserving links to images in previously sent emails. The loopback frontend vhost `gslog-test-frontend` is disabled, so port 8081 no longer serves the test application. The HTTP ACME challenge route and TLS certificate remain for valid HTTPS redirects. Source, releases and previous nginx configuration are retained for recovery. The instructions below describe the former test setup; publishing static files alone does not reactivate it.
+
 
 - URL: https://test.gslog.kz
 - Frontend listener: 127.0.0.1:8081 (nginx, static production build).
