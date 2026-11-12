@@ -1,0 +1,181 @@
+.consultation-flight {
+  padding: 20px 18px 18px;
+  margin-top: 16px;
+  background: #f3f7ed;
+  border: 1px solid #dfe8d5;
+  border-radius: 3px;
+  --flight-progress: 0%;
+}
+.flight-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 9px;
+  color: #61745d;
+}
+.flight-labels > span:last-child {
+  text-align: right;
+}
+.flight-route {
+  position: relative;
+  height: 34px;
+  margin: 14px 10px 0;
+}
+.flight-route-line,
+.flight-route-progress {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 100%;
+  height: 1px;
+}
+.flight-route-line {
+  background: repeating-linear-gradient(
+    90deg,
+    #a8bf9766 0 5px,
+    transparent 5px 10px
+  );
+}
+.flight-route-progress {
+  width: var(--flight-progress);
+  background: #4a7b3a;
+  transition: width 1.25s cubic-bezier(0.3, 0.65, 0.25, 1);
+}
+.flight-origin,
+.flight-destination {
+  position: absolute;
+  top: 11px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid #95ac82;
+  background: #edf4e4;
+}
+.flight-origin {
+  left: -5px;
+}
+.flight-destination {
+  right: -6px;
+  width: 19px;
+  height: 19px;
+  top: 7px;
+  display: grid;
+  place-items: center;
+  background: #f3f7ed;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s;
+}
+.flight-destination svg {
+  opacity: 0;
+}
+.flight-plane {
+  position: absolute;
+  top: 16px;
+  left: var(--flight-progress);
+  transform: translate(-50%, -50%);
+  color: #286640;
+  filter: drop-shadow(0 3px 3px #1c432c20);
+  transition:
+    left 1.25s cubic-bezier(0.3, 0.65, 0.25, 1),
+    color 0.25s;
+}
+.flight-plane svg {
+  display: block;
+}
+.consultation-flight[data-state="loading"] {
+  --flight-progress: 52%;
+}
+.consultation-flight[data-state="loading"] .flight-plane svg {
+  animation: flight-cruise 1.3s ease-in-out infinite alternate;
+}
+.consultation-flight[data-state="success"] {
+  --flight-progress: 100%;
+}
+.consultation-flight[data-state="success"] .flight-plane {
+  opacity: 0;
+  transition:
+    left 1s cubic-bezier(0.2, 0.6, 0.2, 1),
+    opacity 0.2s 1s;
+}
+.consultation-flight[data-state="success"] .flight-destination {
+  background: #2e693f;
+  color: #fff;
+  border-color: #2e693f;
+  transition-delay: 0.9s;
+  animation: flight-arrival 0.7s 0.9s ease-out;
+}
+.consultation-flight[data-state="success"] .flight-destination svg {
+  opacity: 1;
+  transition: opacity 0.2s 0.9s;
+}
+.consultation-flight[data-state="success"] .flight-labels > span:last-child {
+  color: #27613b;
+}
+.consultation-flight[data-state="error"] {
+  --flight-progress: 38%;
+  background: #fbf5f1;
+  border-color: #eadacf;
+}
+.consultation-flight[data-state="error"] .flight-plane,
+.consultation-flight[data-state="error"] .flight-labels > span:last-child {
+  color: #9c5644;
+}
+.consultation-flight[data-state="error"] .flight-route-progress {
+  background: #a16a54;
+}
+.submit-plane-icon {
+  width: 22px;
+  height: 22px;
+  --plane-detail: #155332;
+}
+.form-submit:disabled .submit-plane-icon {
+  animation: flight-cruise 1s ease-in-out infinite alternate;
+}
+.field .field-error {
+  color: #8e4339;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 7px;
+}
+.field [aria-invalid="true"] {
+  border-color: #b76c5a;
+}
+.form-feedback.loading {
+  background: #f3f7ed;
+  color: #476440;
+}
+@keyframes flight-cruise {
+  from {
+    transform: translateY(-2px) rotate(-4deg);
+  }
+  to {
+    transform: translateY(2px) rotate(3deg);
+  }
+}
+@keyframes flight-arrival {
+  from {
+    box-shadow: 0 0 0 0 #779b5466;
+  }
+  to {
+    box-shadow: 0 0 0 15px #779b5400;
+  }
+}
+@media (max-width: 400px) {
+  .consultation-flight {
+    padding: 17px 12px 14px;
+  }
+  .flight-labels {
+    font-size: 8px;
+    gap: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consultation-flight *,
+  .form-submit .submit-plane-icon {
+    animation: none !important;
+    transition: none !important;
+  }
+}

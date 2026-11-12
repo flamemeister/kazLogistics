@@ -18,6 +18,14 @@ The original marketing copy is retained verbatim in `src/locales`. Tests pin its
 
 Production gslog.kz and the backend are independent of this checkout.
 
+## Consultation form
+
+The form matches the existing Django serializer: name up to 100 characters, required email up to 254 characters, and phone normalized from common formatting to a maximum of 15 characters. A request uses the unchanged name/phone/email/comment payload. HTTP 400 field errors are highlighted; network/server failures preserve inputs. Duplicate submissions are blocked while a request is pending.
+
+The flight route below the send button stops midway during the actual request and reaches its destination only after a successful server response. Errors never show an arrival; reduced-motion users see static state changes. Original success/error marketing wording remains pinned in `src/locales`, with new operation labels localized separately in `src/consultation`.
+
+SMTP credentials previously embedded in the backend settings were rejected by Gmail (535 BadCredentials). SMTP configuration now reads a server-only, mode-600 `.mail.env` file; it and credential backups must never enter this checkout or any archive. The owner updates the app password interactively with `/home/ubuntu/gslog-mail-setup.py` on the server. That helper authenticates without sending email and writes/restarts the backend only after successful Gmail authentication. Live inbox delivery requires a separate authorized submission; QA uses an in-memory mail backend.
+
 ## Content and visual constraints
 
 Keep the customer's original seven service posters and all four language variants in `public/media/cards`. Display each complete poster without cropping or replacing it with an icon-only card. Use the existing transparent `logo-white.webp` for header and footer, with no opaque logo background. Footer copyright is 2026. Motion is progressive enhancement and must respect reduced-motion preferences. Marketing copy and backend remain unchanged unless explicitly requested.

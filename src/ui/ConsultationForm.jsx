@@ -2,22 +2,45 @@ import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { postJSON } from "../lib/api";
 import Icon from "./Icon";
+import DeliveryFlight, { PaperPlane } from "../consultation/DeliveryFlight";
+import { consultationCopy } from "../consultation/copy";
+import { prepareConsultation } from "../consultation/contract";
 export default function ConsultationForm() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const copy = consultationCopy[i18n.resolvedLanguage] || consultationCopy.kk;
   const [status, setStatus] = useState("idle");
+  const [fieldErrors, setFieldErrors] = useState([]);
   const busy = useRef(false);
   async function submit(e) {
     e.preventDefault();
     if (busy.current) return;
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const { data, invalid } = prepareConsultation(
+      Object.fromEntries(new FormData(form)),
+    );
+    if (invalid.length) {
+      setFieldErrors(invalid);
+      setStatus("error");
+      form.elements.namedItem(invalid[0])?.focus();
+      return;
+    }
     busy.current = true;
+    setFieldErrors([]);
     setStatus("loading");
     try {
       await postJSON("/api/", data);
       setStatus("success");
       form.reset();
-    } catch {
+    } catch (error) {
+      const fields =
+        error.status === 400 &&
+        error.details &&
+        typeof error.details === "object"
+          ? Object.keys(error.details).filter((key) =>
+              ["name", "phone", "email", "comment"].includes(key),
+            )
+          : [];
+      setFieldErrors(fields);
       setStatus("error");
     } finally {
       busy.current = false;
@@ -48,6 +71,12 @@ export default function ConsultationForm() {
         <form
           className="consultation-form"
           onSubmit={submit}
+          onChange={(e) => {
+            setFieldErrors((fields) =>
+              fields.filter((key) => key !== e.target.name),
+            );
+            if (status !== "loading") setStatus("idle");
+          }}
           aria-busy={status === "loading"}
         >
           <div className="form-grid">
@@ -58,7 +87,7 @@ export default function ConsultationForm() {
               >
                 <label htmlFor={`consultation-${key}`}>
                   {t(`home.form.${key}`)}
-                  {key !== "email" && <span aria-hidden="true"> *</span>}
+                  <span aria-hidden="true"> *</span>
                 </label>
                 <input
                   id={`consultation-${key}`}
@@ -67,11 +96,22 @@ export default function ConsultationForm() {
                     key === "phone" ? "tel" : key === "email" ? "email" : "text"
                   }
                   autoComplete={key === "phone" ? "tel" : key}
-                  required={key !== "email"}
+                  required
                   placeholder={t(`home.form.${key}Placeholder`)}
-                  maxLength={key === "name" ? 150 : key === "phone" ? 40 : 254}
+                  maxLength={key === "name" ? 100 : key === "phone" ? 40 : 254}
+                  aria-invalid={fieldErrors.includes(key)}
+                  aria-describedby={
+                    fieldErrors.includes(key)
+                      ? `consultation-${key}-error`
+                      : undefined
+                  }
                   disabled={status === "loading"}
                 />
+                {fieldErrors.includes(key) && (
+                  <p className="field-error" id={`consultation-${key}-error`}>
+                    {key === "phone" ? copy.phone : copy.invalid}
+                  </p>
+                )}
               </div>
             ))}
             <div className="field field-full">
@@ -84,25 +124,40 @@ export default function ConsultationForm() {
                 rows="4"
                 placeholder={t("home.form.commentPlaceholder")}
                 maxLength={5000}
+                aria-invalid={fieldErrors.includes("comment")}
+                aria-describedby={
+                  fieldErrors.includes("comment")
+                    ? "consultation-comment-error"
+                    : undefined
+                }
                 disabled={status === "loading"}
               />
+              {fieldErrors.includes("comment") && (
+                <p className="field-error" id="consultation-comment-error">
+                  {copy.invalid}
+                </p>
+              )}
             </div>
           </div>
           <button
             className="button form-submit"
             disabled={status === "loading"}
           >
-            {status === "loading" && <span className="spinner" />}
-            {t("home.form.send")}
-            <Icon name="northeast" size={20} />
+            {status === "loading" ? copy.sending : t("home.form.send")}
+            <PaperPlane className="submit-plane-icon" />
           </button>
+          <DeliveryFlight status={status} copy={copy} />
           <div aria-live="polite">
-            {["success", "error"].includes(status) && (
+            {["loading", "success", "error"].includes(status) && (
               <p
                 className={`form-feedback ${status}`}
                 role={status === "error" ? "alert" : "status"}
               >
-                {t(`home.form.${status}`)}
+                {status === "loading"
+                  ? copy.sending
+                  : status === "error" && fieldErrors.length
+                    ? copy.check
+                    : t(`home.form.${status}`)}
               </p>
             )}
           </div>
