@@ -56,7 +56,7 @@ print(json.dumps(missing))
             subprocess.run(ssh + [f'sudo tar xzf - -C {directory}'],stdin=stream,check=True)
     configuration = repr((ROOT/'deploy/production.conf').read_text())
     activate = f'''
-import hashlib,json,os,subprocess
+import hashlib,json,os,subprocess,time
 from pathlib import Path
 manifest=json.loads({manifest})
 release=Path('{directory}')
@@ -78,8 +78,11 @@ try:
  subprocess.run(['sudo','install','-m','644',str(staged),str(conf)],check=True)
  subprocess.run(['sudo','nginx','-t'],check=True)
  subprocess.run(['sudo','systemctl','reload','nginx'],check=True)
- response=subprocess.check_output(['curl','-fsS','--resolve','gslog.kz:443:127.0.0.1','https://gslog.kz/'],text=True)
- assert 'index, follow' in response and 'noindex' not in response
+ for attempt in range(20):
+  probe=subprocess.run(['curl','-fsS','--connect-timeout','2','--max-time','5','--resolve','gslog.kz:443:127.0.0.1','https://gslog.kz/'],text=True,capture_output=True)
+  if probe.returncode==0 and 'index, follow' in probe.stdout and 'noindex' not in probe.stdout:break
+  time.sleep(0.25)
+ else:raise RuntimeError('Production startup check failed after nginx reload')
 except Exception:
  subprocess.run(['sudo','install','-m','644',str(backup/'nginx.conf'),str(conf)],check=True)
  if previous:
