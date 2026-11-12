@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { postJSON } from "../lib/api";
 import Icon from "./Icon";
-import DeliveryFlight, { PaperPlane } from "../consultation/DeliveryFlight";
+import DeliveryFlight from "../consultation/DeliveryFlight";
 import { consultationCopy } from "../consultation/copy";
 import { prepareConsultation } from "../consultation/contract";
 export default function ConsultationForm() {
@@ -10,6 +10,7 @@ export default function ConsultationForm() {
   const copy = consultationCopy[i18n.resolvedLanguage] || consultationCopy.kk;
   const [status, setStatus] = useState("idle");
   const [fieldErrors, setFieldErrors] = useState([]);
+  const [flightVisible, setFlightVisible] = useState(false);
   const busy = useRef(false);
   async function submit(e) {
     e.preventDefault();
@@ -27,6 +28,7 @@ export default function ConsultationForm() {
     busy.current = true;
     setFieldErrors([]);
     setStatus("loading");
+    setFlightVisible(true);
     try {
       await postJSON("/api/", data);
       setStatus("success");
@@ -70,6 +72,7 @@ export default function ConsultationForm() {
         </div>
         <form
           className="consultation-form"
+          tabIndex={-1}
           onSubmit={submit}
           onChange={(e) => {
             setFieldErrors((fields) =>
@@ -144,9 +147,8 @@ export default function ConsultationForm() {
             disabled={status === "loading"}
           >
             {status === "loading" ? copy.sending : t("home.form.send")}
-            <PaperPlane className="submit-plane-icon" />
+            <Icon name="northeast" size={20} />
           </button>
-          <DeliveryFlight status={status} copy={copy} />
           <div aria-live="polite">
             {["loading", "success", "error"].includes(status) && (
               <p
@@ -162,6 +164,18 @@ export default function ConsultationForm() {
             )}
           </div>
         </form>
+        {flightVisible && (
+          <DeliveryFlight
+            status={status}
+            copy={copy}
+            message={
+              status === "error" && fieldErrors.length
+                ? copy.check
+                : t(`home.form.${status}`)
+            }
+            onClose={() => setFlightVisible(false)}
+          />
+        )}
       </div>
     </section>
   );

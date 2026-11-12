@@ -8,6 +8,10 @@ export const consultationCopy = {
     phone: "Введите номер телефона с кодом страны.",
     delivered: "Заявка отправлена",
     failed: "Отправка не удалась",
+    flightHint: "Из точки А в точку Б — ваша заявка в пути.",
+    close: "Закрыть",
+    hideFlight: "Скрыть анимацию",
+    backToForm: "Вернуться к форме",
   },
   kk: {
     sending: "Өтінім жіберілуде…",
@@ -18,6 +22,10 @@ export const consultationCopy = {
     phone: "Телефон нөмірін ел кодымен енгізіңіз.",
     delivered: "Өтінім жіберілді",
     failed: "Жіберу сәтсіз аяқталды",
+    flightHint: "А нүктесінен Б нүктесіне — өтініміңіз жолда.",
+    close: "Жабу",
+    hideFlight: "Анимацияны жасыру",
+    backToForm: "Пішінге оралу",
   },
   en: {
     sending: "Sending your request…",
@@ -28,6 +36,10 @@ export const consultationCopy = {
     phone: "Enter your phone number including the country code.",
     delivered: "Request sent",
     failed: "Could not send",
+    flightHint: "From A to B — your request is on its way.",
+    close: "Close",
+    hideFlight: "Hide animation",
+    backToForm: "Back to the form",
   },
   zh: {
     sending: "正在发送申请…",
@@ -38,5 +50,9 @@ export const consultationCopy = {
     phone: "请输入包含国家代码的电话号码。",
     delivered: "申请已发送",
     failed: "发送失败",
+    flightHint: "从 A 点到 B 点——您的申请正在发送。",
+    close: "关闭",
+    hideFlight: "隐藏动画",
+    backToForm: "返回表单",
   },
 };

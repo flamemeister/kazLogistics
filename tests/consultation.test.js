@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { prepareConsultation } from "../src/consultation/contract.js";
 import { consultationCopy } from "../src/consultation/copy.js";
+import { flightRoute } from "../src/consultation/flightRoute.js";
 
 test("formatted phone numbers are normalized before the existing backend request", () => {
   const result = prepareConsultation({
@@ -44,5 +45,23 @@ test("flight and validation feedback is localized without modifying marketing di
         (value) => value.length > 0,
       ),
     );
+  }
+});
+test("the airplane and SVG share an A-to-B route that stays within phone and desktop stages", () => {
+  for (const [width, height] of [
+    [280, 300],
+    [350, 420],
+    [1200, 560],
+  ]) {
+    const route = flightRoute(width, height);
+    assert.ok(route.a.x < route.b.x);
+    assert.ok(route.a.y > route.b.y);
+    for (const p of [route.a, route.b]) {
+      assert.ok(p.x > 25 && p.x < width - 25);
+      assert.ok(p.y > 25 && p.y < height - 25);
+    }
+    assert.ok(route.path.startsWith(`M ${route.a.x} ${route.a.y} C `));
+    assert.ok(route.path.endsWith(`${route.b.x} ${route.b.y}`));
+    assert.ok(!route.path.includes("NaN"));
   }
 });
