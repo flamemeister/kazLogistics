@@ -179,10 +179,10 @@ export default function DeliveryFlight({ status, copy, message, onClose }) {
       <div className="delivery-flight-sky" aria-hidden="true" />
       <header className="delivery-flight-header">
         <img
-          src="/media/logo-white.webp"
+          src="/media/brand/gslog-header-2026.webp"
           alt="Great Steppe Logistics"
           width="640"
-          height="166"
+          height="213"
         />
         <span aria-hidden="true">
           A <span>→</span> B

@@ -61,7 +61,7 @@ function Header() {
       <div className="container navigation">
         <Link className="brand" to="/" aria-label="Great Steppe Logistics">
           <img
-            src="/media/logo-white.webp"
+            src="/media/brand/gslog-header-2026.webp"
             width="190"
             height="63"
             alt="Great Steppe Logistics"
@@ -169,7 +169,7 @@ function Footer() {
             <div className="footer-brand">
               <Link to="/">
                 <img
-                  src="/media/logo-white.webp"
+                  src="/media/brand/gslog-header-2026.webp"
                   alt="Great Steppe Logistics"
                   width="235"
                   height="78"
