@@ -25,7 +25,6 @@ export default function ServiceHero({ service }) {
           <div className="service-hero-copy">
             <div className="service-hero-kicker">
               <span className="eyebrow">Great Steppe Logistics</span>
-              <span>0{service.id} / 07</span>
             </div>
             <h1>{t(`${service.key}.title`)}</h1>
             <Link className="service-hero-cta" to="/#consultation-form">

@@ -10,18 +10,10 @@
   background: linear-gradient(180deg, #001b1d12, transparent 40%, #00170d38);
   pointer-events: none;
 }
-.hero-scene .video-motion-toggle {
-  top: 25px;
-  right: max(24px, calc((100vw - 1280px) / 2));
-}
 .hero-shade {
   pointer-events: none;
 }
 @media (max-width: 800px) {
-  .hero-scene .video-motion-toggle {
-    top: 20px;
-    right: 18px;
-  }
   .hero-scene .video-poster,
   .hero-scene .video-footage {
     object-position: 58% center;

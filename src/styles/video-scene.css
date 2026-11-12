@@ -19,25 +19,6 @@
 .video-scene[data-video-ready="true"] .video-footage {
   opacity: 1;
 }
-.video-motion-toggle {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 3;
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid #ffffff80;
-  border-radius: 50%;
-  background: #082b21a8;
-  color: #fff;
-  pointer-events: auto;
-  backdrop-filter: blur(6px);
-}
-.video-motion-toggle:hover {
-  background: #092c20ed;
-}
 @media (prefers-reduced-motion: reduce) {
   .video-footage {
     transition: none;

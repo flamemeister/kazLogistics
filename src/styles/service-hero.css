@@ -37,7 +37,6 @@
   color: #edf4e8;
   font-size: 11px;
   text-shadow: 0 1px 12px #0005;
-  padding-right: 55px;
 }
 .service-hero-layout {
   display: flex;
@@ -59,13 +58,8 @@
 .service-hero-kicker .eyebrow {
   margin: 0;
   color: #e3eed3;
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 1.8px;
-}
-.service-hero-kicker > span:last-child {
-  font: 10px monospace;
-  letter-spacing: 1px;
-  color: #e3eed3;
 }
 .service-hero h1 {
   font-size: clamp(48px, 6.6vw, 96px);
@@ -101,10 +95,6 @@
   flex: 1;
   background: #e2edd442;
 }
-.service-video .video-motion-toggle {
-  top: 20px;
-  right: max(24px, calc((100vw - 1280px) / 2));
-}
 @media (max-width: 800px) {
   .service-hero {
     min-height: calc(100svh - 107px);
@@ -127,11 +117,8 @@
     margin-bottom: 24px;
   }
   .service-hero-kicker .eyebrow {
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 1.3px;
-  }
-  .service-hero-kicker > span:last-child {
-    font-size: 9px;
   }
   .service-hero-cta {
     font-size: 12px;
@@ -140,12 +127,6 @@
   .service-hero-footer {
     font-size: 7px;
     gap: 15px;
-  }
-  .service-video .video-motion-toggle {
-    width: 36px;
-    height: 36px;
-    top: 17px;
-    right: 18px;
   }
   .service-hero-shade {
     background:

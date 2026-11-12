@@ -1,16 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
 import useSceneActivity from "../experience/useSceneActivity";
-import { experienceCopy } from "../experience/copy";
 import "../styles/video-scene.css";
 
 export default function VideoScene({ asset, className = "" }) {
   const scene = useRef(null);
   const video = useRef(null);
-  const { i18n } = useTranslation();
-  const copy = experienceCopy[i18n.resolvedLanguage] || experienceCopy.kk;
   const { active, reduced, compact, saveData } = useSceneActivity(scene);
-  const [paused, setPaused] = useState(false);
   const [ready, setReady] = useState(false);
   const [source, setSource] = useState(null);
   const [failed, setFailed] = useState(false);
@@ -27,16 +22,16 @@ export default function VideoScene({ asset, className = "" }) {
     const element = video.current;
     if (!element || !source) return;
     let cancelled = false;
-    if (active && allowed && !paused && !failed) {
+    if (active && allowed && !failed) {
       element.play().catch(() => {
-        if (!cancelled) setPaused(true);
+        if (!cancelled) setFailed(true);
       });
     } else element.pause();
     return () => {
       cancelled = true;
       element.pause();
     };
-  }, [active, allowed, paused, source, failed]);
+  }, [active, allowed, source, failed]);
   return (
     <div
       className={`video-scene ${className}`}
@@ -49,7 +44,7 @@ export default function VideoScene({ asset, className = "" }) {
             ? "static"
             : !ready
               ? "loading"
-              : paused || !active
+              : !active
                 ? "paused"
                 : "playing"
       }
@@ -75,29 +70,6 @@ export default function VideoScene({ asset, className = "" }) {
           onLoadedData={() => setReady(true)}
           onError={() => setFailed(true)}
         />
-      )}
-      {allowed && !failed && (
-        <button
-          className="video-motion-toggle"
-          onClick={() => setPaused((value) => !value)}
-          aria-label={paused ? copy.play : copy.pause}
-          aria-pressed={paused}
-          title={paused ? copy.play : copy.pause}
-        >
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            {paused ? (
-              <path d="m5 3 8 5-8 5V3Z" />
-            ) : (
-              <path d="M4 3h3v10H4V3Zm5 0h3v10H9V3Z" />
-            )}
-          </svg>
-        </button>
       )}
     </div>
   );

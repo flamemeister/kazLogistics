@@ -348,7 +348,7 @@ p {
   align-items: center;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   color: #e3eddf;
 }
@@ -1550,7 +1550,7 @@ p {
     letter-spacing: -0.045em;
   }
   .hero-eyebrow {
-    font-size: 8px;
+    font-size: 10px;
     gap: 9px;
   }
   .hero-line {

@@ -14,7 +14,6 @@ export default function GeographyGlobe({ selected, onSelect, language }) {
     styleReady = useRef(false);
   const [ready, setReady] = useState(false),
     [failed, setFailed] = useState(false),
-    [paused, setPaused] = useState(false),
     [expanded, setExpanded] = useState(false);
   const resizeMap = useCallback(() => instance.current?.resize(), []);
   useMapDialog(panel, resizeMap, expanded);
@@ -111,8 +110,7 @@ export default function GeographyGlobe({ selected, onSelect, language }) {
   }, [selected, ready, reduced]);
   useEffect(() => {
     const map = instance.current;
-    if (!map || !ready || !styleReady.current || !active || reduced || paused)
-      return;
+    if (!map || !ready || !styleReady.current || !active || reduced) return;
     let frame,
       last = 0;
     function animate(time) {
@@ -126,7 +124,7 @@ export default function GeographyGlobe({ selected, onSelect, language }) {
     }
     frame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frame);
-  }, [ready, active, reduced, paused, selected]);
+  }, [ready, active, reduced, selected]);
   function reset() {
     instance.current?.easeTo({
       center: [55, 34],
@@ -175,27 +173,6 @@ export default function GeographyGlobe({ selected, onSelect, language }) {
         <button onClick={reset} aria-label={copy.reset}>
           <Icon name="globe" size={18} />
         </button>
-        {!reduced && (
-          <button
-            onClick={() => setPaused((v) => !v)}
-            aria-label={paused ? copy.play : copy.pause}
-            aria-pressed={paused}
-          >
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              {paused ? (
-                <path d="m5 3 8 5-8 5V3Z" />
-              ) : (
-                <path d="M4 3h3v10H4V3Zm5 0h3v10H9V3Z" />
-              )}
-            </svg>
-          </button>
-        )}
       </div>
       <div className="globe-office-caption">
         <span className="status-dot" />
