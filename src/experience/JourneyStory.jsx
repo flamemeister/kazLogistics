@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import ContainerModel from "./ContainerModel";
+import "./experience.css";
 import useSceneActivity from "./useSceneActivity";
 import {
   experienceCopy,
@@ -76,15 +76,6 @@ export default function JourneyStory() {
         window.innerHeight,
       );
       setIndex(journeyIndex(progress));
-      root.current.style.setProperty("--journey-progress", progress);
-      root.current.style.setProperty(
-        "--cargo-drift",
-        `${Math.sin(progress * Math.PI * 4) * 28}px`,
-      );
-      root.current.style.setProperty(
-        "--cargo-turn",
-        `${-28 + Math.sin(progress * Math.PI * 2) * 12}deg`,
-      );
     };
     const schedule = () => {
       if (!frame) frame = requestAnimationFrame(update);
@@ -161,10 +152,6 @@ export default function JourneyStory() {
             </div>
             <div className="journey-vehicle" aria-hidden="true">
               <Transport mode={stage.mode} />
-              <div className="journey-cargo">
-                <ContainerModel />
-              </div>
-              <div className="journey-cargo-shadow" />
             </div>
             <span className="journey-note">{copy.note}</span>
           </div>
@@ -185,8 +172,8 @@ export default function JourneyStory() {
               </button>
             ))}
           </div>
-          <a className="journey-skip" href="#cargo-configurator">
-            {copy.next}
+          <a className="journey-skip" href="#about-company">
+            {t("nav.about")}
             <Icon name="arrow" size={17} />
           </a>
         </div>

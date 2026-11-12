@@ -8,7 +8,6 @@ import Chat from "../ui/Chat";
 import HeroScene from "../ui/HeroScene";
 import GeographySection from "../maps/GeographySection";
 import JourneyStory from "../experience/JourneyStory";
-import ContainerShowcase from "../experience/ContainerShowcase";
 export default function Home() {
   const { t } = useTranslation();
   return (
@@ -60,8 +59,7 @@ export default function Home() {
         </div>
       </section>
       <JourneyStory />
-      <ContainerShowcase />
-      <section className="home-about section">
+      <section className="home-about section" id="about-company">
         <div className="container about-layout">
           <div className="about-photo">
             <Photo name="container" />
