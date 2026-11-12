@@ -23,3 +23,5 @@ Production gslog.kz and the backend are independent of this checkout.
 Keep the customer's original seven service posters and all four language variants in `public/media/cards`. Display each complete poster without cropping or replacing it with an icon-only card. Use the existing transparent `logo-white.webp` for header and footer, with no opaque logo background. Footer copyright is 2026. Motion is progressive enhancement and must respect reduced-motion preferences. Marketing copy and backend remain unchanged unless explicitly requested.
 
 The language switcher retains the original country flags for Kazakh, Russian, English, and Chinese in both its selected state and dropdown, including mobile layouts.
+
+The homepage's existing ship photograph has a lightweight 2.5D sailing effect with subtle water highlights. The motion control can pause it; animations also stop offscreen, in a hidden tab, and for reduced-motion preferences. Mobile movement is deliberately smaller. This effect does not require a video download or backend changes.

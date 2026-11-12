@@ -1,0 +1,150 @@
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-scene .hero-photo {
+  inset: -4%;
+  width: 108%;
+  height: 108%;
+  max-width: none;
+  transform-origin: 60% 60%;
+  animation: vessel-glide 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.hero-sea {
+  position: absolute;
+  inset: -3%;
+  width: 106%;
+  height: 106%;
+  opacity: 0.65;
+}
+.sea-current {
+  transform-origin: center;
+  stroke-dasharray: 65 13 18 10 110 24;
+}
+.sea-current-near {
+  animation:
+    sea-flow 16s linear infinite,
+    sea-swell 9s ease-in-out infinite alternate;
+}
+.sea-current-far {
+  opacity: 0.6;
+  animation:
+    sea-flow 22s linear infinite reverse,
+    sea-swell 13s ease-in-out infinite alternate-reverse;
+}
+.hero-water-light {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 84% 12%, #e2edc81a, transparent 40%);
+  animation: sea-light 12s ease-in-out infinite alternate;
+}
+.hero-shade {
+  pointer-events: none;
+}
+.hero-motion-toggle {
+  position: absolute;
+  top: 25px;
+  right: max(24px, calc((100vw - 1280px) / 2));
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ffffff45;
+  border-radius: 50%;
+  background: #092c2038;
+  color: #f2f7ed;
+  pointer-events: auto;
+  backdrop-filter: blur(5px);
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.hero-motion-toggle:hover {
+  background: #092c2075;
+  border-color: #ffffff90;
+}
+.hero-scene[data-paused="true"] .hero-photo,
+.hero-scene[data-paused="true"] .sea-current,
+.hero-scene[data-paused="true"] .hero-water-light {
+  animation-play-state: paused;
+}
+@keyframes vessel-glide {
+  from {
+    transform: translate3d(1.1%, 0.5%, 0) scale(1.015) rotate(0.1deg);
+  }
+  to {
+    transform: translate3d(-1.7%, -0.55%, 0) scale(1.045) rotate(-0.1deg);
+  }
+}
+@keyframes sea-flow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -300;
+  }
+}
+@keyframes sea-swell {
+  from {
+    transform: translate3d(-10px, 3px, 0);
+    opacity: 0.35;
+  }
+  to {
+    transform: translate3d(10px, -4px, 0);
+    opacity: 0.8;
+  }
+}
+@keyframes sea-light {
+  from {
+    opacity: 0.3;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.85;
+    transform: translate3d(-2%, 1%, 0);
+  }
+}
+@media (max-width: 800px) {
+  .hero-scene .hero-photo {
+    animation-name: vessel-glide-mobile;
+    animation-duration: 28s;
+  }
+  .hero-sea {
+    opacity: 0.35;
+  }
+  .sea-current-far {
+    display: none;
+  }
+  .hero-motion-toggle {
+    top: 20px;
+    right: 18px;
+    width: 30px;
+    height: 30px;
+  }
+}
+@keyframes vessel-glide-mobile {
+  from {
+    transform: translate3d(0.4%, 0.2%, 0) scale(1.01);
+  }
+  to {
+    transform: translate3d(-0.6%, -0.25%, 0) scale(1.025);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-scene .hero-photo,
+  .hero-scene .sea-current,
+  .hero-scene .hero-water-light {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+  .hero-sea,
+  .hero-water-light,
+  .hero-motion-toggle {
+    display: none;
+  }
+}

@@ -1887,9 +1887,6 @@ p {
 .service-card.reveal-visible:hover {
   transform: translateY(-7px);
 }
-.home-hero .hero-photo {
-  animation: hero-settle 1.8s ease-out both;
-}
 .hero-eyebrow,
 .home-hero h1,
 .hero-bottom {
@@ -1900,16 +1897,6 @@ p {
 }
 .hero-bottom {
   animation-delay: 0.2s;
-}
-@keyframes hero-settle {
-  from {
-    transform: scale(1.045);
-    opacity: 0.75;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 @keyframes hero-copy {
   from {

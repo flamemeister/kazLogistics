@@ -5,12 +5,13 @@ import Icon from "../ui/Icon";
 import { ButtonLink, ServiceCards } from "../ui/Sections";
 import ConsultationForm from "../ui/ConsultationForm";
 import Chat from "../ui/Chat";
+import HeroScene from "../ui/HeroScene";
 export default function Home() {
   const { t } = useTranslation();
   return (
     <>
       <section className="home-hero">
-        <Photo name="multimodal" className="hero-photo" priority />
+        <HeroScene />
         <div className="hero-shade" />
         <div className="container hero-content">
           <div className="hero-eyebrow">
