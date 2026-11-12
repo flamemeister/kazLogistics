@@ -17,6 +17,18 @@ Backups: `/home/ubuntu/.gslog-production-backups/<release>/nginx.conf` and `stat
 
 Production outputs `index, follow` and `robots.txt` allowing crawling. Test outputs noindex and a disallowing robots.txt. Test nginx keeps its noindex header. Email images now use the production domain; the old test image URLs remain available for already-sent messages.
 
+## Production release — 2026-11-12
+
+- Deployed application commit: `6d4e81b2da0fde8afaeacfd81927185f6244141f` (main and codex/gslog-production).
+- Active production artifact: `/var/www/gslog-production/releases/20261112T135253Z-6d4e81b2-5161`.
+- Protected rollback configuration/state/backend backups: `/home/ubuntu/.gslog-production-backups/20261112T135253Z-6d4e81b2-5161/`.
+- Matching source snapshot: `/home/ubuntu/gslog-production-source/6d4e81b2da0fde8afaeacfd81927185f6244141f`.
+- Legacy frontend remains at `/var/www/html`. Test remains on its independent release symlink.
+- Verified: ESLint, 26 tests, production/staging indexing builds, runtime dependency audit (0 vulnerabilities), all 11 production routes, desktop/mobile navigation, logo and ship playback, office-map expansion, TLS for gslog.kz/www, video range requests, asset compression, no-cache HTML, API OPTIONS and invalid-payload HTTP 400.
+- Gmail authentication succeeded without sending mail. Django system check and consultation view passed with two in-memory email messages, the production logo, year 2026 and escaped user content. Only the reviewed private-key configuration migration and email base URL were applied to the live backend; its existing key, SMTP settings and database configuration were verified unchanged.
+- The first activation check ran before nginx finished replacing workers and automatically restored the previous configuration. The helper now waits for the new workers; the subsequent activation and external checks passed.
+- Follow-up outside this release: rotate credentials exposed in historical public commits and audit past workflow executions. Development-only dependency advisories remain (18 in the full npm audit); the production dependency audit is clean. No real consultation emails were sent during this release.
+
 ## Test environment
 
 - URL: https://test.gslog.kz
