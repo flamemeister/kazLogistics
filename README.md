@@ -28,7 +28,7 @@ The homepage uses real, locally hosted ship footage from Pexels (provenance and 
 
 ## Service hero films
 
-All seven detail pages use `ServiceHero` and the shared `VideoScene` player, also used on the homepage. Headings sit beside the film on desktop and above it on phones. The 16:9 media frame uses `object-fit: contain` for both poster and footage: keep the complete image visible instead of clipping it into a shallow background banner. Original service posters and translations are independent and remain unchanged.
+All seven detail pages use `ServiceHero` and the shared `VideoScene` player, also used on the homepage. The customer's latest direction is a full-width, first-screen video background with light darkening and the title overlaid, like the earlier photo banners. Use `object-fit: cover` for poster and footage; responsive framing fills the viewport below the header. Keep the pause button accessible above the shade and content layers. This supersedes the earlier separate, uncropped 16:9 media-panel layout. Original service posters and translations are independent and remain unchanged.
 
 Each service has appropriate real footage: road truck, aircraft taking off, moving freight train, port crane, sailing ship for multimodal transport, low-loader carrying an excavator for oversized transport, and container terminal for depot services. The six additional clips have desktop/mobile MP4s and matching posters in `public/media/services`; per-clip attribution files record their original pages, creators and licenses. Multimodal reuses the existing ship loop. Videos are silent, controlled by the visible pause button, stopped offscreen/in hidden tabs, and skipped for reduced-motion/data-saver users. Only the current page's clip is requested.
 

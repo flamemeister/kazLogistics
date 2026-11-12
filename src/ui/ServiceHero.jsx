@@ -9,7 +9,13 @@ export default function ServiceHero({ service }) {
   const { t } = useTranslation();
   return (
     <section className="service-hero" data-service={service.slug}>
-      <div className="container">
+      <VideoScene
+        key={service.slug}
+        asset={serviceVideos[service.slug]}
+        className="service-video"
+      />
+      <div className="service-hero-shade" aria-hidden="true" />
+      <div className="container service-hero-content">
         <nav className="breadcrumb" aria-label={t("nav.services")}>
           <Link to="/">{t("nav.home")}</Link>
           <span aria-hidden="true">/</span>
@@ -26,20 +32,6 @@ export default function ServiceHero({ service }) {
               {t("home.consultation.title")}
               <Icon name="northeast" size={20} />
             </Link>
-          </div>
-          <div className="service-hero-film">
-            <VideoScene
-              key={service.slug}
-              asset={serviceVideos[service.slug]}
-              className="service-video"
-            />
-            <div className="service-film-caption">
-              <span>
-                <Icon name={service.icon} size={17} />
-                {t(`${service.key}.title`)}
-              </span>
-              <span className="film-caption-brand">GSL · 0{service.id}</span>
-            </div>
           </div>
         </div>
         <div className="service-hero-footer" aria-hidden="true">

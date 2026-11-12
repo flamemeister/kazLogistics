@@ -1,193 +1,177 @@
 .service-hero {
-  background: #082c24;
-  color: #f2f5ec;
-  padding: 26px 0 28px;
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #082c24;
+  color: #fff;
+  min-height: calc(100svh - 125px);
+  display: flex;
+}
+.service-hero .service-video {
+  position: absolute;
+  inset: 0;
+  --video-fit: cover;
+  pointer-events: none;
+}
+.service-hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #031c18a8 0%, #031c1870 47%, #031c1826 100%),
+    linear-gradient(0deg, #031c188c, transparent 48%, #031c1826);
+  pointer-events: none;
+}
+.service-hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 27px;
+  padding-bottom: 28px;
+  pointer-events: none;
+}
+.service-hero-content a {
+  pointer-events: auto;
 }
 .service-hero .breadcrumb {
   opacity: 1;
-  color: #b3c5b5;
+  color: #edf4e8;
   font-size: 11px;
-}
-.service-hero .breadcrumb a:hover {
-  color: #fff;
+  text-shadow: 0 1px 12px #0005;
+  padding-right: 55px;
 }
 .service-hero-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: 54px;
+  display: flex;
   align-items: center;
-  padding: 42px 0;
+  flex: 1;
+  padding: 90px 0;
 }
 .service-hero-copy {
   min-width: 0;
+  max-width: 1100px;
 }
 .service-hero-kicker {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 18px;
+  flex-wrap: wrap;
+  gap: 24px;
   margin-bottom: 28px;
 }
 .service-hero-kicker .eyebrow {
   margin: 0;
-  color: #b8d69c;
-  font-size: 10px;
-  letter-spacing: 1.6px;
+  color: #e3eed3;
+  font-size: 11px;
+  letter-spacing: 1.8px;
 }
 .service-hero-kicker > span:last-child {
   font: 10px monospace;
   letter-spacing: 1px;
-  color: #9fb7a2;
+  color: #e3eed3;
 }
 .service-hero h1 {
-  font-size: clamp(35px, 3.8vw, 56px);
-  line-height: 1.12;
-  letter-spacing: -2.2px;
-  overflow-wrap: anywhere;
+  font-size: clamp(48px, 6.6vw, 96px);
+  line-height: 1.07;
+  letter-spacing: -3.5px;
   text-wrap: balance;
+  overflow-wrap: anywhere;
+  text-shadow: 0 3px 28px #00150c25;
 }
 .service-hero-cta {
   display: inline-flex;
   align-items: center;
-  gap: 28px;
-  margin-top: 36px;
+  gap: 30px;
+  margin-top: 38px;
   padding: 16px 0;
-  border-bottom: 1px solid #c8dfb875;
-  color: #e6f5d8;
-  font-size: 12px;
+  border-bottom: 1px solid #ffffff80;
+  color: #fff;
+  font-size: 13px;
 }
 .service-hero-cta:hover {
-  border-color: #e6f5d8;
-}
-.service-hero-film {
-  min-width: 0;
-  border: 1px solid #a2bb9d45;
-  background: #041f1a;
-  box-shadow: 0 18px 50px #01170f26;
-}
-.service-video {
-  width: 100%;
-  aspect-ratio: 16/9;
-  --video-fit: contain;
-}
-.service-film-caption {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 14px 17px;
-  border-top: 1px solid #a2bb9d30;
-  color: #c4d8be;
-  font-size: 10px;
-}
-.service-film-caption > span:first-child {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.service-film-caption svg {
-  flex-shrink: 0;
-}
-.film-caption-brand {
-  white-space: nowrap;
-  font: 9px monospace;
-  letter-spacing: 1.5px;
-  opacity: 0.65;
+  border-color: #fff;
 }
 .service-hero-footer {
   display: flex;
   align-items: center;
   gap: 24px;
-  font-size: 8px;
+  color: #e0eadc;
+  font-size: 9px;
   letter-spacing: 2px;
-  color: #a8c0a7;
 }
 .service-hero-rule {
   height: 1px;
   flex: 1;
-  background: #a2bb9d30;
+  background: #e2edd442;
 }
-@media (min-width: 1600px) {
-  .service-hero-layout {
-    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-    gap: 64px;
-    padding: 54px 0;
-  }
-  .service-hero h1 {
-    font-size: 58px;
-  }
-}
-@media (max-width: 1100px) {
-  .service-hero-layout {
-    gap: 30px;
-  }
-  .service-hero h1 {
-    font-size: 38px;
-    letter-spacing: -1.4px;
-  }
-  .service-hero-kicker {
-    gap: 12px;
-  }
+.service-video .video-motion-toggle {
+  top: 20px;
+  right: max(24px, calc((100vw - 1280px) / 2));
 }
 @media (max-width: 800px) {
   .service-hero {
-    padding: 22px 0 24px;
+    min-height: calc(100svh - 107px);
+  }
+  .service-hero-content {
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
   .service-hero-layout {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 32px 0 28px;
-  }
-  .service-hero-copy {
-    max-width: 640px;
-  }
-  .service-hero-kicker {
-    margin-bottom: 18px;
-    justify-content: space-between;
+    padding: 88px 0;
   }
   .service-hero h1 {
-    font-size: clamp(32px, 7.7vw, 48px);
-    letter-spacing: -1.5px;
+    font-size: clamp(36px, 9vw, 62px);
+    letter-spacing: -1.6px;
     line-height: 1.1;
-    overflow-wrap: normal;
     hyphens: auto;
   }
-  .service-hero-cta {
-    margin-top: 18px;
-    padding: 12px 0;
-    font-size: 11px;
+  .service-hero-kicker {
+    gap: 16px;
+    margin-bottom: 24px;
   }
-  .service-film-caption {
-    padding: 12px;
+  .service-hero-kicker .eyebrow {
     font-size: 9px;
-    gap: 10px;
+    letter-spacing: 1.3px;
+  }
+  .service-hero-kicker > span:last-child {
+    font-size: 9px;
+  }
+  .service-hero-cta {
+    font-size: 12px;
+    margin-top: 30px;
+  }
+  .service-hero-footer {
+    font-size: 7px;
+    gap: 15px;
   }
   .service-video .video-motion-toggle {
     width: 36px;
     height: 36px;
-    top: 10px;
-    right: 10px;
+    top: 17px;
+    right: 18px;
   }
-  .service-hero-footer {
-    font-size: 7px;
-    gap: 16px;
+  .service-hero-shade {
+    background:
+      linear-gradient(90deg, #031c189e, #031c1845),
+      linear-gradient(0deg, #031c1880, transparent 70%);
   }
-  .service-hero-footer svg {
-    width: 17px;
-    height: 17px;
+  .service-hero[data-service="auto"] .video-footage,
+  .service-hero[data-service="auto"] .video-poster {
+    object-position: 58% center;
+  }
+  .service-hero[data-service="air"] .video-footage,
+  .service-hero[data-service="air"] .video-poster {
+    object-position: 54% center;
   }
 }
 @media (max-width: 370px) {
   .service-hero h1 {
-    font-size: 30px;
-    letter-spacing: -1.2px;
+    font-size: 34px;
+    letter-spacing: -1.3px;
   }
-  .service-hero-kicker .eyebrow {
-    font-size: 8px;
-    letter-spacing: 1px;
+}
+@media (max-height: 650px) and (min-width: 801px) {
+  .service-hero-layout {
+    padding: 60px 0;
   }
-  .film-caption-brand {
-    display: none;
+  .service-hero h1 {
+    font-size: 64px;
   }
 }
