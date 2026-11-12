@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { postJSON } from "../lib/api";
 import Icon from "./Icon";
@@ -11,6 +11,7 @@ export default function ConsultationForm() {
   const [status, setStatus] = useState("idle");
   const [fieldErrors, setFieldErrors] = useState([]);
   const [flightVisible, setFlightVisible] = useState(false);
+  const closeFlight = useCallback(() => setFlightVisible(false), []);
   const busy = useRef(false);
   async function submit(e) {
     e.preventDefault();
@@ -173,7 +174,7 @@ export default function ConsultationForm() {
                 ? copy.check
                 : t(`home.form.${status}`)
             }
-            onClose={() => setFlightVisible(false)}
+            onClose={closeFlight}
           />
         )}
       </div>

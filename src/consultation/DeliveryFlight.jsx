@@ -152,6 +152,11 @@ export default function DeliveryFlight({ status, copy, message, onClose }) {
   }, [status, reduced]);
 
   const delivered = status === "success" && arrived;
+  useEffect(() => {
+    if (!delivered) return;
+    const timeout = setTimeout(onClose, 2000);
+    return () => clearTimeout(timeout);
+  }, [delivered, onClose]);
   const title =
     status === "error"
       ? copy.failed

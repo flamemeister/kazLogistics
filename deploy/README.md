@@ -34,3 +34,9 @@ The owner replaced the Gmail app password using `/home/ubuntu/gslog-mail-setup.p
 Consultation views, serializers, database, recipient addresses, and chat business logic were not changed. The frontend now matches the serializer's required email/name/phone limits. Backend endpoint/template tests use Django's in-memory email backend; a real request sends an administrator notification and a customer acknowledgement, so live mail checks require explicit authorization or the owner's own submission.
 
 With the owner's explicit authorization, one marked technical test request was submitted through the deployed form with `info@gslog.kz` as the customer address. The endpoint completed both existing mail send calls and returned success; the form reset and the flight animation reached its destination. Both messages target `info@gslog.kz`; final inbox/spam-folder receipt is checked by the owner.
+
+## Branded consultation emails — 2026-11-12
+
+The owner subsequently authorized redesign of both email templates. The sources in `deploy/email-templates/email/` replace `api/templates/email/admin_notification.html` and `consultation_email.html` and add shared `base.html` and `request_details.html`. Back up the existing directory under the protected mail-backup area before replacing files; install shared dependencies first, then the two entry templates. Render and test through Django with its in-memory mail backend before restarting `django-app-container` to clear any cached templates. Do not modify SMTP configuration, views, recipient addresses or the database for presentation changes.
+
+Publish the frontend PNG logo at `https://test.gslog.kz/media/email/logo-white.png` before activating the email templates. Test responsive layouts, escaping of user input, blank comments and the current-year footer. These changes do not send test mail; a new real mail check still needs explicit authorization.
